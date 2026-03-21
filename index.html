@@ -15,7 +15,10 @@
 <!-- ===== HEADER ===== -->
 <header class="site-header" id="site-header">
   <div class="header-inner container">
-    <a href="index.html" class="site-logo">ESIMJAPAN<span>.com</span></a>
+    <a href="index.html" class="site-logo">
+      <span class="logo-mark">EJ<span class="logo-dot">.</span></span>
+      <span class="logo-name">ESIMJAPAN</span>
+    </a>
 
     <nav class="main-nav" id="main-nav">
       <ul class="main-nav__list">
@@ -106,12 +109,12 @@
   <div class="hero-bg"></div>
   <div class="container hero-container">
     <div class="hero-text">
-      <h1 class="hero-title"><strong>No.1 Japan eSIM Store</strong></h1>
+      <h1 class="hero-title">No.1 Japan eSIM Store</h1>
       <p class="hero-sub">Get most reliable way to stay connected in Japan</p>
       <a href="#plans" class="btn-shop">Shop Now</a>
     </div>
     <div class="hero-text hero-text--mobile">
-      <h1 class="hero-title"><strong>No.1 Japan eSIM Store</strong></h1>
+      <h1 class="hero-title">No.1 Japan eSIM Store</h1>
       <p class="hero-sub">Get most reliable way<br>to stay connected in Japan</p>
       <a href="#plans" class="btn-shop">Shop Now</a>
     </div>
@@ -127,51 +130,52 @@
 
     <div class="plans-grid">
 
-      <!-- Plan 1: Unlimited -->
-      <div class="plan-card">
-        <h3 class="plan-card__name">5G Unlimited Max</h3>
+      <!-- Plan 1: Most Popular - Unlimited/30days -->
+      <div class="plan-card plan-card--featured">
+        <span class="popular-badge">Most Popular</span>
+        <h3 class="plan-card__name">Unlimited / 30days</h3>
         <div class="plan-card__meta">
           <span class="stars">★★★★★</span>
           <span class="rating-val">4.98</span>
           <span class="review-ct">(985 reviews)</span>
           <span class="sold-ct">· 86K+ sold</span>
         </div>
-        <p class="plan-card__validity">Valid for 3-30 days</p>
+        <p class="plan-card__validity">Valid for 30 days</p>
         <div class="plan-card__pricing">
           <span class="pricing-label">Starts at</span>
           <div class="pricing-row">
-            <span class="price-orig">¥7,200 USD</span>
+            <span class="price-orig">¥7,200</span>
             <span class="price-sale">¥5,500</span>
           </div>
-          <span class="price-usd">Current price is: ¥5,500 (~$36 USD)</span>
+          <span class="price-usd">~$36 USD</span>
         </div>
         <a href="#" class="btn-buy">Buy now</a>
       </div>
 
-      <!-- Plan 2: Unlimited Basic -->
+      <!-- Plan 2: 10GB/10days -->
       <div class="plan-card">
-        <h3 class="plan-card__name">Unlimited Data</h3>
+        <h3 class="plan-card__name">10GB / 10days</h3>
         <div class="plan-card__meta">
           <span class="stars">★★★★★</span>
           <span class="rating-val">4.96</span>
           <span class="review-ct">(2.5K+ reviews)</span>
           <span class="sold-ct">· 34K+ sold</span>
         </div>
-        <p class="plan-card__validity">Valid for 3-30 days</p>
+        <p class="plan-card__validity">Valid for 10 days</p>
         <div class="plan-card__pricing">
           <span class="pricing-label">Starts at</span>
           <div class="pricing-row">
-            <span class="price-orig">¥6,500 USD</span>
+            <span class="price-orig">¥6,500</span>
             <span class="price-sale">¥4,000</span>
           </div>
-          <span class="price-usd">Current price is: ¥4,000 (~$26 USD)</span>
+          <span class="price-usd">~$26 USD</span>
         </div>
         <a href="#" class="btn-buy">Buy now</a>
       </div>
 
-      <!-- Plan 3: Fixed Data -->
+      <!-- Plan 3: 3GB/5days -->
       <div class="plan-card">
-        <h3 class="plan-card__name">3GB Data</h3>
+        <h3 class="plan-card__name">3GB / 5days</h3>
         <div class="plan-card__meta">
           <span class="stars">★★★★★</span>
           <span class="rating-val">4.92</span>
@@ -182,10 +186,10 @@
         <div class="plan-card__pricing">
           <span class="pricing-label">Starts at</span>
           <div class="pricing-row">
-            <span class="price-orig">¥3,200 USD</span>
+            <span class="price-orig">¥3,200</span>
             <span class="price-sale">¥2,500</span>
           </div>
-          <span class="price-usd">Current price is: ¥2,500 (~$16 USD)</span>
+          <span class="price-usd">~$16 USD</span>
         </div>
         <a href="#" class="btn-buy">Buy now</a>
       </div>
@@ -200,62 +204,71 @@
     <h2 class="section-title">For city travelers</h2>
     <p class="section-sub">City Plans connect to the best local network</p>
     <div class="city-grid">
+
       <a href="#" class="city-card">
-        <div class="city-card__img city-img--tokyo"></div>
+        <div class="city-card__img-wrap">
+          <div class="city-card__sim">
+            <div class="city-card__sim-chip"></div>
+            <div class="city-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="city-card__sim-city">Tokyo</div>
+          </div>
+          <div class="city-card__photo city-img--tokyo"></div>
+          <div class="city-card__arrow">↗</div>
+        </div>
         <div class="city-card__body">
           <h4>eSIM Tokyo</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
+          <p>from ¥5,500</p>
         </div>
       </a>
+
       <a href="#" class="city-card">
-        <div class="city-card__img city-img--osaka"></div>
+        <div class="city-card__img-wrap">
+          <div class="city-card__sim">
+            <div class="city-card__sim-chip"></div>
+            <div class="city-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="city-card__sim-city">Osaka</div>
+          </div>
+          <div class="city-card__photo city-img--osaka"></div>
+          <div class="city-card__arrow">↗</div>
+        </div>
         <div class="city-card__body">
           <h4>eSIM Osaka</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
+          <p>from ¥5,500</p>
         </div>
       </a>
+
       <a href="#" class="city-card">
-        <div class="city-card__img city-img--sapporo"></div>
+        <div class="city-card__img-wrap">
+          <div class="city-card__sim">
+            <div class="city-card__sim-chip"></div>
+            <div class="city-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="city-card__sim-city">Sapporo</div>
+          </div>
+          <div class="city-card__photo city-img--sapporo"></div>
+          <div class="city-card__arrow">↗</div>
+        </div>
         <div class="city-card__body">
           <h4>eSIM Sapporo</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
+          <p>from ¥5,500</p>
         </div>
       </a>
+
       <a href="#" class="city-card">
-        <div class="city-card__img city-img--okinawa"></div>
+        <div class="city-card__img-wrap">
+          <div class="city-card__sim">
+            <div class="city-card__sim-chip"></div>
+            <div class="city-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="city-card__sim-city">Okinawa</div>
+          </div>
+          <div class="city-card__photo city-img--okinawa"></div>
+          <div class="city-card__arrow">↗</div>
+        </div>
         <div class="city-card__body">
           <h4>eSIM Okinawa</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
+          <p>from ¥5,500</p>
         </div>
       </a>
-      <a href="#" class="city-card">
-        <div class="city-card__img city-img--kyoto"></div>
-        <div class="city-card__body">
-          <h4>eSIM Kyoto</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
-        </div>
-      </a>
-      <a href="#" class="city-card">
-        <div class="city-card__img city-img--fukuoka"></div>
-        <div class="city-card__body">
-          <h4>eSIM Fukuoka</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
-        </div>
-      </a>
-      <a href="#" class="city-card">
-        <div class="city-card__img city-img--hiroshima"></div>
-        <div class="city-card__body">
-          <h4>eSIM Hiroshima</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
-        </div>
-      </a>
-      <a href="#" class="city-card">
-        <div class="city-card__img city-img--nagoya"></div>
-        <div class="city-card__body">
-          <h4>eSIM Nagoya</h4>
-          <p>from <s>¥7,200</s> <strong>¥5,500</strong></p>
-        </div>
-      </a>
+
     </div>
   </div>
 </section>
@@ -266,26 +279,71 @@
     <h2 class="section-title">For Multi-Country travelers</h2>
     <p class="section-sub">Multi-Country Plans cover multiple destinations</p>
     <div class="multi-grid">
+
       <a href="#" class="multi-card">
-        <div class="multi-card__flags">🇯🇵🇨🇳</div>
-        <h4>eSIM Japan-China Fixed data</h4>
-        <p>from <s>¥3,900</s> <strong>¥2,900</strong></p>
+        <div class="multi-card__img-wrap">
+          <div class="multi-card__sim">
+            <div class="multi-card__sim-chip"></div>
+            <div class="multi-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="multi-card__sim-region">Japan China</div>
+          </div>
+          <div class="multi-card__photo multi-img--jpcn"></div>
+          <div class="multi-card__arrow">↗</div>
+        </div>
+        <div class="multi-card__body">
+          <h4>eSIM Japan-China Fixed data</h4>
+          <p>from ¥2,900</p>
+        </div>
       </a>
+
       <a href="#" class="multi-card">
-        <div class="multi-card__flags">🇯🇵🇰🇷</div>
-        <h4>eSIM Japan-Korea Fixed data</h4>
-        <p>from <s>¥6,200</s> <strong>¥4,400</strong></p>
+        <div class="multi-card__img-wrap">
+          <div class="multi-card__sim">
+            <div class="multi-card__sim-chip"></div>
+            <div class="multi-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="multi-card__sim-region">Japan Korea</div>
+          </div>
+          <div class="multi-card__photo multi-img--jpkr"></div>
+          <div class="multi-card__arrow">↗</div>
+        </div>
+        <div class="multi-card__body">
+          <h4>eSIM Japan-Korea Fixed data</h4>
+          <p>from ¥4,400</p>
+        </div>
       </a>
+
       <a href="#" class="multi-card">
-        <div class="multi-card__flags">🇯🇵🇰🇷🇨🇳</div>
-        <h4>eSIM Japan-Korea-China Unlimited</h4>
-        <p>from <s>¥9,600</s> <strong>¥6,800</strong></p>
+        <div class="multi-card__img-wrap">
+          <div class="multi-card__sim">
+            <div class="multi-card__sim-chip"></div>
+            <div class="multi-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="multi-card__sim-region">Japan Korea China</div>
+          </div>
+          <div class="multi-card__photo multi-img--jpkrcn"></div>
+          <div class="multi-card__arrow">↗</div>
+        </div>
+        <div class="multi-card__body">
+          <h4>eSIM Japan-Korea-China Unlimited</h4>
+          <p>from ¥6,800</p>
+        </div>
       </a>
+
       <a href="#" class="multi-card">
-        <div class="multi-card__flags">🌏</div>
-        <h4>eSIM Asia Unlimited</h4>
-        <p>from <s>¥8,900</s> <strong>¥6,300</strong></p>
+        <div class="multi-card__img-wrap">
+          <div class="multi-card__sim">
+            <div class="multi-card__sim-chip"></div>
+            <div class="multi-card__sim-logo">EJ<span class="sim-dot">.</span></div>
+            <div class="multi-card__sim-region">Asia 16 Countries</div>
+          </div>
+          <div class="multi-card__photo multi-img--asia"></div>
+          <div class="multi-card__arrow">↗</div>
+        </div>
+        <div class="multi-card__body">
+          <h4>eSIM Asia Unlimited</h4>
+          <p>from ¥6,300</p>
+        </div>
       </a>
+
     </div>
     <div class="see-all-wrap">
       <a href="#" class="btn-see-all">See all plans</a>
@@ -298,70 +356,86 @@
   <div class="container">
     <h2 class="section-title">Why ESIMJAPAN.com is Best for Japan eSIM</h2>
     <div class="why-grid">
+
       <div class="why-item">
         <div class="why-icon">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="#EBF4FF" stroke="#2684FF" stroke-width="2"/>
-            <path d="M20 30 L28 38 L42 22" stroke="#2684FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="13" r="11" stroke="#E8392A" stroke-width="1.5"/>
+            <path d="M13 7 L13 13 L17 17" stroke="#E8392A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>Fast<br>4G LTE data</h3>
-        <p>Experience the remarkable speed of our dependable 4G LTE network, ensuring a smooth and uninterrupted connection.</p>
+        <div class="why-content">
+          <h3>Fast<br>4G LTE data</h3>
+          <p>Experience the remarkable speed of our dependable 4G LTE network, ensuring a smooth and uninterrupted connection.</p>
+        </div>
       </div>
+
       <div class="why-item">
         <div class="why-icon">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="#EBF4FF" stroke="#2684FF" stroke-width="2"/>
-            <path d="M18 22 L30 12 L42 22 M30 12 L30 40 M22 32 L22 44 L38 44 L38 32" stroke="#2684FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="4" width="8" height="14" rx="1.5" stroke="#E8392A" stroke-width="1.5"/>
+            <path d="M11 18 L11 22 M8 22 L14 22 M15 8 L19 4 L19 8" stroke="#E8392A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>Swift delivery<br>&amp; Activation</h3>
-        <p>Save precious time and free yourself from concerns about potential disruptions with our hassle-free, uninterrupted data services.</p>
+        <div class="why-content">
+          <h3>Swift delivery<br>&amp; Activation</h3>
+          <p>Save precious time and free yourself from concerns about potential disruptions with our hassle-free, uninterrupted data services.</p>
+        </div>
       </div>
+
       <div class="why-item">
         <div class="why-icon">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="#EBF4FF" stroke="#2684FF" stroke-width="2"/>
-            <path d="M30 18 C24 18 18 23 18 30 C18 37 24 42 30 42 C36 42 42 37 42 30" stroke="#2684FF" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M36 18 L42 18 L42 24" stroke="#2684FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M42 18 L34 26" stroke="#2684FF" stroke-width="2.5" stroke-linecap="round"/>
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="13" r="6" stroke="#E8392A" stroke-width="1.5"/>
+            <path d="M13 5 L13 3 M13 21 L13 23 M5 13 L3 13 M21 13 L23 13" stroke="#E8392A" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 10 L19 7 M16 16 L19 19 M10 16 L7 19 M10 10 L7 7" stroke="#E8392A" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Limitless<br>hotspot data</h3>
-        <p>Enjoy the freedom of unrestricted hotspot usage. Share your data with loved ones and multiple devices without any constraints.</p>
+        <div class="why-content">
+          <h3>Limitless<br>hotspot data</h3>
+          <p>Enjoy the freedom of unrestricted hotspot usage. Share your data with loved ones and multiple devices without any constraints.</p>
+        </div>
       </div>
+
       <div class="why-item">
         <div class="why-icon">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="#EBF4FF" stroke="#2684FF" stroke-width="2"/>
-            <rect x="22" y="16" width="16" height="28" rx="3" stroke="#2684FF" stroke-width="2.5"/>
-            <path d="M27 20 L33 20 M30 38 L30 38" stroke="#2684FF" stroke-width="2.5" stroke-linecap="round"/>
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="4" width="10" height="18" rx="2" stroke="#E8392A" stroke-width="1.5"/>
+            <path d="M11 7 L15 7 M13 19 L13 19" stroke="#E8392A" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Keep your original<br>phone number</h3>
-        <p>Keep your home phone number and stay connected with your loved ones back home, all while enjoying reliable data connectivity through our eSIM.</p>
+        <div class="why-content">
+          <h3>Keep your original<br>phone number</h3>
+          <p>Keep your home phone number and stay connected with your loved ones back home, all while enjoying reliable data connectivity.</p>
+        </div>
       </div>
+
       <div class="why-item">
         <div class="why-icon">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="#EBF4FF" stroke="#2684FF" stroke-width="2"/>
-            <rect x="18" y="22" width="24" height="16" rx="2" stroke="#2684FF" stroke-width="2.5"/>
-            <path d="M24 22 L24 20 M36 22 L36 20 M22 30 L38 30" stroke="#2684FF" stroke-width="2.5" stroke-linecap="round"/>
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="8" width="18" height="12" rx="2" stroke="#E8392A" stroke-width="1.5"/>
+            <path d="M9 8 L9 6 M17 8 L17 6 M7 14 L19 14" stroke="#E8392A" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3>Completely prepaid &amp;<br>No-contract plan</h3>
-        <p>Enjoy our straightforward one-time prepaid eSIM without any complicated contracts or unexpected charges.</p>
+        <div class="why-content">
+          <h3>Completely prepaid &amp;<br>No-contract plan</h3>
+          <p>Enjoy our straightforward one-time prepaid eSIM without any complicated contracts or unexpected charges.</p>
+        </div>
       </div>
+
       <div class="why-item">
         <div class="why-icon">
-          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="30" cy="30" r="28" fill="#EBF4FF" stroke="#2684FF" stroke-width="2"/>
-            <path d="M30 18 L32.5 25 L40 25 L34 29.5 L36 37 L30 32.5 L24 37 L26 29.5 L20 25 L27.5 25 Z" stroke="#2684FF" stroke-width="2" fill="#BDD8FF"/>
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="13" r="9" stroke="#E8392A" stroke-width="1.5"/>
+            <path d="M13 8 L14.5 11.5 L18 11.5 L15.5 13.8 L16.5 17.5 L13 15.2 L9.5 17.5 L10.5 13.8 L8 11.5 L11.5 11.5 Z" stroke="#E8392A" stroke-width="1.2" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3>Nearly local rate &amp;<br>Clear pricing</h3>
-        <p>Say goodbye to costly roaming charges and hello to budget-friendly, transparent pricing. Make the smart choice by choosing our eSIM.</p>
+        <div class="why-content">
+          <h3>Nearly local rate &amp;<br>Clear pricing</h3>
+          <p>Say goodbye to costly roaming charges and hello to budget-friendly, transparent pricing. Make the smart choice by choosing our eSIM.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -369,27 +443,26 @@
 <!-- ===== 24/7 SUPPORT ===== -->
 <section class="support-section" id="support">
   <div class="container support-inner">
+    <div class="support-illustration" aria-hidden="true">
+      <span class="support-label-badge">24/7 SUPPORT</span>
+    </div>
     <div class="support-text">
-      <span class="support-label">24/7 Support</span>
       <h2>Our 24/7 specialists are here to help you</h2>
       <p>Start your journey with confidence. Our dedicated customer support team is available to help you from anywhere in the world. Reach out to us via email or WhatsApp.</p>
       <ul class="support-list">
         <li>
           <span class="support-check">✓</span>
-          Get help within 5 minutes.
+          <strong>Get help within 5 minutes.</strong>
         </li>
         <li>
           <span class="support-check">✓</span>
-          Connect with real human support, not an automated response.
+          <strong>Connect with real human support, not an automated response.</strong>
         </li>
         <li>
           <span class="support-check">✓</span>
-          Get effective and real solutions from our knowledgeable experts.
+          <strong>Get effective and real solutions from our knowledgeable experts.</strong>
         </li>
       </ul>
-    </div>
-    <div class="support-cta">
-      <a href="mailto:support@esimjapan.com" class="btn-contact">Contact Support</a>
     </div>
   </div>
 </section>
@@ -486,7 +559,7 @@
 <section class="section first-time-section" id="first-time">
   <div class="container">
     <h2 class="section-title">First time using eSIM for your trip to Japan?</h2>
-    <p class="section-sub">Count on us for your stress-free eSIM experience.</p>
+    <div class="ft-speech">Count on us for your stress-free eSIM experience.</div>
 
     <div class="ft-accordion">
       <div class="ft-item">
@@ -670,11 +743,10 @@
 </section>
 
 <!-- ===== ABOUT ===== -->
-<section class="section about-section" id="about">
-  <div class="container about-inner">
-    <div class="about-logo">ESIMJAPAN<span>.com</span></div>
-    <p class="about-text">ESIMJAPAN.com is the No.1 eSIM Japan provider for travelers. Enjoy fast-speed Japan eSIM data at the lowest price, trusted by 9,999+ reviews. We provide the easiest way to get connected in Japan at a reasonable price. Have an amazing time with eSIM data plans in Japan.</p>
-    <p class="about-text">Join us at ESIMJAPAN.com for an unforgettable experience in Japan. Stay connected, whether you're at the top of Tokyo Tower, climbing Mount Fuji, or exploring the lush Arashiyama Bamboo Grove.</p>
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <p>ESIMJAPAN.com is the No.1 eSIM Japan provider for travelers. Enjoy fast-speed Japan eSIM data at the lowest price, trusted by 9,999+ reviews. We provide the easiest way to get connected in Japan at a reasonable price. Have an amazing time with eSIM data plans in Japan.</p>
+    <p>Join us at ESIMJAPAN.com for an unforgettable adventure in Japan today.</p>
     <a href="#plans" class="btn-explore">Explore plans</a>
   </div>
 </section>
@@ -683,7 +755,8 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="site-footer" id="footer">
-  <div class="container footer-grid">
+  <div class="container">
+  <div class="footer-grid">
     <div class="footer-col">
       <h4>About ESIMJAPAN.com</h4>
       <ul>
@@ -732,6 +805,7 @@
         <a href="#">ESIMVIETNAM.net</a>
       </div>
     </div>
+  </div>
   </div>
   <div class="footer-bottom">
     <div class="container">
