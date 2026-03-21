@@ -1,0 +1,212 @@
+/* ============================================================
+   eSIM Japan — Sub-pages (terms / privacy / refund / legal)
+   ============================================================ */
+
+.page-body {
+  background: var(--bg);
+  padding-bottom: 0;
+}
+
+/* ===== Page Header Overrides ===== */
+.page-nav-right { display: flex; align-items: center; gap: 16px; }
+
+/* ===== Page Hero ===== */
+.page-hero {
+  background: linear-gradient(145deg, #091524 0%, #162B48 60%, #0D3B8B 100%);
+  padding: 120px 0 56px;
+  color: white;
+}
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.60);
+  margin-bottom: 20px;
+}
+.breadcrumb a {
+  color: rgba(255,255,255,0.70);
+  transition: var(--transition);
+}
+.breadcrumb a:hover { color: white; }
+.breadcrumb span { color: rgba(255,255,255,0.40); }
+.page-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.page-hero p { font-size: 0.9rem; color: rgba(255,255,255,0.58); }
+
+/* ===== Page Content Layout ===== */
+.page-content {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 56px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  align-items: start;
+}
+
+/* ===== TOC ===== */
+.page-toc {
+  position: sticky;
+  top: 90px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.page-toc h3 {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+.page-toc ol {
+  list-style: none;
+  counter-reset: toc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.page-toc li { counter-increment: toc; }
+.page-toc a {
+  font-size: 0.875rem;
+  color: var(--text);
+  transition: var(--transition);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.page-toc a::before {
+  content: counter(toc) ".";
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+.page-toc a:hover { color: var(--primary); padding-left: 4px; }
+
+/* ===== Article ===== */
+.page-article {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.page-article section {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+.page-article section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.page-article h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+}
+.page-article p {
+  font-size: 0.93rem;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.page-article p:last-child { margin-bottom: 0; }
+.page-article ul, .page-article ol {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.page-article ul { list-style: disc; }
+.page-article ol { list-style: decimal; }
+.page-article li {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* ===== Info Box ===== */
+.info-box {
+  background: rgba(0,82,204,0.05);
+  border: 1px solid rgba(0,82,204,0.18);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.info-box strong { color: var(--dark); display: block; margin-bottom: 8px; }
+.info-box ul { margin: 8px 0 0; list-style: none; padding: 0; gap: 6px; }
+.info-box li::before { content: "• "; color: var(--primary); font-weight: 700; }
+
+/* ===== Contact Info ===== */
+.contact-info {
+  background: var(--bg-gray);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.contact-info p { margin: 0 !important; font-size: 0.9rem; }
+.contact-info a { color: var(--primary); text-decoration: underline; }
+
+/* ===== Page Footer ===== */
+.page-footer {
+  background: #080F1A;
+  padding: 40px 0;
+}
+.page-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.page-footer .logo-text {
+  font-family: var(--font-en);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: white;
+}
+.page-footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.page-footer-links a {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.55);
+  transition: var(--transition);
+}
+.page-footer-links a:hover { color: white; }
+.page-footer p { font-size: 0.82rem; color: rgba(255,255,255,0.38); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .page-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+  }
+  .page-toc { position: static; }
+  .page-hero h1 { font-size: 1.9rem; }
+  .page-footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .page-footer-links { gap: 12px; }
+}
