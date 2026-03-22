@@ -1179,7 +1179,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: #666;
+  color: #888;
   margin-bottom: 14px;
 }
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
@@ -1249,8 +1249,8 @@ img { max-width: 100%; display: block; }
 .footer-copy {
   text-align: center;
   font-size: 0.80rem;
-  color: #555;
-  padding: 24px 0 32px;
+  color: #888;
+  padding: 24px 0 48px;
   margin-top: 8px;
 }
 
