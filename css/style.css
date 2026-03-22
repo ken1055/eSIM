@@ -1127,7 +1127,7 @@ img { max-width: 100%; display: block; }
   .company-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
-/* ===== FOOTER ===== -->
+/* ===== FOOTER ===== */
 .site-footer {
   background: #111;
   color: #aaa;
