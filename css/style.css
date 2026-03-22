@@ -52,28 +52,18 @@ img { max-width: 100%; display: block; }
   height: 62px;
 }
 
-/* Logo: EJ. ESIMJAPAN stacked style */
+/* Logo: SVG image */
 .site-logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
   flex-shrink: 0;
   margin-right: 24px;
   text-decoration: none;
 }
-.logo-mark {
-  font-size: 1.15rem;
-  font-weight: 900;
-  color: var(--text);
-  letter-spacing: -0.5px;
-}
-.logo-mark .logo-dot { color: var(--red); }
-.logo-name {
-  font-size: 0.62rem;
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
 /* Main Nav */
@@ -222,81 +212,139 @@ img { max-width: 100%; display: block; }
 /* ===== HERO ===== */
 .hero-section {
   position: relative;
-  min-height: 460px;
+  min-height: 560px;
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-top: 62px;
   overflow: hidden;
-  text-align: center;
-  /* Japan-inspired layered gradient: sky blue -> mountain purple -> sakura pink -> warm temple */
-  background:
-    linear-gradient(180deg,
-      rgba(0,0,0,0.52) 0%,
-      rgba(0,0,0,0.35) 50%,
-      rgba(0,0,0,0.48) 100%),
-    linear-gradient(160deg,
-      #4A7BAC 0%,
-      #7BA7C5 15%,
-      #8EB3C8 28%,
-      #B8C8C0 40%,
-      #D4C5A9 55%,
-      #C4906A 70%,
-      #A0644A 85%,
-      #7C4A3C 100%);
+  background: #1a0f0a;
 }
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* Sakura blossom texture overlay */
-  background:
-    radial-gradient(ellipse 60% 40% at 25% 55%, rgba(255,180,160,0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 30% at 75% 35%, rgba(200,220,240,0.15) 0%, transparent 65%),
-    radial-gradient(ellipse 50% 60% at 50% 100%, rgba(100,60,40,0.30) 0%, transparent 60%);
-  pointer-events: none;
+  background-image: url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+/* Gradient overlay: solid-ish on left for text readability, fades to transparent on right */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 10, 5, 0.72) 0%,
+    rgba(15, 10, 5, 0.52) 38%,
+    rgba(15, 10, 5, 0.18) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 .hero-container {
   position: relative;
   z-index: 1;
-  padding: 90px 24px;
+  padding: 80px 24px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
-.hero-text { max-width: 700px; text-align: center; }
-.hero-text--mobile { display: none; }
-.hero-title {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 14px;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+.hero-text {
+  max-width: 520px;
+  text-align: left;
 }
-.hero-sub {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.90);
+.hero-text--mobile { display: none; }
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.hero-checks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 32px;
-  line-height: 1.6;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
+.hero-checks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+}
+.hero-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #22C55E;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
 }
 .btn-shop {
   display: inline-block;
-  padding: 14px 44px;
+  padding: 16px 40px;
   background: var(--red);
   color: var(--white);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   border-radius: 100px;
   transition: var(--transition);
   letter-spacing: 0.2px;
-  box-shadow: 0 4px 18px rgba(232,57,42,0.45);
+  box-shadow: 0 4px 20px rgba(232,57,42,0.50);
+  margin-bottom: 28px;
+  white-space: nowrap;
 }
-.btn-shop:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,57,42,0.50); }
+.btn-shop:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,57,42,0.55); }
+
+.hero-flags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.hero-flags span {
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.hero-stars {
+  color: #F5A623;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.hero-rating {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.hero-trusted {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
 
 /* ===== SECTIONS BASE ===== */
 .section { padding: 72px 0; }
@@ -1287,7 +1335,16 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.2rem; }
+  .hero-title { font-size: 2.8rem; }
+  .hero-bg { background-position: 70% center; }
+  .hero-bg::after {
+    background: linear-gradient(
+      to right,
+      rgba(15,10,5,0.80) 0%,
+      rgba(15,10,5,0.60) 50%,
+      rgba(15,10,5,0.30) 100%
+    );
+  }
   .section-title { font-size: 1.6rem; }
   .section { padding: 52px 0; }
   .city-grid  { grid-template-columns: repeat(2, 1fr); }
@@ -1303,7 +1360,8 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
-  .hero-title   { font-size: 1.8rem; }
+  .hero-title   { font-size: 2.2rem; }
+  .hero-bg { background-position: 75% center; }
   .hero-text    { display: none; }
   .hero-text--mobile { display: block; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 12px; }
