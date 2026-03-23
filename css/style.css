@@ -1003,26 +1003,15 @@ img { max-width: 100%; display: block; }
   flex: 0 0 auto;
 }
 
-/* Placeholder screenshot — phone portrait shape */
+/* Phone screenshot */
 .phone-shot {
   width: 180px;
   aspect-ratio: 9 / 19.5;
   border-radius: 18px;
   overflow: hidden;
   border: 2px solid #e0e0e0;
-}
-.phone-shot--placeholder {
-  background: #f4f4f4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.shot-label {
-  font-size: 0.72rem;
-  color: #aaa;
-  text-align: center;
-  line-height: 1.6;
-  padding: 8px;
+  display: block;
+  object-fit: cover;
 }
 
 /* Step caption */
