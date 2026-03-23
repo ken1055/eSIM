@@ -97,5 +97,24 @@
     document.querySelectorAll('.util-dropdown').forEach(el => el.classList.remove('active'));
   });
 
+  // ===== Activate section tab switcher =====
+  document.querySelectorAll('.activate-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      document.querySelectorAll('.activate-tab').forEach(t => {
+        t.classList.remove('activate-tab--active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.activate-panel').forEach(p => {
+        p.classList.remove('activate-panel--active');
+        p.hidden = true;
+      });
+      tab.classList.add('activate-tab--active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('tab-' + target);
+      if (panel) { panel.classList.add('activate-panel--active'); panel.hidden = false; }
+    });
+  });
+
   onScroll();
 })();
