@@ -144,4 +144,90 @@
   });
 
   onScroll();
+
+  // ===== Sakura Animation =====
+  (function () {
+    const canvas = document.getElementById('sakura-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let petals = [];
+    let animId = null;
+    let played = false;
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    function Petal(cx, cy) {
+      // タップ位置周辺からランダムに発生
+      this.x  = cx + (Math.random() - 0.5) * 120;
+      this.y  = cy + (Math.random() - 0.5) * 80;
+      this.size  = Math.random() * 7 + 4;
+      this.vx    = (Math.random() - 0.5) * 3;
+      this.vy    = -(Math.random() * 3 + 1);   // 最初は上へ
+      this.gravity = 0.06;
+      this.rot   = Math.random() * 360;
+      this.rotV  = (Math.random() - 0.5) * 4;
+      this.alpha = 1;
+      // ピンク系をランダムに
+      const hue = Math.round(340 + Math.random() * 20);
+      const sat = Math.round(80 + Math.random() * 15);
+      const lgt = Math.round(78 + Math.random() * 12);
+      this.color = `hsl(${hue},${sat}%,${lgt}%)`;
+    }
+    Petal.prototype.update = function () {
+      this.vy   += this.gravity;
+      this.x    += this.vx + Math.sin(Date.now() * 0.001 + this.rot) * 0.4;
+      this.y    += this.vy;
+      this.rot  += this.rotV;
+      this.alpha = Math.max(0, this.alpha - 0.008);
+    };
+    Petal.prototype.draw = function () {
+      ctx.save();
+      ctx.globalAlpha = this.alpha;
+      ctx.translate(this.x, this.y);
+      ctx.rotate(this.rot * Math.PI / 180);
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, this.size, this.size * 0.55, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    };
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      petals = petals.filter(p => p.alpha > 0);
+      petals.forEach(p => { p.update(); p.draw(); });
+      if (petals.length > 0) {
+        animId = requestAnimationFrame(animate);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        animId = null;
+      }
+    }
+
+    function startSakura(e) {
+      if (played) return;
+      played = true;
+
+      const cx = e.clientX ?? window.innerWidth  / 2;
+      const cy = e.clientY ?? window.innerHeight / 2;
+
+      for (let i = 0; i < 60; i++) petals.push(new Petal(cx, cy));
+
+      if (animId) cancelAnimationFrame(animId);
+      animate();
+
+      // 3秒後にフェードアウトしながら停止
+      setTimeout(() => {
+        petals.forEach(p => { p.gravity += 0.03; });
+      }, 3000);
+    }
+
+    document.addEventListener('click',      startSakura, { once: true });
+    document.addEventListener('touchstart', startSakura, { once: true, passive: true });
+  })();
 })();
