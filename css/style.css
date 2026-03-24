@@ -224,19 +224,19 @@ img { max-width: 100%; display: block; }
   inset: 0;
   background-image: url('../img/hero-bg.jpg');
   background-size: cover;
-  background-position: right center;
+  background-position: center 35%;
   background-repeat: no-repeat;
 }
-/* Gradient overlay: solid-ish on left for text readability, fades to transparent on right */
+/* Gradient overlay for text readability */
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(15, 10, 5, 0.72) 0%,
-    rgba(15, 10, 5, 0.52) 38%,
-    rgba(15, 10, 5, 0.18) 65%,
+    rgba(10, 8, 18, 0.78) 0%,
+    rgba(10, 8, 18, 0.55) 40%,
+    rgba(10, 8, 18, 0.20) 68%,
     rgba(0, 0, 0, 0) 100%
   );
 }
@@ -1590,13 +1590,13 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .hero-title { font-size: 2.8rem; }
-  .hero-bg { background-position: 70% center; }
+  .hero-bg { background-position: center 30%; }
   .hero-bg::after {
     background: linear-gradient(
       to right,
-      rgba(15,10,5,0.80) 0%,
-      rgba(15,10,5,0.60) 50%,
-      rgba(15,10,5,0.30) 100%
+      rgba(10,8,18,0.82) 0%,
+      rgba(10,8,18,0.62) 50%,
+      rgba(10,8,18,0.32) 100%
     );
   }
   .section-title { font-size: 1.6rem; }
@@ -1615,7 +1615,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
   .hero-title   { font-size: 2.2rem; }
-  .hero-bg { background-position: 75% center; }
+  .hero-bg { background-position: center 30%; }
   .hero-text    { display: none; }
   .hero-text--mobile { display: block; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 12px; }
