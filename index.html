@@ -985,6 +985,87 @@
   </div>
 </div>
 
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="mob-overlay" id="mob-overlay"></div>
+<aside class="mob-drawer" id="mob-drawer" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="mob-drawer__head">
+    <button class="mob-drawer__close" id="mob-drawer-close" aria-label="Close menu">✕</button>
+  </div>
+  <div class="mob-drawer__body">
+
+    <!-- Shop section -->
+    <p class="mob-sec-label">Shop</p>
+
+    <div class="mob-acc-item">
+      <button class="mob-acc-btn" data-acc="mob-nationwide">
+        Nationwide Plans <span class="mob-acc-icon">+</span>
+      </button>
+      <div class="mob-acc-panel" id="mob-nationwide">
+        <a href="#plans">5G Unlimited Max Data</a>
+        <a href="#plans">Unlimited Data</a>
+        <a href="#plans">Fixed Data</a>
+        <a href="#plans">Daily Data</a>
+      </div>
+    </div>
+
+    <div class="mob-acc-item">
+      <button class="mob-acc-btn" data-acc="mob-multi">
+        Multi-Country Plans <span class="mob-acc-icon">+</span>
+      </button>
+      <div class="mob-acc-panel" id="mob-multi">
+        <a href="#multi">eSIM Japan &amp; Korea Fixed Data</a>
+        <a href="#multi">eSIM Japan &amp; China Fixed Data</a>
+        <a href="#multi">eSIM Japan-Korea-Taiwan Unlimited</a>
+        <a href="#multi">eSIM Asia Unlimited</a>
+        <a href="#multi">eSIM Global Unlimited</a>
+      </div>
+    </div>
+
+    <div class="mob-acc-item">
+      <button class="mob-acc-btn" data-acc="mob-city">
+        City Plans <span class="mob-acc-icon">+</span>
+      </button>
+      <div class="mob-acc-panel" id="mob-city">
+        <a href="#city">eSIM Tokyo</a>
+        <a href="#city">eSIM Osaka</a>
+        <a href="#city">eSIM Kyoto</a>
+        <a href="#city">eSIM Sapporo</a>
+        <a href="#city">eSIM Fukuoka</a>
+        <a href="#city">eSIM Okinawa</a>
+        <a href="#city">eSIM Nagoya</a>
+        <a href="#city">eSIM Hiroshima</a>
+      </div>
+    </div>
+
+    <!-- Support links -->
+    <div class="mob-links">
+      <a href="#devices">eSIM Compatible Phones</a>
+      <a href="#install">eSIM Activation Guide</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:support@getjapanesim.com">Contact</a>
+      <a href="#">Connectivity Lab</a>
+    </div>
+
+    <!-- Settings -->
+    <p class="mob-sec-label">Settings</p>
+    <div class="mob-settings">
+      <label class="mob-settings__label" for="mob-lang">Language</label>
+      <select class="mob-settings__select" id="mob-lang">
+        <option>English</option>
+        <option>Deutsch</option>
+        <option>简体中文</option>
+        <option>繁體中文</option>
+      </select>
+      <label class="mob-settings__label" for="mob-curr">Currency</label>
+      <select class="mob-settings__select" id="mob-curr">
+        <option>$ USD</option>
+        <option>€ EUR</option>
+      </select>
+    </div>
+
+  </div>
+</aside>
+
 <script src="js/main.js"></script>
 </body>
 </html>

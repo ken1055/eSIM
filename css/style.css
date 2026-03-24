@@ -1424,21 +1424,148 @@ img { max-width: 100%; display: block; }
 @media (max-width: 1024px) {
   .main-nav { display: none; }
   .hamburger { display: flex; }
-  .main-nav.open {
-    display: block;
+
+  /* === Mobile Overlay === */
+  .mob-overlay {
+    display: none;
     position: fixed;
-    top: 62px; left: 0; right: 0; bottom: 0;
-    background: white;
-    overflow-y: auto;
-    z-index: 900;
-    padding: 16px 0;
-    border-top: 1px solid var(--border);
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1100;
   }
-  .main-nav.open .main-nav__list { flex-direction: column; height: auto; }
-  .main-nav.open .nav-item { height: auto; flex-direction: column; align-items: stretch; }
-  .main-nav.open .nav-link { padding: 14px 24px; border-bottom: none; border-bottom: 1px solid var(--border); }
-  .main-nav.open .dropdown { position: static; opacity: 1; pointer-events: all; transform: none; box-shadow: none; border: none; border-radius: 0; background: var(--bg-light); padding: 0; columns: 1; }
-  .main-nav.open .dropdown a { padding: 10px 24px 10px 40px; border-bottom: 1px solid var(--border); }
+  .mob-overlay.active { display: block; }
+
+  /* === Mobile Drawer === */
+  .mob-drawer {
+    position: fixed;
+    top: 0; right: 0;
+    width: 310px;
+    max-width: 88vw;
+    height: 100dvh;
+    background: #fff;
+    z-index: 1200;
+    transform: translateX(100%);
+    transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mob-drawer.open { transform: translateX(0); }
+
+  .mob-drawer__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+  }
+  .mob-drawer__close {
+    background: none;
+    border: none;
+    font-size: 1.15rem;
+    color: #444;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+  }
+  .mob-drawer__body { padding: 8px 0 40px; }
+
+  /* Section label */
+  .mob-sec-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 20px 6px;
+  }
+
+  /* Accordion */
+  .mob-acc-item { border-bottom: 1px solid #f2f2f2; }
+  .mob-acc-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-family: var(--font);
+    cursor: pointer;
+    text-align: left;
+  }
+  .mob-acc-icon {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #888;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .mob-acc-btn.open .mob-acc-icon { transform: rotate(45deg); }
+  .mob-acc-panel {
+    display: none;
+    flex-direction: column;
+    background: #fafafa;
+  }
+  .mob-acc-panel.open { display: flex; }
+  .mob-acc-panel a {
+    padding: 11px 20px 11px 32px;
+    font-size: 0.875rem;
+    color: #444;
+    text-decoration: none;
+    border-top: 1px solid #f0f0f0;
+    transition: color 0.15s;
+  }
+  .mob-acc-panel a:hover { color: var(--red); }
+
+  /* Support links */
+  .mob-links {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  .mob-links a {
+    padding: 13px 20px;
+    font-size: 0.9rem;
+    color: #444;
+    text-decoration: none;
+    border-bottom: 1px solid #f2f2f2;
+    transition: color 0.15s;
+  }
+  .mob-links a:hover { color: var(--red); }
+
+  /* Settings */
+  .mob-settings {
+    padding: 4px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mob-settings__label {
+    font-size: 0.78rem;
+    color: #999;
+    margin-bottom: -4px;
+  }
+  .mob-settings__select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    background: #fff;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    cursor: pointer;
+  }
 
   .plans-grid    { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
   .city-grid     { grid-template-columns: repeat(2, 1fr); }

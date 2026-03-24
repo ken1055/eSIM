@@ -1,22 +1,49 @@
 (function () {
   'use strict';
 
-  // ===== Hamburger / Mobile Nav =====
-  const hamburger = document.getElementById('hamburger');
-  const mainNav   = document.getElementById('main-nav');
+  // ===== Mobile Drawer =====
+  const hamburger      = document.getElementById('hamburger');
+  const mobDrawer      = document.getElementById('mob-drawer');
+  const mobOverlay     = document.getElementById('mob-overlay');
+  const mobDrawerClose = document.getElementById('mob-drawer-close');
 
-  hamburger.addEventListener('click', () => {
-    const open = mainNav.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
+  function openDrawer() {
+    mobDrawer.classList.add('open');
+    mobOverlay.classList.add('active');
+    mobDrawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    mobDrawer.classList.remove('open');
+    mobOverlay.classList.remove('active');
+    mobDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-  // Close nav on link click
-  mainNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.style.overflow = '';
+  if (hamburger)      hamburger.addEventListener('click', openDrawer);
+  if (mobDrawerClose) mobDrawerClose.addEventListener('click', closeDrawer);
+  if (mobOverlay)     mobOverlay.addEventListener('click', closeDrawer);
+
+  // Close on drawer link click
+  if (mobDrawer) {
+    mobDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+  }
+
+  // ===== Mobile Accordion =====
+  document.querySelectorAll('.mob-acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panelId = btn.dataset.acc;
+      const panel   = document.getElementById(panelId);
+      if (!panel) return;
+      const isOpen = panel.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.mob-acc-panel').forEach(p => p.classList.remove('open'));
+      document.querySelectorAll('.mob-acc-btn').forEach(b => b.classList.remove('open'));
+      // Toggle clicked
+      if (!isOpen) {
+        panel.classList.add('open');
+        btn.classList.add('open');
+      }
     });
   });
 
