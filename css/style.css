@@ -1429,6 +1429,10 @@ img { max-width: 100%; display: block; }
 .mob-cta-price { font-size: 1.25rem; font-weight: 900; color: var(--text); }
 .mob-btn { padding: 12px 28px; border-radius: 100px; font-size: 0.95rem; background: var(--red); color: white; font-weight: 700; border: none; }
 
+/* デスクトップではドロワー・オーバーレイを非表示 */
+.mob-overlay,
+.mob-drawer { display: none; }
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .main-nav { display: none; }
@@ -1446,6 +1450,7 @@ img { max-width: 100%; display: block; }
 
   /* === Mobile Drawer === */
   .mob-drawer {
+    display: block;
     position: fixed;
     top: 0; right: 0;
     width: 310px;
