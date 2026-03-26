@@ -1628,6 +1628,11 @@ img { max-width: 100%; display: block; }
   .hero-bg { background-position: center 65%; }
   .hero-text    { display: none; }
   .hero-text--mobile { display: block; }
+  .hero-container { align-items: flex-start; }
+  .hero-text, .hero-text--mobile { text-align: left; }
+  .hero-checks { align-items: flex-start; }
+  .hero-flags { justify-content: flex-start; }
+  .hero-trust { justify-content: flex-start; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .multi-grid   { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .footer-grid  { grid-template-columns: 1fr; }
