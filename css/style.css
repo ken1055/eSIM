@@ -547,8 +547,8 @@ img { max-width: 100%; display: block; }
 }
 .pay-logo-img--visa   { height: 28px; }
 .pay-logo-img--mc     { height: 36px; }
-.pay-logo-img--apple  { height: 38px; border-radius: 8px; box-shadow: 0 1px 8px rgba(0,0,0,0.14); }
-.pay-logo-img--google { height: 38px; border-radius: 8px; box-shadow: 0 1px 8px rgba(0,0,0,0.14); }
+.pay-logo-img--apple  { height: 38px; border-radius: 0; box-shadow: none; }
+.pay-logo-img--google { height: 38px; border-radius: 0; box-shadow: none; }
 .payment-info p {
   font-size: 0.82rem;
   color: var(--text-mid);
