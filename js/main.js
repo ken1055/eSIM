@@ -169,7 +169,7 @@
       this.y         = startY !== undefined ? startY : HEADER_H - Math.random() * 10;
       this.size      = Math.random() * 6 + 3;
       this.vx        = (Math.random() - 0.5) * 1.2;
-      this.vy        = Math.random() * 1.4 + 0.7;
+      this.vy        = Math.random() * 2.5 + 2.0;
       this.rot       = Math.random() * 360;
       this.rotV      = (Math.random() - 0.5) * 2.5;
       this.swing     = Math.random() * Math.PI * 2;
