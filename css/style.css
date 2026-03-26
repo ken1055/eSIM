@@ -625,11 +625,19 @@ img { max-width: 100%; display: block; }
   padding-right: 6px;
 }
 
+.city-card__logo-wrap {
+  background: rgba(255,255,255,0.92);
+  border-radius: 8px;
+  padding: 5px 8px;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 .city-card__logo {
-  height: 30px;
+  height: 22px;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.92;
+  display: block;
 }
 
 /* 金色SIMチップ */
@@ -734,7 +742,9 @@ img { max-width: 100%; display: block; }
 .city-card:hover .city-card__cta { background: rgba(255,255,255,0.25); }
 
 /* ===== MULTI-COUNTRY ===== */
-.multi-section { background: #f7f7fa; }
+.multi-section { background: #0a0a0f; }
+.multi-section .section-title { color: #fff; }
+.multi-section .section-sub { color: rgba(255,255,255,0.5); }
 .multi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -746,52 +756,146 @@ img { max-width: 100%; display: block; }
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 260px;
+  height: 270px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   text-decoration: none;
+  padding: 18px;
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
 }
 .multi-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.30);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
 }
 
-.multi-img--jpcn   { background: linear-gradient(150deg, #1a0a0a 0%, #7b1a1a 45%, #c0392b 100%); }
-.multi-img--jpkr   { background: linear-gradient(150deg, #0a0e1a 0%, #1a2a6e 45%, #2471a3 100%); }
-.multi-img--jpkrcn { background: linear-gradient(150deg, #1a0a2e 0%, #6c3483 45%, #a569bd 100%); }
-.multi-img--asia   { background: linear-gradient(150deg, #0a1a10 0%, #1a6b3a 45%, #1abc9c 100%); }
+.multi-img--jpcn   { background: linear-gradient(160deg, #1a0a0a 0%, #7b1a1a 50%, #c0392b 100%); }
+.multi-img--jpkr   { background: linear-gradient(160deg, #0a0e1a 0%, #1a2a6e 50%, #2471a3 100%); }
+.multi-img--jpkrcn { background: linear-gradient(160deg, #1a0a2e 0%, #6c3483 50%, #a569bd 100%); }
+.multi-img--asia   { background: linear-gradient(160deg, #0a1a10 0%, #1a6b3a 50%, #1abc9c 100%); }
+
+/* SIMカード切り欠き */
+.multi-card__notch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 42px 42px 0;
+  border-color: transparent #0a0a0f transparent transparent;
+  z-index: 10;
+  pointer-events: none;
+}
 
 .multi-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.70) 100%);
+  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.72) 100%);
   z-index: 1;
 }
 
-.multi-card__flags {
+/* ロゴ＋チップ上段 */
+.multi-card__top {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 6px;
+}
+
+.multi-card__logo-wrap {
+  background: rgba(255,255,255,0.92);
+  border-radius: 8px;
+  padding: 5px 8px;
+  display: inline-flex;
+  align-items: center;
+}
+.multi-card__logo {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+/* 金色チップ（cityと共通スタイル） */
+.multi-card__chip {
+  width: 44px;
+  height: 34px;
+  border-radius: 6px;
+  background: linear-gradient(
+    145deg,
+    #f9e97e 0%,
+    #d4a820 18%,
+    #f5d060 35%,
+    #c89010 52%,
+    #f0c840 68%,
+    #b87c10 82%,
+    #e8c030 100%
+  );
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,0.55),
+    inset 0 -1px 3px rgba(0,0,0,0.30),
+    0 2px 8px rgba(0,0,0,0.40);
+  position: relative;
+  flex-shrink: 0;
+}
+.multi-card__chip-inner {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 2rem;
-  line-height: 1;
-  z-index: 3;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  inset: 5px;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+}
+.multi-card__chip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.12);
+  transform: translateX(-50%);
+}
+.multi-card__chip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+  transform: translateY(-50%);
+}
+
+/* 国旗（漢字の代わり） */
+.multi-card__kanji {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-52%);
+  font-size: 2.8rem;
+  line-height: 1.3;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.18;
+  filter: grayscale(20%);
+  transition: opacity 0.35s ease;
   letter-spacing: 2px;
 }
+.multi-card:hover .multi-card__kanji { opacity: 0.28; }
 
 .multi-card__content {
   position: relative;
   z-index: 3;
-  padding: 20px;
 }
 .multi-card__region {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.55);
   margin-bottom: 4px;
 }
 .multi-card__content h4 {
