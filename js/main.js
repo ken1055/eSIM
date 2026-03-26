@@ -145,14 +145,14 @@
 
   onScroll();
 
-  // ===== Sakura Animation =====
+  // ===== Sakura Animation — 自動で上から下へ連続して降る =====
   (function () {
     const canvas = document.getElementById('sakura-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const HEADER_H = 84;
+    const MAX_PETALS = 45;
     let petals = [];
-    let animId = null;
-    let played = false;
 
     function resize() {
       canvas.width  = window.innerWidth;
@@ -161,29 +161,36 @@
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
-    function Petal(cx, cy) {
-      // タップ位置周辺からランダムに発生
-      this.x  = cx + (Math.random() - 0.5) * 120;
-      this.y  = cy + (Math.random() - 0.5) * 80;
-      this.size  = Math.random() * 7 + 4;
-      this.vx    = (Math.random() - 0.5) * 3;
-      this.vy    = -(Math.random() * 3 + 1);   // 最初は上へ
-      this.gravity = 0.06;
-      this.rot   = Math.random() * 360;
-      this.rotV  = (Math.random() - 0.5) * 4;
-      this.alpha = 1;
-      // ピンク系をランダムに
-      const hue = Math.round(340 + Math.random() * 20);
+    function Petal(startY) {
+      const hue = Math.round(338 + Math.random() * 22);
       const sat = Math.round(80 + Math.random() * 15);
-      const lgt = Math.round(78 + Math.random() * 12);
-      this.color = `hsl(${hue},${sat}%,${lgt}%)`;
+      const lgt = Math.round(76 + Math.random() * 14);
+      this.x         = Math.random() * canvas.width;
+      this.y         = startY !== undefined ? startY : HEADER_H - Math.random() * 10;
+      this.size      = Math.random() * 6 + 3;
+      this.vx        = (Math.random() - 0.5) * 1.2;
+      this.vy        = Math.random() * 1.4 + 0.7;
+      this.rot       = Math.random() * 360;
+      this.rotV      = (Math.random() - 0.5) * 2.5;
+      this.swing     = Math.random() * Math.PI * 2;
+      this.swingSpd  = 0.012 + Math.random() * 0.014;
+      this.swingAmp  = 0.6 + Math.random() * 1.0;
+      this.color     = `hsl(${hue},${sat}%,${lgt}%)`;
+      this.alpha     = 0;
     }
     Petal.prototype.update = function () {
-      this.vy   += this.gravity;
-      this.x    += this.vx + Math.sin(Date.now() * 0.001 + this.rot) * 0.4;
-      this.y    += this.vy;
-      this.rot  += this.rotV;
-      this.alpha = Math.max(0, this.alpha - 0.008);
+      this.swing += this.swingSpd;
+      this.x     += this.vx + Math.sin(this.swing) * this.swingAmp;
+      this.y     += this.vy;
+      this.rot   += this.rotV;
+      if (this.alpha < 0.9) this.alpha = Math.min(0.9, this.alpha + 0.04);
+      const fadeStart = canvas.height * 0.82;
+      if (this.y > fadeStart) {
+        this.alpha = Math.max(0, 0.9 * (1 - (this.y - fadeStart) / (canvas.height * 0.18)));
+      }
+    };
+    Petal.prototype.isDead = function () {
+      return this.y > canvas.height + 20;
     };
     Petal.prototype.draw = function () {
       ctx.save();
@@ -197,37 +204,23 @@
       ctx.restore();
     };
 
+    // 初期ロード時は画面全体に分散して配置
+    for (let i = 0; i < MAX_PETALS; i++) {
+      const p = new Petal(HEADER_H + Math.random() * (window.innerHeight - HEADER_H));
+      p.alpha = Math.random() * 0.7;
+      petals.push(p);
+    }
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      petals = petals.filter(p => p.alpha > 0);
-      petals.forEach(p => { p.update(); p.draw(); });
-      if (petals.length > 0) {
-        animId = requestAnimationFrame(animate);
-      } else {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        animId = null;
+      petals = petals.filter(p => !p.isDead());
+      while (petals.length < MAX_PETALS) {
+        petals.push(new Petal());
       }
+      petals.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
     }
 
-    function startSakura(e) {
-      if (played) return;
-      played = true;
-
-      const cx = e.clientX ?? window.innerWidth  / 2;
-      const cy = e.clientY ?? window.innerHeight / 2;
-
-      for (let i = 0; i < 60; i++) petals.push(new Petal(cx, cy));
-
-      if (animId) cancelAnimationFrame(animId);
-      animate();
-
-      // 3秒後にフェードアウトしながら停止
-      setTimeout(() => {
-        petals.forEach(p => { p.gravity += 0.03; });
-      }, 3000);
-    }
-
-    document.addEventListener('click',      startSakura, { once: true });
-    document.addEventListener('touchstart', startSakura, { once: true, passive: true });
+    animate();
   })();
 })();
