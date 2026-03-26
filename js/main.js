@@ -212,8 +212,8 @@
     }
 
     let spawning = true;
-    // 4秒後に新規生成を停止
-    setTimeout(() => { spawning = false; }, 4000);
+    // 2秒後に新規生成を停止
+    setTimeout(() => { spawning = false; }, 2000);
 
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
