@@ -224,7 +224,7 @@ img { max-width: 100%; display: block; }
   inset: 0;
   background-image: url('../img/hero-bg.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center 65%;
   background-repeat: no-repeat;
 }
 /* Gradient overlay for text readability */
@@ -1600,7 +1600,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .hero-title { font-size: 2.8rem; }
-  .hero-bg { background-position: center center; }
+  .hero-bg { background-position: center 65%; }
   .hero-bg::after {
     background: linear-gradient(
       to right,
@@ -1625,7 +1625,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
   .hero-title   { font-size: 2.2rem; }
-  .hero-bg { background-position: center center; }
+  .hero-bg { background-position: center 65%; }
   .hero-text    { display: none; }
   .hero-text--mobile { display: block; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 12px; }
