@@ -1331,19 +1331,24 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px 20px;
-  margin-bottom: 24px;
+  gap: 8px 32px;
+  margin-bottom: 36px;
 }
 .coverage-city {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 8px 20px;
-  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.coverage-city__icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+.coverage-city__name {
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text);
-  white-space: nowrap;
-  box-shadow: var(--shadow-sm);
+  text-align: center;
 }
 .coverage-desc {
   text-align: center;
@@ -1447,8 +1452,9 @@ img { max-width: 100%; display: block; }
   .company-row { grid-template-columns: 120px 1fr; }
 }
 @media (max-width: 480px) {
-  .coverage-cities { gap: 8px 12px; }
-  .coverage-city { font-size: 0.82rem; padding: 7px 14px; }
+  .coverage-cities { gap: 8px 24px; }
+  .coverage-city__icon { font-size: 2.4rem; }
+  .coverage-city__name { font-size: 0.8rem; }
   .company-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
