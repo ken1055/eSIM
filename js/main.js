@@ -211,14 +211,20 @@
       petals.push(p);
     }
 
+    let spawning = true;
+    // 4秒後に新規生成を停止
+    setTimeout(() => { spawning = false; }, 4000);
+
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       petals = petals.filter(p => !p.isDead());
-      while (petals.length < MAX_PETALS) {
-        petals.push(new Petal());
+      if (spawning) {
+        while (petals.length < MAX_PETALS) petals.push(new Petal());
       }
       petals.forEach(p => { p.update(); p.draw(); });
-      requestAnimationFrame(animate);
+      if (petals.length > 0 || spawning) {
+        requestAnimationFrame(animate);
+      }
     }
 
     animate();
