@@ -534,43 +534,21 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   margin-bottom: 14px;
   flex-wrap: wrap;
 }
-.pay-logo {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 0.95rem;
+.pay-logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.10);
 }
-.pay-logo--visa {
-  color: #1a1f71;
-  font-size: 1.15rem;
-  font-style: italic;
-  letter-spacing: -0.5px;
-}
-.pay-logo--mc {
-  display: inline-flex;
-  gap: 0;
-}
-.mc-circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.mc-red    { background: #eb001b; }
-.mc-orange { background: #f79e1b; margin-left: -10px; opacity: 0.9; }
-.pay-logo--apple { color: #1d1d1f; font-size: 0.9rem; gap: 4px; }
-.pay-logo--google { color: #444; font-size: 0.9rem; gap: 2px; }
-.gpay-g {
-  font-weight: 800;
-  background: linear-gradient(135deg, #4285f4, #ea4335, #fbbc04, #34a853);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+.pay-logo-img--visa   { height: 28px; }
+.pay-logo-img--mc     { height: 36px; }
+.pay-logo-img--apple  { height: 36px; border-radius: 6px; }
+.pay-logo-img--google { height: 32px; }
 .payment-info p {
   font-size: 0.82rem;
   color: var(--text-mid);
