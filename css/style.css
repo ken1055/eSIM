@@ -369,141 +369,214 @@ img { max-width: 100%; display: block; }
 /* ===== PLAN CARDS ===== */
 .plans-section .section-title { text-align: center; }
 .plans-section .section-sub { text-align: center; }
+.plans-section { background: #f0f2f5; }
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: center;
 }
+
 .plan-card {
-  background: var(--bg-light);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 28px 24px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
 }
-.plan-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
-
-/* Featured (Most Popular) card */
-.plan-card--featured {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: white;
+.plan-card:hover {
+  border-color: var(--red);
+  box-shadow: 0 8px 32px rgba(232,57,42,0.12);
+  transform: translateY(-4px);
 }
-.plan-card--featured:hover { box-shadow: 0 8px 32px rgba(27,32,53,0.40); }
+
+.plan-card--featured {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+  transform: scale(1.04);
+  z-index: 2;
+  box-shadow: 0 8px 40px rgba(232,57,42,0.35);
+}
+.plan-card--featured:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 16px 48px rgba(232,57,42,0.45);
+}
 
 .popular-badge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
   display: inline-block;
-  padding: 5px 18px;
-  background: var(--red);
+  padding: 6px 20px;
+  background: #1a1a1a;
   color: white;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   border-radius: 100px;
-  margin-bottom: 16px;
-  align-self: flex-start;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
 }
 
-.plan-card__name {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--text);
-  margin-bottom: 10px;
-}
-.plan-card--featured .plan-card__name { color: white; }
-
-.plan-card__meta {
+.plan-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(232,57,42,0.10);
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 12px;
-  font-size: 0.82rem;
-}
-.stars { color: var(--star); font-size: 0.9rem; letter-spacing: 0.5px; }
-.rating-val { font-weight: 700; color: var(--text); }
-.plan-card--featured .rating-val { color: white; }
-.review-ct { color: var(--text-light); }
-.plan-card--featured .review-ct { color: rgba(255,255,255,0.65); }
-.sold-ct { color: var(--text-light); }
-.plan-card--featured .sold-ct { color: rgba(255,255,255,0.65); }
-
-.plan-card__validity {
-  font-size: 0.875rem;
-  color: var(--text-light);
-  padding: 10px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 18px;
-  text-align: center;
-}
-.plan-card--featured .plan-card__validity {
-  color: rgba(255,255,255,0.60);
-  border-color: rgba(255,255,255,0.15);
-}
-
-.plan-card__pricing { margin-bottom: 20px; }
-.pricing-label {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  display: block;
-  margin-bottom: 4px;
-  text-align: center;
-}
-.plan-card--featured .pricing-label { color: rgba(255,255,255,0.60); }
-
-.pricing-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 16px;
+  color: var(--red);
 }
-.price-orig {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  text-decoration: line-through;
+.plan-card--featured .plan-icon-wrap {
+  background: rgba(255,255,255,0.20);
+  color: white;
 }
-.plan-card--featured .price-orig { color: rgba(255,255,255,0.50); }
-.price-sale {
-  font-size: 1.5rem;
+
+.plan-data-size {
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--text);
-  text-align: center;
-  display: block;
+  line-height: 1;
+  margin-bottom: 2px;
 }
-.plan-card--featured .price-sale { color: white; }
-.price-usd {
-  font-size: 0.78rem;
-  color: var(--text-light);
-  display: block;
-  text-align: center;
+.plan-card--featured .plan-data-size { color: white; }
+
+.plan-period {
+  font-size: 1rem;
+  color: var(--text-mid);
+  margin-bottom: 16px;
 }
-.plan-card--featured .price-usd { color: rgba(255,255,255,0.55); }
+.plan-card--featured .plan-period { color: rgba(255,255,255,0.75); }
+
+.plan-price-main {
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.plan-price-main span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-mid);
+}
+.plan-card--featured .plan-price-main { color: white; }
+.plan-card--featured .plan-price-main span { color: rgba(255,255,255,0.72); }
+
+.plan-features {
+  list-style: none;
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.plan-features li {
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+}
+.plan-features li::before {
+  content: "✓";
+  color: var(--red);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.plan-card--featured .plan-features li {
+  border-color: rgba(255,255,255,0.20);
+  color: rgba(255,255,255,0.92);
+}
+.plan-card--featured .plan-features li::before { color: rgba(255,255,255,0.95); }
 
 .btn-buy {
   display: block;
   width: 100%;
-  padding: 13px;
-  background: var(--navy);
-  color: var(--white);
+  padding: 14px;
+  background: var(--red);
+  color: white;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
-  border-radius: 100px;
+  border-radius: 10px;
   border: none;
-  transition: var(--transition);
+  transition: all 0.2s ease;
   margin-top: auto;
 }
-.btn-buy:hover { background: var(--navy-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(27,32,53,0.30); }
+.btn-buy:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(232,57,42,0.30); }
 .plan-card--featured .btn-buy {
-  background: var(--red);
+  background: white;
+  color: var(--red);
 }
-.plan-card--featured .btn-buy:hover { background: var(--red-dark); box-shadow: 0 4px 16px rgba(232,57,42,0.40); }
+.plan-card--featured .btn-buy:hover { background: #fce8e6; box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
+
+/* 決済方法 */
+.payment-info {
+  margin-top: 40px;
+  text-align: center;
+}
+.payment-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.pay-logo {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.pay-logo--visa {
+  color: #1a1f71;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: -0.5px;
+}
+.pay-logo--mc {
+  display: inline-flex;
+  gap: 0;
+}
+.mc-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.mc-red    { background: #eb001b; }
+.mc-orange { background: #f79e1b; margin-left: -10px; opacity: 0.9; }
+.pay-logo--apple { color: #1d1d1f; font-size: 0.9rem; gap: 4px; }
+.pay-logo--google { color: #444; font-size: 0.9rem; gap: 2px; }
+.gpay-g {
+  font-weight: 800;
+  background: linear-gradient(135deg, #4285f4, #ea4335, #fbbc04, #34a853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.payment-info p {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin: 0;
+}
 
 /* ===== CITY PLANS ===== */
 /* ===== CITY PLANS ===== */
