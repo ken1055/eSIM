@@ -288,14 +288,11 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  background: #22C55E;
-  color: white;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 800;
+  color: #22C55E;
+  font-size: 1.1rem;
+  font-weight: 900;
   flex-shrink: 0;
+  text-shadow: none;
 }
 .btn-shop {
   display: inline-block;
