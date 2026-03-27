@@ -629,7 +629,7 @@ img { max-width: 100%; display: block; }
   height: 44px;
   width: auto;
   display: block;
-  border-radius: 6px;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 
 /* 金色SIMチップ */
@@ -801,7 +801,7 @@ img { max-width: 100%; display: block; }
   height: 44px;
   width: auto;
   display: block;
-  border-radius: 6px;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 
 /* 金色チップ（cityと共通スタイル） */
@@ -1963,6 +1963,8 @@ img { max-width: 100%; display: block; }
   .section { padding: 52px 0; }
   .city-grid  { grid-template-columns: repeat(2, 1fr); }
   .multi-grid { grid-template-columns: repeat(2, 1fr); }
+  .city-card  { height: auto; aspect-ratio: 5/3; }
+  .multi-card { height: auto; aspect-ratio: 5/3; }
   .why-grid   { grid-template-columns: 1fr; gap: 24px; }
   .reviews-grid { grid-template-columns: 1fr; }
   .how-steps { flex-direction: column; }
@@ -1983,7 +1985,21 @@ img { max-width: 100%; display: block; }
   .hero-checks { align-items: flex-start; }
   .hero-flags { justify-content: flex-start; }
   .hero-trust { justify-content: flex-start; }
-  .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .multi-grid   { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .multi-grid   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .city-card    { height: auto; aspect-ratio: 3/2; padding: 11px; }
+  .multi-card   { height: auto; aspect-ratio: 3/2; padding: 11px; }
+  .city-card__logo  { height: 28px; }
+  .multi-card__logo { height: 28px; }
+  .city-card__chip  { width: 28px; height: 22px; }
+  .multi-card__chip { width: 28px; height: 22px; }
+  .city-card__kanji  { font-size: 4rem; }
+  .multi-card__kanji { font-size: 1.8rem; }
+  .city-card__content h4  { font-size: 0.78rem; }
+  .multi-card__content h4 { font-size: 0.78rem; }
+  .city-card__content p   { font-size: 0.68rem; margin-bottom: 6px; }
+  .multi-card__price      { font-size: 0.68rem; margin-bottom: 6px; }
+  .city-card__cta  { font-size: 0.72rem; padding: 5px 10px; }
+  .multi-card__cta { font-size: 0.72rem; padding: 5px 10px; }
   .footer-grid  { grid-template-columns: 1fr; }
 }
