@@ -145,6 +145,37 @@
 
   onScroll();
 
+  // ===== Reviews Carousel =====
+  (function () {
+    const track = document.querySelector('.reviews-track');
+    if (!track) return;
+    const cards = Array.from(track.querySelectorAll('.review-card'));
+    const dots  = Array.from(document.querySelectorAll('.carousel-dot'));
+    const btnPrev = document.querySelector('.carousel-btn--prev');
+    const btnNext = document.querySelector('.carousel-btn--next');
+    let current = 0;
+    let timer   = null;
+
+    function goTo(idx) {
+      cards[current].classList.remove('active');
+      if (dots[current]) dots[current].classList.remove('active');
+      current = (idx + cards.length) % cards.length;
+      cards[current].classList.add('active');
+      if (dots[current]) dots[current].classList.add('active');
+    }
+
+    function startAuto() { timer = setInterval(() => goTo(current + 1), 5000); }
+    function stopAuto()  { clearInterval(timer); }
+
+    if (btnPrev) btnPrev.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+    if (btnNext) btnNext.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
+    });
+
+    startAuto();
+  })();
+
   // ===== Sakura Animation — 自動で上から下へ連続して降る =====
   (function () {
     const canvas = document.getElementById('sakura-canvas');
@@ -197,10 +228,33 @@
       ctx.globalAlpha = this.alpha;
       ctx.translate(this.x, this.y);
       ctx.rotate(this.rot * Math.PI / 180);
-      ctx.fillStyle = this.color;
+      const s = this.size;
+      // 桜の花びら形状：上部にV字ノッチ、丸みのある下部
       ctx.beginPath();
-      ctx.ellipse(0, 0, this.size, this.size * 0.55, 0, 0, Math.PI * 2);
+      ctx.moveTo(0, -s * 0.08);            // ノッチ底
+      ctx.lineTo(-s * 0.22, -s * 0.52);   // ノッチ左
+      ctx.bezierCurveTo(
+        -s * 1.05, -s * 0.38,
+        -s * 1.05,  s * 0.58,
+         0,         s * 1.0
+      );                                   // 左弧
+      ctx.bezierCurveTo(
+         s * 1.05,  s * 0.58,
+         s * 1.05, -s * 0.38,
+         s * 0.22, -s * 0.52
+      );                                   // 右弧
+      ctx.lineTo(0, -s * 0.08);
+      ctx.closePath();
+      // グラデーション
+      const g = ctx.createRadialGradient(0, s * 0.2, 0, 0, s * 0.2, s * 1.3);
+      g.addColorStop(0, this.color.replace('hsl', 'hsla').replace(')', ',0.95)').replace('%)', `%,${this.alpha})`));
+      g.addColorStop(1, this.color);
+      ctx.fillStyle = this.color;
       ctx.fill();
+      // 薄い輪郭線
+      ctx.strokeStyle = `hsla(340,70%,72%,${this.alpha * 0.4})`;
+      ctx.lineWidth = 0.4;
+      ctx.stroke();
       ctx.restore();
     };
 
