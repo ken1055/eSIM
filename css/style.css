@@ -1308,16 +1308,18 @@ img { max-width: 100%; display: block; }
 .about-inner p:last-of-type { margin-bottom: 24px; }
 .btn-explore {
   display: inline-block;
-  margin-top: 12px;
-  padding: 13px 36px;
+  margin-top: 16px;
+  padding: 15px 42px;
   background: var(--red);
   color: white;
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
   border-radius: 100px;
+  box-shadow: 0 4px 18px rgba(232,57,42,0.35);
   transition: var(--transition);
 }
-.btn-explore:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(232,57,42,0.40); }
+.btn-explore:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 6px 22px rgba(232,57,42,0.50); }
 
 /* ===== SPEED STATUS ===== */
 .speed-status-section {
