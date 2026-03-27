@@ -468,9 +468,10 @@ img { max-width: 100%; display: block; }
   justify-content: center;
 }
 .plan-price-main span {
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-mid);
+  letter-spacing: 0.1px;
 }
 .plan-card--featured .plan-price-main { color: white; }
 .plan-card--featured .plan-price-main span { color: rgba(255,255,255,0.72); }
