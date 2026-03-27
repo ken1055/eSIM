@@ -623,7 +623,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-right: 6px;
+  padding-right: 30px;
 }
 
 .city-card__logo {
@@ -793,7 +793,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-right: 6px;
+  padding-right: 30px;
 }
 
 .multi-card__logo {
