@@ -577,11 +577,12 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   text-decoration: none;
   padding: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
 }
 .city-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.05);
 }
 
 /* SIMカード切り欠き（右上コーナー） */
@@ -599,19 +600,19 @@ img { max-width: 100%; display: block; }
 }
 
 /* Gradient backgrounds */
-.city-img--tokyo    { background: linear-gradient(160deg, #0f0c29 0%, #302b63 50%, #24243e 100%); }
-.city-img--osaka    { background: linear-gradient(160deg, #4a0e0e 0%, #c0392b 55%, #e74c3c 100%); }
-.city-img--sapporo  { background: linear-gradient(160deg, #0d1b2a 0%, #1a4a6e 55%, #2980b9 100%); }
-.city-img--okinawa  { background: linear-gradient(160deg, #0a2e38 0%, #0c7b93 55%, #00a8cc 100%); }
-.city-img--kyoto    { background: linear-gradient(160deg, #2d1b2e 0%, #8e44ad 55%, #c39bd3 100%); }
-.city-img--fukuoka  { background: linear-gradient(160deg, #0b2a18 0%, #1a7a3f 55%, #27ae60 100%); }
-.city-img--hiroshima { background: linear-gradient(160deg, #2c1b0e 0%, #a04000 55%, #e67e22 100%); }
-.city-img--nagoya   { background: linear-gradient(160deg, #0e0e2c 0%, #2a2a7e 55%, #3498db 100%); }
+.city-img--tokyo    { background: linear-gradient(145deg, #ffffff 40%, #d8e8ff 100%); }
+.city-img--osaka    { background: linear-gradient(145deg, #ffffff 40%, #ffd8d8 100%); }
+.city-img--sapporo  { background: linear-gradient(145deg, #ffffff 40%, #d8eeff 100%); }
+.city-img--okinawa  { background: linear-gradient(145deg, #ffffff 40%, #d8fff6 100%); }
+.city-img--kyoto    { background: linear-gradient(145deg, #ffffff 40%, #ead8ff 100%); }
+.city-img--fukuoka  { background: linear-gradient(145deg, #ffffff 40%, #d8ffe6 100%); }
+.city-img--hiroshima { background: linear-gradient(145deg, #ffffff 40%, #fff0d8 100%); }
+.city-img--nagoya   { background: linear-gradient(145deg, #ffffff 40%, #d8d8ff 100%); }
 
 .city-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.72) 100%);
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.04) 100%);
   z-index: 1;
 }
 
@@ -629,7 +630,6 @@ img { max-width: 100%; display: block; }
   height: 44px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 
 /* 金色SIMチップ */
@@ -690,28 +690,28 @@ img { max-width: 100%; display: block; }
   transform: translateY(-52%);
   font-size: 5.5rem;
   font-weight: 900;
-  color: rgba(255,255,255,0.06);
+  color: rgba(0,0,0,0.06);
   line-height: 1;
   z-index: 2;
   pointer-events: none;
   user-select: none;
   transition: color 0.35s ease;
 }
-.city-card:hover .city-card__kanji { color: rgba(255,255,255,0.10); }
+.city-card:hover .city-card__kanji { color: rgba(0,0,0,0.10); }
 
 .city-card__content {
   position: relative;
   z-index: 3;
 }
 .city-card__content h4 {
-  color: #fff;
+  color: var(--text);
   font-size: 0.92rem;
   font-weight: 800;
   margin-bottom: 2px;
   letter-spacing: -0.2px;
 }
 .city-card__content p {
-  color: rgba(255,255,255,0.65);
+  color: var(--text-mid);
   font-size: 0.78rem;
   font-weight: 500;
   margin-bottom: 10px;
@@ -720,18 +720,16 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: var(--red);
+  border: none;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 100px;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, opacity 0.2s ease;
 }
-.city-card:hover .city-card__cta { background: rgba(255,255,255,0.25); }
+.city-card:hover .city-card__cta { opacity: 0.88; }
 
 /* ===== MULTI-COUNTRY ===== */
 .multi-section { background: #0a0a0f; }
@@ -754,17 +752,18 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   text-decoration: none;
   padding: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
 }
 .multi-card:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.05);
 }
 
-.multi-img--jpcn   { background: linear-gradient(160deg, #1a0a0a 0%, #7b1a1a 50%, #c0392b 100%); }
-.multi-img--jpkr   { background: linear-gradient(160deg, #0a0e1a 0%, #1a2a6e 50%, #2471a3 100%); }
-.multi-img--jpkrcn { background: linear-gradient(160deg, #1a0a2e 0%, #6c3483 50%, #a569bd 100%); }
-.multi-img--asia   { background: linear-gradient(160deg, #0a1a10 0%, #1a6b3a 50%, #1abc9c 100%); }
+.multi-img--jpcn   { background: linear-gradient(145deg, #ffffff 40%, #ffd8d8 100%); }
+.multi-img--jpkr   { background: linear-gradient(145deg, #ffffff 40%, #d8e8ff 100%); }
+.multi-img--jpkrcn { background: linear-gradient(145deg, #ffffff 40%, #ead8ff 100%); }
+.multi-img--asia   { background: linear-gradient(145deg, #ffffff 40%, #d8fff0 100%); }
 
 /* SIMカード切り欠き */
 .multi-card__notch {
@@ -783,7 +782,7 @@ img { max-width: 100%; display: block; }
 .multi-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.72) 100%);
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.04) 100%);
   z-index: 1;
 }
 
@@ -801,7 +800,6 @@ img { max-width: 100%; display: block; }
   height: 44px;
   width: auto;
   display: block;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
 }
 
 /* 金色チップ（cityと共通スタイル） */
@@ -865,12 +863,11 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   pointer-events: none;
   user-select: none;
-  opacity: 0.18;
-  filter: grayscale(20%);
+  opacity: 0.30;
   transition: opacity 0.35s ease;
   letter-spacing: 2px;
 }
-.multi-card:hover .multi-card__kanji { opacity: 0.28; }
+.multi-card:hover .multi-card__kanji { opacity: 0.45; }
 
 .multi-card__content {
   position: relative;
@@ -881,18 +878,18 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-light);
   margin-bottom: 4px;
 }
 .multi-card__content h4 {
-  color: #fff;
+  color: var(--text);
   font-size: 0.92rem;
   font-weight: 800;
   margin-bottom: 4px;
   letter-spacing: -0.2px;
 }
 .multi-card__price {
-  color: rgba(255,255,255,0.65);
+  color: var(--text-mid);
   font-size: 0.78rem;
   font-weight: 500;
   margin-bottom: 10px;
@@ -902,18 +899,16 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: var(--red);
+  border: none;
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 100px;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, opacity 0.2s ease;
 }
-.multi-card:hover .multi-card__cta { background: rgba(255,255,255,0.25); }
+.multi-card:hover .multi-card__cta { opacity: 0.88; }
 
 .see-all-wrap { text-align: center; margin-top: 8px; }
 .btn-see-all {
