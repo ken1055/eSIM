@@ -1982,18 +1982,19 @@ img { max-width: 100%; display: block; }
   .hero-trust { justify-content: flex-start; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .multi-grid   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .city-card    { height: auto; aspect-ratio: 3/2; padding: 11px; }
-  .multi-card   { height: auto; aspect-ratio: 3/2; padding: 11px; }
-  .city-card__logo  { height: 28px; }
-  .multi-card__logo { height: 28px; }
-  .city-card__chip  { width: 28px; height: 22px; }
-  .multi-card__chip { width: 28px; height: 22px; }
+  .city-card    { height: auto; aspect-ratio: 5/4; padding: 12px; }
+  .multi-card   { height: auto; aspect-ratio: 5/4; padding: 12px; }
+  .city-card__logo  { height: 30px; }
+  .multi-card__logo { height: 30px; }
+  .city-card__chip  { width: 30px; height: 23px; }
+  .multi-card__chip { width: 30px; height: 23px; }
   .city-card__kanji  { font-size: 4rem; }
   .multi-card__kanji { font-size: 1.8rem; }
-  .city-card__content h4  { font-size: 0.78rem; }
-  .multi-card__content h4 { font-size: 0.78rem; }
-  .city-card__content p   { font-size: 0.68rem; margin-bottom: 6px; }
-  .multi-card__price      { font-size: 0.68rem; margin-bottom: 6px; }
+  .city-card__content h4  { font-size: 0.80rem; }
+  .multi-card__content h4 { font-size: 0.80rem; }
+  .city-card__content p   { font-size: 0.70rem; margin-bottom: 5px; }
+  .multi-card__price      { font-size: 0.70rem; margin-bottom: 5px; }
+  .multi-card__region     { font-size: 0.58rem; margin-bottom: 2px; }
   .city-card__cta  { font-size: 0.72rem; padding: 5px 10px; }
   .multi-card__cta { font-size: 0.72rem; padding: 5px 10px; }
   .footer-grid  { grid-template-columns: 1fr; }
