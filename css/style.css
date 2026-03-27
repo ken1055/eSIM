@@ -1468,11 +1468,16 @@ img { max-width: 100%; display: block; }
 .coverage-section .section-title { text-align: center; }
 .coverage-cities {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 32px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 0;
   margin-bottom: 36px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.coverage-cities::-webkit-scrollbar { display: none; }
+.coverage-city { flex: 0 0 auto; padding: 0 12px; }
 .coverage-city {
   display: flex;
   flex-direction: column;
@@ -1600,9 +1605,9 @@ img { max-width: 100%; display: block; }
     -webkit-overflow-scrolling: touch;
   }
   .coverage-cities::-webkit-scrollbar { display: none; }
-  .coverage-city { flex: 0 0 auto; padding: 0 6px; }
-  .coverage-city__icon { font-size: 2rem; }
-  .coverage-city__name { font-size: 0.72rem; white-space: nowrap; }
+  .coverage-city { flex: 0 0 auto; padding: 0 2px; }
+  .coverage-city__icon { font-size: 1.6rem; }
+  .coverage-city__name { font-size: 0.6rem; white-space: nowrap; }
   .company-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
