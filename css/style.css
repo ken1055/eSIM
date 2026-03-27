@@ -1133,8 +1133,8 @@ img { max-width: 100%; display: block; }
 .review-plan { font-size: 0.75rem; color: var(--red); font-style: italic; }
 
 /* ===== FIRST TIME ===== */
-.first-time-section {}
-.first-time-section .section-title { text-align: left; }
+.first-time-section { text-align: center; }
+.first-time-section .section-title { text-align: center; }
 .ft-speech {
   display: inline-block;
   background: var(--navy);
@@ -1145,7 +1145,7 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   margin-bottom: 36px;
 }
-.ft-accordion { max-width: 860px; }
+.ft-accordion { max-width: 860px; margin: 0 auto; }
 .ft-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
 .ft-item:last-child { border-bottom: none; }
 .ft-q {
@@ -1175,6 +1175,7 @@ img { max-width: 100%; display: block; }
 .ft-a {
   display: none;
   padding: 16px 0 0 56px;
+  text-align: left;
 }
 .ft-a.open { display: block; }
 .ft-a p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 12px; }
