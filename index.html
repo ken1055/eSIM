@@ -22,7 +22,7 @@
     <nav class="main-nav" id="main-nav">
       <ul class="main-nav__list">
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Nationwide Plans <span class="caret">▾</span></a>
+          <a href="#" class="nav-link"><span data-i18n="nav.nationwide">Nationwide Plans</span> <span class="caret">▾</span></a>
           <div class="dropdown">
             <a href="#plans">5G Unlimited Max Data</a>
             <a href="#plans">Unlimited Data</a>
@@ -31,17 +31,17 @@
           </div>
         </li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Multi-Country Plans <span class="caret">▾</span></a>
+          <a href="#" class="nav-link"><span data-i18n="nav.multi">Multi-Country Plans</span> <span class="caret">▾</span></a>
           <div class="dropdown">
             <a href="#multi">eSIM Japan &amp; Korea Fixed Data</a>
-            <a href="#multi">eSIM Japan&amp;China Fixed Data</a>
+            <a href="#multi">eSIM Japan &amp; China Fixed Data</a>
             <a href="#multi">eSIM Japan-Korea-Taiwan Unlimited</a>
             <a href="#multi">eSIM Asia Unlimited</a>
             <a href="#multi">eSIM Global Unlimited</a>
           </div>
         </li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">City Plans <span class="caret">▾</span></a>
+          <a href="#" class="nav-link"><span data-i18n="nav.city">City Plans</span> <span class="caret">▾</span></a>
           <div class="dropdown dropdown--wide">
             <a href="#city">eSIM Tokyo</a>
             <a href="#city">eSIM Osaka</a>
@@ -54,39 +54,38 @@
           </div>
         </li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Support <span class="caret">▾</span></a>
+          <a href="#" class="nav-link"><span data-i18n="nav.support">Support</span> <span class="caret">▾</span></a>
           <div class="dropdown">
-            <a href="#devices">eSIM Compatible Phones</a>
-            <a href="#install">eSIM Activation Guide</a>
+            <a href="#devices" data-i18n="nav.compat">eSIM Compatible Phones</a>
+            <a href="#install" data-i18n="nav.activate">eSIM Activation Guide</a>
             <a href="#faq">FAQ</a>
-            <a href="mailto:support@esimjapan.com">Contact</a>
+            <a href="mailto:support@esimjapan.com" data-i18n="nav.contact">Contact</a>
           </div>
         </li>
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link">Connectivity Lab <span class="caret">▾</span></a>
+          <a href="#" class="nav-link"><span data-i18n="nav.lab">Connectivity Lab</span> <span class="caret">▾</span></a>
           <div class="dropdown">
-            <a href="#">Daily Report</a>
-            <a href="#">Weekly Reports</a>
+            <a href="#" data-i18n="nav.daily">Daily Report</a>
+            <a href="#" data-i18n="nav.weekly">Weekly Reports</a>
           </div>
         </li>
       </ul>
     </nav>
 
     <div class="header-utils">
-      <div class="util-dropdown">
-        <button class="util-btn">English <span class="caret">▾</span></button>
+      <div class="util-dropdown" id="lang-dropdown">
+        <button class="util-btn" id="lang-btn">EN <span class="caret">▾</span></button>
         <div class="util-menu">
-          <a href="#">English</a>
-          <a href="#">Deutsch</a>
-          <a href="#">简体中文</a>
-          <a href="#">繁體中文</a>
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="zh">简体中文</a>
         </div>
       </div>
-      <div class="util-dropdown">
-        <button class="util-btn">USD <span class="caret">▾</span></button>
+      <div class="util-dropdown" id="curr-dropdown">
+        <button class="util-btn" id="curr-btn">USD <span class="caret">▾</span></button>
         <div class="util-menu">
-          <a href="#">USD</a>
-          <a href="#">EUR</a>
+          <a href="#" data-currency="USD">USD</a>
+          <a href="#" data-currency="EUR">EUR</a>
         </div>
       </div>
       <a href="#" class="cart-btn">
@@ -108,18 +107,18 @@
   <div class="hero-bg"></div>
   <div class="container hero-container">
     <div class="hero-text">
-      <h1 class="hero-title">Skip SIM Cards.<br>Get Online in Japan<br>in Seconds.</h1>
+      <h1 class="hero-title" data-i18n="hero.title">Skip SIM Cards.<br>Get Online in Japan<br>in Seconds.</h1>
       <ul class="hero-checks">
-        <li><span class="hero-check">✓</span> Instant activation</li>
-        <li><span class="hero-check">✓</span> No SIM swap</li>
-        <li><span class="hero-check">✓</span> Unlimited data</li>
+        <li><span class="hero-check">✓</span> <span data-i18n="hero.check1">Instant activation</span></li>
+        <li><span class="hero-check">✓</span> <span data-i18n="hero.check2">No SIM swap</span></li>
+        <li><span class="hero-check">✓</span> <span data-i18n="hero.check3">Unlimited data</span></li>
       </ul>
-      <a href="#plans" class="btn-shop">Get Your eSIM Instantly</a>
+      <a href="#plans" class="btn-shop" data-i18n="hero.btn">Get Your eSIM Instantly</a>
       <div class="hero-trust">
         <span class="hero-stars">★★★★★</span>
         <span class="hero-rating">4.8/5</span>
       </div>
-      <p class="hero-trusted">Used by travelers from 80+ countries</p>
+      <p class="hero-trusted" data-i18n="hero.trusted1">Used by travelers from 80+ countries</p>
       <div class="hero-flags">
         <span title="USA">🇺🇸</span>
         <span title="UK">🇬🇧</span>
@@ -128,25 +127,25 @@
         <span title="Singapore">🇸🇬</span>
         <span title="South Korea">🇰🇷</span>
       </div>
-      <p class="hero-trusted">Trusted by 50,000+ travelers worldwide</p>
+      <p class="hero-trusted" data-i18n="hero.trusted2">Trusted by 50,000+ travelers worldwide</p>
     </div>
     <div class="hero-text hero-text--mobile">
-      <h1 class="hero-title">Skip SIM Cards.<br>Get Online in Japan<br>in Seconds.</h1>
+      <h1 class="hero-title" data-i18n="hero.title">Skip SIM Cards.<br>Get Online in Japan<br>in Seconds.</h1>
       <ul class="hero-checks">
-        <li><span class="hero-check">✓</span> Instant activation</li>
-        <li><span class="hero-check">✓</span> No SIM swap</li>
-        <li><span class="hero-check">✓</span> Unlimited data</li>
+        <li><span class="hero-check">✓</span> <span data-i18n="hero.check1">Instant activation</span></li>
+        <li><span class="hero-check">✓</span> <span data-i18n="hero.check2">No SIM swap</span></li>
+        <li><span class="hero-check">✓</span> <span data-i18n="hero.check3">Unlimited data</span></li>
       </ul>
-      <a href="#plans" class="btn-shop">Get Your eSIM Instantly</a>
+      <a href="#plans" class="btn-shop" data-i18n="hero.btn">Get Your eSIM Instantly</a>
       <div class="hero-trust">
         <span class="hero-stars">★★★★★</span>
         <span class="hero-rating">4.8/5</span>
       </div>
-      <p class="hero-trusted">Used by travelers from 80+ countries</p>
+      <p class="hero-trusted" data-i18n="hero.trusted1">Used by travelers from 80+ countries</p>
       <div class="hero-flags">
         <span>🇺🇸</span><span>🇬🇧</span><span>🇦🇺</span><span>🇨🇦</span><span>🇸🇬</span><span>🇰🇷</span>
       </div>
-      <p class="hero-trusted">Trusted by 50,000+ travelers worldwide</p>
+      <p class="hero-trusted" data-i18n="hero.trusted2">Trusted by 50,000+ travelers worldwide</p>
     </div>
   </div>
 </section>
@@ -154,8 +153,8 @@
 <!-- ===== BEST PLANS ===== -->
 <section class="section plans-section" id="plans">
   <div class="container">
-    <h2 class="section-title">Plans</h2>
-    <p class="section-sub">Choose the plan that fits your trip</p>
+    <h2 class="section-title" data-i18n="plans.title">Plans</h2>
+    <p class="section-sub" data-i18n="plans.sub">Choose the plan that fits your trip</p>
 
     <div class="plans-grid">
 
@@ -165,33 +164,33 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         </div>
         <div class="plan-data-size">3GB</div>
-        <div class="plan-period">/ 5 days</div>
-        <div class="plan-price-main">$11.99 <span>USD &middot; ≈¥1,800</span></div>
+        <div class="plan-period" data-i18n="plan.period1">/ 5 days</div>
+        <div class="plan-price-main" data-jpy="1800">$12.00 <span>USD</span></div>
         <ul class="plan-features">
-          <li>High-speed 4G/LTE</li>
-          <li>Instant QR delivery</li>
-          <li>Activates on first use in Japan</li>
-          <li>Powered by Docomo / SoftBank</li>
+          <li data-i18n="plan.feat1">High-speed 4G/LTE</li>
+          <li data-i18n="plan.feat2">Instant QR delivery</li>
+          <li data-i18n="plan.feat3">Activates on first use in Japan</li>
+          <li data-i18n="plan.feat4">Powered by Docomo / SoftBank</li>
         </ul>
-        <a href="#" class="btn-buy">Buy Now</a>
+        <a href="#" class="btn-buy" data-i18n="plan.buy">Buy Now</a>
       </div>
 
       <!-- Plan 2: 10GB/10days - Featured -->
       <div class="plan-card plan-card--featured">
-        <span class="popular-badge">★ MOST POPULAR</span>
+        <span class="popular-badge" data-i18n="plan.popular">★ MOST POPULAR</span>
         <div class="plan-icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
         </div>
         <div class="plan-data-size">10GB</div>
-        <div class="plan-period">/ 10 days</div>
-        <div class="plan-price-main">$14.99 <span>USD &middot; ≈¥2,300</span></div>
+        <div class="plan-period" data-i18n="plan.period2">/ 10 days</div>
+        <div class="plan-price-main" data-jpy="2250">$15.00 <span>USD</span></div>
         <ul class="plan-features">
-          <li>High-speed 4G/LTE</li>
-          <li>Instant QR delivery</li>
-          <li>Activates on first use in Japan</li>
-          <li>Powered by Docomo / SoftBank</li>
+          <li data-i18n="plan.feat1">High-speed 4G/LTE</li>
+          <li data-i18n="plan.feat2">Instant QR delivery</li>
+          <li data-i18n="plan.feat3">Activates on first use in Japan</li>
+          <li data-i18n="plan.feat4">Powered by Docomo / SoftBank</li>
         </ul>
-        <a href="#" class="btn-buy">Buy Now</a>
+        <a href="#" class="btn-buy" data-i18n="plan.buy">Buy Now</a>
       </div>
 
       <!-- Plan 3: Unlimited/30days -->
@@ -199,16 +198,16 @@
         <div class="plan-icon-wrap">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
-        <div class="plan-data-size">Unlimited</div>
-        <div class="plan-period">/ 30 days</div>
-        <div class="plan-price-main">$36.00 <span>USD &middot; ≈¥5,500</span></div>
+        <div class="plan-data-size" data-i18n="plan.unlimited">Unlimited</div>
+        <div class="plan-period" data-i18n="plan.period3">/ 30 days</div>
+        <div class="plan-price-main" data-jpy="5400">$36.00 <span>USD</span></div>
         <ul class="plan-features">
-          <li>High-speed 4G/LTE</li>
-          <li>Instant QR delivery</li>
-          <li>Activates on first use in Japan</li>
-          <li>Powered by Docomo / SoftBank</li>
+          <li data-i18n="plan.feat1">High-speed 4G/LTE</li>
+          <li data-i18n="plan.feat2">Instant QR delivery</li>
+          <li data-i18n="plan.feat3">Activates on first use in Japan</li>
+          <li data-i18n="plan.feat4">Powered by Docomo / SoftBank</li>
         </ul>
-        <a href="#" class="btn-buy">Buy Now</a>
+        <a href="#" class="btn-buy" data-i18n="plan.buy">Buy Now</a>
       </div>
 
     </div>
@@ -221,9 +220,9 @@
         <img src="img/pay/applepay.png" alt="Apple Pay" class="pay-logo-img pay-logo-img--apple">
         <img src="img/pay/googlepay.png" alt="Google Pay" class="pay-logo-img pay-logo-img--google">
       </div>
-      <p>Secure payment powered by Stripe.</p>
-      <p>Your eSIM will be delivered instantly by email after purchase.</p>
-      <p>No physical SIM required.</p>
+      <p data-i18n="plan.pay1">Secure payment powered by Stripe.</p>
+      <p data-i18n="plan.pay2">Your eSIM will be delivered instantly by email after purchase.</p>
+      <p data-i18n="plan.pay3">No physical SIM required.</p>
     </div>
 
   </div>
@@ -295,8 +294,8 @@
 <!-- ===== CITY PLANS ===== -->
 <section class="section city-section" id="city">
   <div class="container">
-    <h2 class="section-title section-title--center">For City Travelers</h2>
-    <p class="section-sub section-sub--center">Connect to Japan's best local network, city by city</p>
+    <h2 class="section-title section-title--center" data-i18n="city.title">For City Travelers</h2>
+    <p class="section-sub section-sub--center" data-i18n="city.sub">Connect to Japan's best local network, city by city</p>
     <div class="city-grid">
 
       <a href="#" class="city-card city-img--tokyo">
@@ -309,8 +308,8 @@
         <span class="city-card__kanji">東京</span>
         <div class="city-card__content">
           <h4>eSIM Tokyo</h4>
-          <p>from $11.99 USD</p>
-          <span class="city-card__cta">Shop Now →</span>
+          <p data-jpy="1800" data-prefix="from ">from $12.00 USD</p>
+          <span class="city-card__cta" data-i18n="city.shop">Shop Now →</span>
         </div>
       </a>
 
@@ -324,8 +323,8 @@
         <span class="city-card__kanji">大阪</span>
         <div class="city-card__content">
           <h4>eSIM Osaka</h4>
-          <p>from $11.99 USD</p>
-          <span class="city-card__cta">Shop Now →</span>
+          <p data-jpy="1800" data-prefix="from ">from $12.00 USD</p>
+          <span class="city-card__cta" data-i18n="city.shop">Shop Now →</span>
         </div>
       </a>
 
@@ -339,8 +338,8 @@
         <span class="city-card__kanji">札幌</span>
         <div class="city-card__content">
           <h4>eSIM Sapporo</h4>
-          <p>from $11.99 USD</p>
-          <span class="city-card__cta">Shop Now →</span>
+          <p data-jpy="1800" data-prefix="from ">from $12.00 USD</p>
+          <span class="city-card__cta" data-i18n="city.shop">Shop Now →</span>
         </div>
       </a>
 
@@ -354,8 +353,8 @@
         <span class="city-card__kanji">沖縄</span>
         <div class="city-card__content">
           <h4>eSIM Okinawa</h4>
-          <p>from $11.99 USD</p>
-          <span class="city-card__cta">Shop Now →</span>
+          <p data-jpy="1800" data-prefix="from ">from $12.00 USD</p>
+          <span class="city-card__cta" data-i18n="city.shop">Shop Now →</span>
         </div>
       </a>
 
@@ -366,8 +365,8 @@
 <!-- ===== MULTI-COUNTRY PLANS ===== -->
 <section class="section multi-section" id="multi">
   <div class="container">
-    <h2 class="section-title section-title--center">For Multi-Country Travelers</h2>
-    <p class="section-sub section-sub--center">One eSIM, multiple destinations — seamless connectivity across Asia</p>
+    <h2 class="section-title section-title--center" data-i18n="multi.title">For Multi-Country Travelers</h2>
+    <p class="section-sub section-sub--center" data-i18n="multi.sub">One eSIM, multiple destinations — seamless connectivity across Asia</p>
     <div class="multi-grid">
 
       <a href="#" class="multi-card multi-img--jpcn">
@@ -381,8 +380,8 @@
         <div class="multi-card__content">
           <div class="multi-card__region">Japan × China</div>
           <h4>Fixed Data Plan</h4>
-          <p class="multi-card__price">from $5.99 USD</p>
-          <span class="multi-card__cta">View Plans →</span>
+          <p class="multi-card__price" data-jpy="900" data-prefix="from ">from $6.00 USD</p>
+          <span class="multi-card__cta" data-i18n="multi.view">View Plans →</span>
         </div>
       </a>
 
@@ -397,8 +396,8 @@
         <div class="multi-card__content">
           <div class="multi-card__region">Japan × Korea</div>
           <h4>Fixed Data Plan</h4>
-          <p class="multi-card__price">from $8.99 USD</p>
-          <span class="multi-card__cta">View Plans →</span>
+          <p class="multi-card__price" data-jpy="1350" data-prefix="from ">from $9.00 USD</p>
+          <span class="multi-card__cta" data-i18n="multi.view">View Plans →</span>
         </div>
       </a>
 
@@ -413,8 +412,8 @@
         <div class="multi-card__content">
           <div class="multi-card__region">Japan · Korea · China</div>
           <h4>Unlimited Plan</h4>
-          <p class="multi-card__price">from $13.99 USD</p>
-          <span class="multi-card__cta">View Plans →</span>
+          <p class="multi-card__price" data-jpy="2100" data-prefix="from ">from $14.00 USD</p>
+          <span class="multi-card__cta" data-i18n="multi.view">View Plans →</span>
         </div>
       </a>
 
@@ -429,8 +428,8 @@
         <div class="multi-card__content">
           <div class="multi-card__region">Asia 16 Countries</div>
           <h4>Unlimited Plan</h4>
-          <p class="multi-card__price">from $12.99 USD</p>
-          <span class="multi-card__cta">View Plans →</span>
+          <p class="multi-card__price" data-jpy="1950" data-prefix="from ">from $13.00 USD</p>
+          <span class="multi-card__cta" data-i18n="multi.view">View Plans →</span>
         </div>
       </a>
 
@@ -444,8 +443,8 @@
 <!-- ===== COVERAGE ===== -->
 <section class="section coverage-section" id="coverage">
   <div class="container">
-    <h2 class="section-title section-title--center">Coverage Across Japan</h2>
-    <p class="section-sub section-sub--center">Stay connected everywhere you travel</p>
+    <h2 class="section-title section-title--center" data-i18n="cov.title">Coverage Across Japan</h2>
+    <p class="section-sub section-sub--center" data-i18n="cov.sub">Stay connected everywhere you travel</p>
 
     <div class="coverage-cities">
       <div class="coverage-city">
@@ -496,7 +495,7 @@
 <!-- ===== WHY ESIMJAPAN ===== -->
 <section class="section why-section" id="why">
   <div class="container">
-    <h2 class="section-title">Why ESIMJAPAN.com is Best for Japan eSIM</h2>
+    <h2 class="section-title" data-i18n="why.title">Why ESIMJAPAN.com is Best for Japan eSIM</h2>
     <div class="why-grid">
 
       <div class="why-item">
@@ -589,20 +588,20 @@
       <span class="support-label-badge">24/7 SUPPORT</span>
     </div>
     <div class="support-text">
-      <h2>24/7 real human support,<br>ready when you need it</h2>
-      <p>We're here before, during, and after your trip. Reach us via email or WhatsApp — a real person always responds.</p>
+      <h2 data-i18n="sup.title">24/7 real human support,<br>ready when you need it</h2>
+      <p data-i18n="sup.p">We're here before, during, and after your trip. Reach us via email or WhatsApp — a real person always responds.</p>
       <ul class="support-list">
         <li>
           <span class="support-check">✓</span>
-          <strong>Get help within 5 minutes.</strong>
+          <strong data-i18n="sup.li1">Get help within 5 minutes.</strong>
         </li>
         <li>
           <span class="support-check">✓</span>
-          <strong>Real humans, not bots — every time.</strong>
+          <strong data-i18n="sup.li2">Real humans, not bots — every time.</strong>
         </li>
         <li>
           <span class="support-check">✓</span>
-          <strong>Fast, reliable support from experienced specialists.</strong>
+          <strong data-i18n="sup.li3">Fast, reliable support from experienced specialists.</strong>
         </li>
       </ul>
     </div>
@@ -612,7 +611,7 @@
 <!-- ===== REVIEWS ===== -->
 <section class="section reviews-section" id="reviews">
   <div class="container">
-    <h2 class="section-title">What Travelers Are Saying About our eSIM in Japan</h2>
+    <h2 class="section-title" data-i18n="rev.title">What Travelers Are Saying About our eSIM in Japan</h2>
     <div class="reviews-carousel">
       <button class="carousel-btn carousel-btn--prev" aria-label="Previous review">&#8249;</button>
       <div class="reviews-track">
@@ -703,8 +702,8 @@
 <!-- ===== FIRST TIME ESIM ===== -->
 <section class="section first-time-section" id="first-time">
   <div class="container">
-    <h2 class="section-title">First time using eSIM for your trip to Japan?</h2>
-    <div class="ft-speech">Count on us for your stress-free eSIM experience.</div>
+    <h2 class="section-title" data-i18n="ft.title">First time using eSIM for your trip to Japan?</h2>
+    <div class="ft-speech" data-i18n="ft.sub">Count on us for your stress-free eSIM experience.</div>
 
     <div class="ft-accordion">
       <div class="ft-item">
@@ -774,28 +773,28 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="section how-section" id="how-it-works">
   <div class="container">
-    <h2 class="section-title">How does eSIM for Japan work?</h2>
-    <p class="section-sub">Get eSIM at your fingertips, Get ready for your Japan trip!</p>
+    <h2 class="section-title" data-i18n="how.title">How does eSIM for Japan work?</h2>
+    <p class="section-sub" data-i18n="how.sub">Get eSIM at your fingertips, Get ready for your Japan trip!</p>
     <div class="how-steps">
       <div class="how-step">
         <div class="how-step__num">Step 1</div>
         <div class="how-step__icon">📋</div>
-        <h3>Pick a plan</h3>
-        <p>Choose the plan that suits your travel needs and place an order.</p>
+        <h3 data-i18n="how.s1">Pick a plan</h3>
+        <p data-i18n="how.s1p">Choose the plan that suits your travel needs and place an order.</p>
       </div>
       <div class="how-arrow">→</div>
       <div class="how-step">
         <div class="how-step__num">Step 2</div>
         <div class="how-step__icon">📱</div>
-        <h3>Scan the QR code</h3>
-        <p>Receive the QR code via email and scan it for instant activation.</p>
+        <h3 data-i18n="how.s2">Scan the QR code</h3>
+        <p data-i18n="how.s2p">Receive the QR code via email and scan it for instant activation.</p>
       </div>
       <div class="how-arrow">→</div>
       <div class="how-step">
         <div class="how-step__num">Step 3</div>
         <div class="how-step__icon">🎉</div>
-        <h3>Ready to go!</h3>
-        <p>Now that your data concerns are taken care of, you can have an enjoyable trip.</p>
+        <h3 data-i18n="how.s3">Ready to go!</h3>
+        <p data-i18n="how.s3p">Now that your data concerns are taken care of, you can have an enjoyable trip.</p>
       </div>
     </div>
   </div>
@@ -874,7 +873,7 @@
 <!-- ===== FAQ ===== -->
 <section class="section faq-section" id="faq">
   <div class="container">
-    <h2 class="section-title section-title--center">Frequently Asked Questions</h2>
+    <h2 class="section-title section-title--center" data-i18n="faq.title">Frequently Asked Questions</h2>
     <div class="faq-list">
 
       <div class="faq-item">
@@ -944,9 +943,9 @@
 <!-- ===== ABOUT / COMPANY ===== -->
 <section class="about-section" id="about">
   <div class="about-inner">
-    <p>Get Japan eSIM is provided by COCODAKE Co., Ltd., a Japan-based company trusted by travelers worldwide. We deliver fast, reliable 4G LTE connectivity with instant activation and 24/7 real human support.</p>
-    <p>Stay connected anywhere in Japan — from Tokyo to Okinawa — with no physical SIM required. Just scan and go.</p>
-    <a href="#plans" class="btn-explore">Get your eSIM now</a>
+    <p data-i18n="about.p1">Get Japan eSIM is provided by COCODAKE Co., Ltd., a Japan-based company trusted by travelers worldwide. We deliver fast, reliable 4G LTE connectivity with instant activation and 24/7 real human support.</p>
+    <p data-i18n="about.p2">Stay connected anywhere in Japan — from Tokyo to Okinawa — with no physical SIM required. Just scan and go.</p>
+    <a href="#plans" class="btn-explore" data-i18n="about.btn">Get your eSIM now</a>
   </div>
 </section>
 
@@ -995,8 +994,8 @@
     <!-- Brand + columns -->
     <div class="footer-top">
       <div class="footer-brand">
-        <p class="footer-tagline">Explore Japan with confidence.</p>
-        <p class="footer-desc">Enjoy instant activation, no hidden fees, and reliable nationwide coverage. Get connected in just minutes — no SIM card required.</p>
+        <p class="footer-tagline" data-i18n="footer.tagline">Explore Japan with confidence.</p>
+        <p class="footer-desc" data-i18n="footer.desc">Enjoy instant activation, no hidden fees, and reliable nationwide coverage. Get connected in just minutes — no SIM card required.</p>
         <a href="mailto:support@getjapanesim.com" class="footer-email">support@getjapanesim.com</a>
       </div>
 
@@ -1061,10 +1060,10 @@
 <div class="mob-cta" id="mob-cta">
   <div class="container mob-cta-inner">
     <div>
-      <div class="mob-cta-label">Starts at</div>
-      <div class="mob-cta-price">from $11.99 USD</div>
+      <div class="mob-cta-label" data-i18n="mob.starts">Starts at</div>
+      <div class="mob-cta-price" data-jpy="1800" data-prefix="from ">from $12.00 USD</div>
     </div>
-    <a href="#plans" class="btn-shop mob-btn">Get your eSIM now</a>
+    <a href="#plans" class="btn-shop mob-btn" data-i18n="hero.btn">Get Your eSIM Instantly</a>
   </div>
 </div>
 
@@ -1132,17 +1131,16 @@
     <!-- Settings -->
     <p class="mob-sec-label">Settings</p>
     <div class="mob-settings">
-      <label class="mob-settings__label" for="mob-lang">Language</label>
+      <label class="mob-settings__label" for="mob-lang" data-i18n="mob.lang">Language</label>
       <select class="mob-settings__select" id="mob-lang">
-        <option>English</option>
-        <option>Deutsch</option>
-        <option>简体中文</option>
-        <option>繁體中文</option>
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="zh">简体中文</option>
       </select>
-      <label class="mob-settings__label" for="mob-curr">Currency</label>
+      <label class="mob-settings__label" for="mob-curr" data-i18n="mob.curr">Currency</label>
       <select class="mob-settings__select" id="mob-curr">
-        <option>$ USD</option>
-        <option>€ EUR</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
       </select>
     </div>
 
@@ -1152,6 +1150,7 @@
 <!-- Sakura Canvas -->
 <canvas id="sakura-canvas"></canvas>
 
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

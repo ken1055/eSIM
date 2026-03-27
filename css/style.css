@@ -164,9 +164,11 @@ img { max-width: 100%; display: block; }
   transition: var(--transition);
   z-index: 200;
 }
-.util-dropdown:hover .util-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+.util-dropdown:hover .util-menu,
+.util-menu.open { opacity: 1; pointer-events: all; transform: translateY(0); }
 .util-menu a { display: block; padding: 8px 16px; font-size: 0.85rem; color: var(--text); }
-.util-menu a:hover { background: var(--bg-light); color: var(--red); }
+.util-menu a:hover,
+.util-menu a.active { background: var(--bg-light); color: var(--red); font-weight: 600; }
 
 .cart-btn {
   display: flex;
