@@ -929,7 +929,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== WHY BEST ===== */
 .why-section { background: var(--white); }
-.why-section .section-title { text-align: left; }
+.why-section .section-title { text-align: center; }
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1023,7 +1023,7 @@ img { max-width: 100%; display: block; }
 .support-check { color: var(--red); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
 
 /* ===== REVIEWS ===== */
-.reviews-section .section-title--center { text-align: center; }
+.reviews-section .section-title { text-align: center; }
 
 /* ===== Reviews Carousel ===== */
 .reviews-carousel {
