@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="390" viewBox="0 0 180 390">
+  <!-- Phone body -->
+  <rect x="4" y="4" width="172" height="382" rx="26" fill="#1c1c1e"/>
+  <!-- Screen - dark for camera -->
+  <rect x="10" y="14" width="160" height="362" rx="20" fill="#1c1c1e"/>
+  <!-- Dynamic Island -->
+  <rect x="60" y="17" width="60" height="14" rx="7" fill="#000000"/>
+  <!-- Status bar (white on dark) -->
+  <text x="18" y="40" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#ffffff">9:41</text>
+
+  <!-- Nav bar -->
+  <text x="18" y="60" font-family="-apple-system,Arial" font-size="9" fill="#0a84ff">Cancel</text>
+  <text x="90" y="62" text-anchor="middle" font-family="-apple-system,Arial" font-size="12" font-weight="700" fill="#ffffff">Scan QR Code</text>
+
+  <!-- Camera viewfinder area -->
+  <rect x="20" y="72" width="140" height="200" rx="4" fill="#2c2c2c"/>
+  <!-- QR scan frame corners -->
+  <!-- Top-left corner -->
+  <path d="M38 90 L38 78 L50 78" fill="none" stroke="#30d158" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Top-right corner -->
+  <path d="M130 90 L130 78 L118 78" fill="none" stroke="#30d158" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom-left corner -->
+  <path d="M38 182 L38 194 L50 194" fill="none" stroke="#30d158" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bottom-right corner -->
+  <path d="M130 182 L130 194 L118 194" fill="none" stroke="#30d158" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Scan line -->
+  <line x1="30" y1="136" x2="150" y2="136" stroke="#30d158" stroke-width="1.5" opacity="0.8"/>
+  <!-- QR code hint (small dots pattern) -->
+  <rect x="72" y="114" width="36" height="36" rx="3" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.4"/>
+  <rect x="75" y="117" width="10" height="10" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="91" y="117" width="10" height="10" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="75" y="133" width="10" height="10" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect x="83" y="125" width="6" height="6" rx="1" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Instruction text on dark background -->
+  <text x="90" y="292" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#ffffff" opacity="0.9">Point camera at QR code</text>
+  <text x="90" y="306" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#ffffffaa">from your email</text>
+
+  <!-- Indicator -->
+  <rect x="20" y="320" width="140" height="26" rx="13" fill="#30d158"/>
+  <text x="90" y="337" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#ffffff" font-weight="700">c Scan the QR Code</text>
+
+  <!-- Step label -->
+  <rect x="12" y="356" width="156" height="14" rx="7" fill="#333"/>
+  <text x="90" y="367" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#999" font-weight="600">STEP 4  Scan QR</text>
+</svg>

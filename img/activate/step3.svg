@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="390" viewBox="0 0 180 390">
+  <!-- Phone body -->
+  <rect x="4" y="4" width="172" height="382" rx="26" fill="#1c1c1e"/>
+  <!-- Screen -->
+  <rect x="10" y="14" width="160" height="362" rx="20" fill="#f2f2f7"/>
+  <!-- Dynamic Island -->
+  <rect x="60" y="17" width="60" height="14" rx="7" fill="#1c1c1e"/>
+  <!-- Status bar -->
+  <text x="18" y="40" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#1c1c1e">9:41</text>
+
+  <!-- Nav bar -->
+  <text x="18" y="60" font-family="-apple-system,Arial" font-size="9" fill="#0a84ff">9 Cellular</text>
+  <text x="90" y="62" text-anchor="middle" font-family="-apple-system,Arial" font-size="12" font-weight="700" fill="#1c1c1e">Add eSIM</text>
+
+  <!-- Icon area -->
+  <circle cx="90" cy="110" r="32" fill="#e8f0ff"/>
+  <rect x="74" y="94" width="32" height="32" rx="6" fill="#0a84ff"/>
+  <text x="90" y="115" text-anchor="middle" font-family="-apple-system,Arial" font-size="20" fill="#fff">+</text>
+
+  <text x="90" y="158" text-anchor="middle" font-family="-apple-system,Arial" font-size="12" font-weight="700" fill="#1c1c1e">Add eSIM Plan</text>
+  <text x="90" y="173" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73">Choose how to add your eSIM</text>
+
+  <!-- Options -->
+  <rect x="12" y="185" width="156" height="108" rx="12" fill="#ffffff"/>
+  <!-- Use QR Code - HIGHLIGHTED -->
+  <rect x="12" y="185" width="156" height="36" rx="12" fill="#e8f0ff"/>
+  <rect x="16" y="189" width="24" height="24" rx="6" fill="#0a84ff"/>
+  <text x="28" y="205" text-anchor="middle" font-family="-apple-system,Arial" font-size="11" fill="#fff">¦</text>
+  <text x="46" y="202" font-family="-apple-system,Arial" font-size="9" font-weight="700" fill="#0a84ff">Use QR Code</text>
+  <text x="46" y="213" font-family="-apple-system,Arial" font-size="7.5" fill="#0a84ff">Scan the code from your email</text>
+  <text x="157" y="206" text-anchor="end" font-family="-apple-system,Arial" font-size="12" fill="#0a84ff">:</text>
+  <line x1="44" y1="223" x2="164" y2="223" stroke="#e5e5ea" stroke-width="0.6"/>
+  <!-- Enter Details Manually -->
+  <rect x="16" y="225" width="24" height="24" rx="6" fill="#5e5ce6"/>
+  <text x="28" y="240" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#fff"></text>
+  <text x="46" y="239" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Enter Details Manually</text>
+  <text x="157" y="239" text-anchor="end" font-family="-apple-system,Arial" font-size="12" fill="#c7c7cc">:</text>
+  <line x1="44" y1="251" x2="164" y2="251" stroke="#e5e5ea" stroke-width="0.6"/>
+  <!-- Transfer from iPhone -->
+  <rect x="16" y="253" width="24" height="24" rx="6" fill="#ff9f0a"/>
+  <text x="28" y="269" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#fff">Ä</text>
+  <text x="46" y="267" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Transfer from iPhone</text>
+  <text x="157" y="267" text-anchor="end" font-family="-apple-system,Arial" font-size="12" fill="#c7c7cc">:</text>
+
+  <!-- Tap indicator -->
+  <rect x="12" y="304" width="156" height="28" rx="10" fill="#fff3cd" opacity="0.9"/>
+  <text x="90" y="322" text-anchor="middle" font-family="-apple-system,Arial" font-size="8.5" fill="#856404">b Tap "Use QR Code"</text>
+
+  <!-- Step label -->
+  <rect x="12" y="356" width="156" height="14" rx="7" fill="#e5e5ea"/>
+  <text x="90" y="367" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73" font-weight="600">STEP 3  Add eSIM</text>
+</svg>

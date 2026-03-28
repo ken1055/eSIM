@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="390" viewBox="0 0 180 390">
+  <!-- Phone body -->
+  <rect x="4" y="4" width="172" height="382" rx="26" fill="#1c1c1e"/>
+  <!-- Screen -->
+  <rect x="10" y="14" width="160" height="362" rx="20" fill="#f2f2f7"/>
+  <!-- Dynamic Island -->
+  <rect x="60" y="17" width="60" height="14" rx="7" fill="#1c1c1e"/>
+  <!-- Status bar with signal -->
+  <text x="18" y="40" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#1c1c1e">9:41</text>
+  <!-- Signal bars -->
+  <rect x="128" y="35" width="3" height="6" rx="1" fill="#1c1c1e"/>
+  <rect x="133" y="33" width="3" height="8" rx="1" fill="#1c1c1e"/>
+  <rect x="138" y="31" width="3" height="10" rx="1" fill="#1c1c1e"/>
+  <rect x="143" y="29" width="3" height="12" rx="1" fill="#1c1c1e"/>
+  <text x="150" y="39" font-family="-apple-system,Arial" font-size="7.5" fill="#1c1c1e">5G</text>
+
+  <!-- Success icon -->
+  <circle cx="90" cy="105" r="36" fill="#30d158" opacity="0.15"/>
+  <circle cx="90" cy="105" r="28" fill="#30d158"/>
+  <path d="M77 105 L86 115 L104 97" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Activated text -->
+  <text x="90" y="158" text-anchor="middle" font-family="-apple-system,Arial" font-size="18" font-weight="700" fill="#1c1c1e">Activated!</text>
+  <text x="90" y="175" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#6e6e73">Your Japan eSIM is ready to use</text>
+
+  <!-- eSIM Info Card -->
+  <rect x="16" y="190" width="148" height="80" rx="14" fill="#ffffff"/>
+  <rect x="16" y="190" width="148" height="30" rx="14" fill="#0a84ff"/>
+  <text x="90" y="210" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#fff" font-weight="700">Japan eSIM  Active</text>
+  <rect x="16" y="206" width="148" height="14" rx="0" fill="#0a84ff"/>
+  <text x="26" y="240" font-family="-apple-system,Arial" font-size="8" fill="#1c1c1e" font-weight="600">Network</text>
+  <text x="157" y="240" text-anchor="end" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73">NTT Docomo</text>
+  <line x1="24" y1="248" x2="156" y2="248" stroke="#e5e5ea" stroke-width="0.6"/>
+  <text x="26" y="262" font-family="-apple-system,Arial" font-size="8" fill="#1c1c1e" font-weight="600">Status</text>
+  <text x="157" y="262" text-anchor="end" font-family="-apple-system,Arial" font-size="8" fill="#30d158" font-weight="700">Ï Connected</text>
+
+  <!-- Done button -->
+  <rect x="30" y="284" width="120" height="32" rx="16" fill="#0a84ff"/>
+  <text x="90" y="304" text-anchor="middle" font-family="-apple-system,Arial" font-size="11" fill="#ffffff" font-weight="600">Done</text>
+
+  <!-- Step label -->
+  <rect x="12" y="356" width="156" height="14" rx="7" fill="#e5e5ea"/>
+  <text x="90" y="367" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73" font-weight="600">STEP 5  Connected </text>
+</svg>

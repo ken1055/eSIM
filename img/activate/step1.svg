@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="390" viewBox="0 0 180 390">
+  <!-- Phone body -->
+  <rect x="4" y="4" width="172" height="382" rx="26" fill="#1c1c1e"/>
+  <!-- Screen -->
+  <rect x="10" y="14" width="160" height="362" rx="20" fill="#f2f2f7"/>
+  <!-- Dynamic Island -->
+  <rect x="60" y="17" width="60" height="14" rx="7" fill="#1c1c1e"/>
+  <!-- Status bar -->
+  <text x="18" y="40" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#1c1c1e">9:41</text>
+  <rect x="140" y="33" width="20" height="8" rx="2" fill="none" stroke="#1c1c1e" stroke-width="1.2"/>
+  <rect x="141" y="34" width="14" height="6" rx="1.5" fill="#1c1c1e"/>
+  <!-- Large title "Settings" -->
+  <text x="16" y="64" font-family="-apple-system,Arial" font-size="18" font-weight="700" fill="#1c1c1e">Settings</text>
+
+  <!-- Profile Row -->
+  <rect x="12" y="72" width="156" height="48" rx="12" fill="#ffffff"/>
+  <circle cx="38" cy="96" r="16" fill="#c7c7cc"/>
+  <text x="38" y="101" text-anchor="middle" font-family="-apple-system,Arial" font-size="13" fill="#fff" font-weight="600">A</text>
+  <text x="62" y="91" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#1c1c1e">Apple ID</text>
+  <text x="62" y="104" font-family="-apple-system,Arial" font-size="7.5" fill="#6e6e73">iCloud, App Store &amp; more</text>
+  <text x="158" y="98" text-anchor="end" font-family="-apple-system,Arial" font-size="12" fill="#c7c7cc">:</text>
+
+  <!-- Settings Group 1 -->
+  <rect x="12" y="128" width="156" height="112" rx="12" fill="#ffffff"/>
+  <!-- Airplane Mode -->
+  <rect x="16" y="132" width="24" height="24" rx="6" fill="#747480"/>
+  <text x="28" y="148" text-anchor="middle" font-family="-apple-system,Arial" font-size="12" fill="#fff"></text>
+  <text x="46" y="148" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Airplane Mode</text>
+  <line x1="44" y1="158" x2="164" y2="158" stroke="#e5e5ea" stroke-width="0.6"/>
+  <!-- Wi-Fi -->
+  <rect x="16" y="160" width="24" height="24" rx="6" fill="#0a84ff"/>
+  <text x="28" y="176" text-anchor="middle" font-family="-apple-system,Arial" font-size="10" fill="#fff" font-weight="700">•</text>
+  <text x="46" y="176" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Wi-Fi</text>
+  <text x="157" y="176" text-anchor="end" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73">On :</text>
+  <line x1="44" y1="186" x2="164" y2="186" stroke="#e5e5ea" stroke-width="0.6"/>
+  <!-- Bluetooth -->
+  <rect x="16" y="188" width="24" height="24" rx="6" fill="#0a84ff"/>
+  <text x="28" y="204" text-anchor="middle" font-family="-apple-system,Arial" font-size="11" fill="#fff" font-weight="700">B</text>
+  <text x="46" y="204" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Bluetooth</text>
+  <text x="157" y="204" text-anchor="end" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73">On :</text>
+  <line x1="44" y1="214" x2="164" y2="214" stroke="#e5e5ea" stroke-width="0.6"/>
+  <!-- Cellular - HIGHLIGHTED -->
+  <rect x="16" y="216" width="24" height="24" rx="6" fill="#30d158"/>
+  <text x="28" y="231" text-anchor="middle" font-family="-apple-system,Arial" font-size="9" fill="#fff" font-weight="700">ŠŠŠ</text>
+  <text x="46" y="230" font-family="-apple-system,Arial" font-size="9" font-weight="700" fill="#0a84ff">Cellular</text>
+  <text x="157" y="230" text-anchor="end" font-family="-apple-system,Arial" font-size="12" fill="#0a84ff">:</text>
+
+  <!-- Tap indicator -->
+  <rect x="12" y="248" width="156" height="28" rx="10" fill="#fff3cd" opacity="0.9"/>
+  <text x="90" y="266" text-anchor="middle" font-family="-apple-system,Arial" font-size="8.5" fill="#856404">` Tap "Cellular"</text>
+  
+  <!-- Step label at bottom -->
+  <rect x="12" y="356" width="156" height="14" rx="7" fill="#e5e5ea"/>
+  <text x="90" y="367" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73" font-weight="600">STEP 1  Settings</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="390" viewBox="0 0 180 390">
+  <!-- Phone body -->
+  <rect x="4" y="4" width="172" height="382" rx="26" fill="#1c1c1e"/>
+  <!-- Screen -->
+  <rect x="10" y="14" width="160" height="362" rx="20" fill="#f2f2f7"/>
+  <!-- Dynamic Island -->
+  <rect x="60" y="17" width="60" height="14" rx="7" fill="#1c1c1e"/>
+  <!-- Status bar -->
+  <text x="18" y="40" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#1c1c1e">9:41</text>
+
+  <!-- Back + Title nav bar -->
+  <text x="18" y="60" font-family="-apple-system,Arial" font-size="9" fill="#0a84ff">9 Settings</text>
+  <text x="90" y="62" text-anchor="middle" font-family="-apple-system,Arial" font-size="12" font-weight="700" fill="#1c1c1e">Cellular</text>
+
+  <!-- Cellular Data toggle -->
+  <rect x="12" y="72" width="156" height="36" rx="12" fill="#ffffff"/>
+  <text x="20" y="94" font-family="-apple-system,Arial" font-size="9" font-weight="600" fill="#1c1c1e">Cellular Data</text>
+  <rect x="140" y="82" width="24" height="14" rx="7" fill="#30d158"/>
+  <circle cx="154" cy="89" r="6" fill="#ffffff"/>
+
+  <!-- eSIM section -->
+  <text x="16" y="122" font-family="-apple-system,Arial" font-size="7.5" fill="#6e6e73" font-weight="600">eSIM</text>
+  <rect x="12" y="128" width="156" height="60" rx="12" fill="#ffffff"/>
+  <!-- Current SIM -->
+  <rect x="16" y="132" width="24" height="24" rx="6" fill="#5e5ce6"/>
+  <text x="28" y="148" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#fff" font-weight="700">SIM</text>
+  <text x="46" y="145" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Primary</text>
+  <text x="46" y="157" font-family="-apple-system,Arial" font-size="7.5" fill="#6e6e73">My Carrier</text>
+  <line x1="44" y1="158" x2="164" y2="158" stroke="#e5e5ea" stroke-width="0.6"/>
+  <!-- Add eSIM - HIGHLIGHTED -->
+  <rect x="16" y="160" width="24" height="24" rx="6" fill="#0a84ff"/>
+  <text x="28" y="176" text-anchor="middle" font-family="-apple-system,Arial" font-size="16" fill="#fff" font-weight="300">+</text>
+  <text x="46" y="172" font-family="-apple-system,Arial" font-size="9" font-weight="700" fill="#0a84ff">Add eSIM</text>
+  <text x="46" y="184" font-family="-apple-system,Arial" font-size="7.5" fill="#0a84ff">Tap to add Japan eSIM</text>
+  <text x="157" y="176" text-anchor="end" font-family="-apple-system,Arial" font-size="12" fill="#0a84ff">:</text>
+
+  <!-- Tap indicator -->
+  <rect x="12" y="204" width="156" height="28" rx="10" fill="#fff3cd" opacity="0.9"/>
+  <text x="90" y="222" text-anchor="middle" font-family="-apple-system,Arial" font-size="8.5" fill="#856404">a Tap "Add eSIM"</text>
+
+  <!-- Data section -->
+  <text x="16" y="248" font-family="-apple-system,Arial" font-size="7.5" fill="#6e6e73" font-weight="600">DATA USAGE</text>
+  <rect x="12" y="254" width="156" height="52" rx="12" fill="#ffffff"/>
+  <text x="20" y="274" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Current Period</text>
+  <text x="157" y="274" text-anchor="end" font-family="-apple-system,Arial" font-size="9" fill="#6e6e73">4.2 GB</text>
+  <line x1="16" y1="282" x2="164" y2="282" stroke="#e5e5ea" stroke-width="0.6"/>
+  <text x="20" y="298" font-family="-apple-system,Arial" font-size="9" fill="#1c1c1e">Current Period Roaming</text>
+  <text x="157" y="298" text-anchor="end" font-family="-apple-system,Arial" font-size="9" fill="#6e6e73">0 bytes</text>
+
+  <!-- Step label -->
+  <rect x="12" y="356" width="156" height="14" rx="7" fill="#e5e5ea"/>
+  <text x="90" y="367" text-anchor="middle" font-family="-apple-system,Arial" font-size="8" fill="#6e6e73" font-weight="600">STEP 2  Cellular</text>
+</svg>
