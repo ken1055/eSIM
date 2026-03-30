@@ -226,7 +226,7 @@ img { max-width: 100%; display: block; }
   inset: 0;
   background-image: url('../img/hero-bg.jpg');
   background-size: cover;
-  background-position: center 65%;
+  background-position: center 75%;
   background-repeat: no-repeat;
 }
 /* Gradient overlay for text readability */
@@ -2113,7 +2113,7 @@ img { max-width: 100%; display: block; }
   .logo-img { height: 44px; }
   .hero-section { margin-top: 60px; }
   .hero-title { font-size: 2.8rem; }
-  .hero-bg { background-position: center 65%; }
+  .hero-bg { background-position: center 75%; }
   .hero-bg::after {
     background: linear-gradient(
       to right,
@@ -2145,7 +2145,7 @@ img { max-width: 100%; display: block; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
   .hero-title   { font-size: 2.2rem; }
-  .hero-bg { background-position: center 65%; }
+  .hero-bg { background-position: center 75%; }
   .hero-text    { display: none; }
   .hero-text--mobile { display: block; }
   .hero-container { align-items: flex-start; }
