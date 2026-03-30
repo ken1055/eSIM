@@ -1058,7 +1058,7 @@ img { max-width: 100%; display: block; }
 }
 .reviews-track .review-card { display: none; }
 .reviews-track .review-card.active {
-  display: block;
+  display: flex;
   animation: reviewFadeIn 0.4s ease-out;
 }
 .review-card {
