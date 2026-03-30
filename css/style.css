@@ -1050,7 +1050,7 @@ img { max-width: 100%; display: block; }
 }
 .reviews-track {
   position: relative;
-  min-height: 260px;
+  height: 260px;
 }
 @keyframes reviewFadeIn {
   from { opacity: 0; transform: translateX(24px); }
@@ -1068,9 +1068,12 @@ img { max-width: 100%; display: block; }
   padding: 28px 32px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
   height: 260px;
+  max-height: 260px;
+  overflow: hidden;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .review-stars { font-size: 1.1rem; color: #f5a623; letter-spacing: 2px; margin-bottom: 14px; flex-shrink: 0; }
 .review-text {
@@ -2133,7 +2136,8 @@ img { max-width: 100%; display: block; }
   .multi-card { height: auto; aspect-ratio: 5/3; }
   .why-grid   { grid-template-columns: 1fr; gap: 24px; }
   .reviews-carousel { padding: 0 40px; }
-  .review-card { padding: 22px 20px; height: 280px; }
+  .review-card { padding: 22px 20px; height: 280px; max-height: 280px; }
+  .reviews-track { height: 280px; }
   .how-steps { flex-direction: column; }
   .how-arrow { transform: rotate(90deg); padding: 4px 0; opacity: 0.4; }
   .flow-steps { grid-template-columns: 1fr; gap: 28px; }
