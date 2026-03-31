@@ -1370,8 +1370,10 @@ img { max-width: 100%; display: block; }
   height: 290px;
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid #dde3ea;
+  border: none;
   display: block;
+  object-fit: contain;
+  object-position: center;
   object-fit: cover;
   flex-shrink: 0;
 }
