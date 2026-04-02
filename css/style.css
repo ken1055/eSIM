@@ -2155,15 +2155,22 @@ img { max-width: 100%; display: block; }
   .header-inner { height: 56px; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
-  .hero-title   { font-size: 2.2rem; }
+  .hero-title   { font-size: 1.75rem; }
   .hero-bg { background-position: center 75%; }
   .hero-text    { display: none; }
-  .hero-text--mobile { display: block; }
-  .hero-container { align-items: flex-start; }
+  .hero-text--mobile {
+    display: block;
+    padding: 0 20px;
+    max-width: 92%;
+  }
+  .hero-container { align-items: flex-start; padding: 60px 16px; }
   .hero-text, .hero-text--mobile { text-align: left; }
   .hero-checks { align-items: flex-start; }
+  .hero-checks li { font-size: 0.9rem; }
   .hero-flags { justify-content: flex-start; }
   .hero-trust { justify-content: flex-start; }
+  .hero-trusted { font-size: 0.82rem; }
+  .btn-shop { font-size: 0.9rem; padding: 13px 24px; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .multi-grid   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .city-card    { height: auto; aspect-ratio: 5/4; padding: 12px; }
