@@ -1266,7 +1266,7 @@ img { max-width: 100%; display: block; }
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 3/4;
-  margin-bottom: 22px;
+  margin-bottom: 10px;
 }
 .flow-step__img {
   width: 100%;
