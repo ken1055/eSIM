@@ -1424,6 +1424,20 @@ img { max-width: 100%; display: block; }
   .activate-steps { gap: 10px; }
 }
 
+/* 1枚画像ガイド */
+.activate-guide-img-wrap {
+  text-align: center;
+  padding: 8px 0 16px;
+}
+.activate-guide-img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
 /* ===== FAQ ===== */
 .faq-section .section-title { text-align: center; }
 .faq-list { max-width: 860px; margin: 0 auto; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
