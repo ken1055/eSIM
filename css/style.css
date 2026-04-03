@@ -603,10 +603,10 @@ img { max-width: 100%; display: block; }
 }
 
 /* Photo backgrounds with dark overlay */
-.city-img--tokyo   { background: url('img/city-tokyo.jpg') center/cover; }
-.city-img--osaka   { background: url('img/city-osaka.jpg') center/cover; }
-.city-img--sapporo { background: url('img/city-sapporo.jpg') center/cover; }
-.city-img--okinawa { background: url('img/city-okinawa.jpg') center/cover; }
+.city-img--tokyo   { background: url('../img/city-tokyo.jpg') center/cover; }
+.city-img--osaka   { background: url('../img/city-osaka.jpg') center/cover; }
+.city-img--sapporo { background: url('../img/city-sapporo.jpg') center/cover; }
+.city-img--okinawa { background: url('../img/city-okinawa.jpg') center/cover; }
 .city-img--kyoto    { background: linear-gradient(145deg, #2a2a3a 0%, #1a1a2e 100%); }
 .city-img--fukuoka  { background: linear-gradient(145deg, #1a2a1a 0%, #0f1f0f 100%); }
 .city-img--hiroshima { background: linear-gradient(145deg, #2a1a1a 0%, #1f0f0f 100%); }
@@ -763,10 +763,10 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 20px 48px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.05);
 }
 
-.multi-img--jpcn   { background: url('img/multi-jpcn.jpg') center/cover; }
-.multi-img--jpkr   { background: url('img/multi-jpkr.jpg') center/cover; }
-.multi-img--jpkrcn { background: url('img/multi-jpkrcn.jpg') center/cover; }
-.multi-img--asia   { background: url('img/multi-asia.jpg') center/cover; }
+.multi-img--jpcn   { background: url('../img/multi-jpcn.jpg') center/cover; }
+.multi-img--jpkr   { background: url('../img/multi-jpkr.jpg') center/cover; }
+.multi-img--jpkrcn { background: url('../img/multi-jpkrcn.jpg') center/cover; }
+.multi-img--asia   { background: url('../img/multi-asia.jpg') center/cover; }
 
 /* SIMカード切り欠き */
 .multi-card__notch {
