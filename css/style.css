@@ -602,36 +602,20 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-/* Photo backgrounds with gradient overlay */
-.city-img--tokyo {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(210,230,255,0.60) 100%),
-    url('https://images.unsplash.com/photo-1764418658791-771bb04efdcd?fm=jpg&q=80&w=800&auto=format&fit=crop') center/cover;
-}
-.city-img--osaka {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(255,210,210,0.60) 100%),
-    url('https://images.unsplash.com/photo-1759746334715-fae30ec56600?fm=jpg&q=80&w=800&auto=format&fit=crop') center/cover;
-}
-.city-img--sapporo {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(210,230,255,0.60) 100%),
-    url('https://images.unsplash.com/photo-1741225241678-0c7f8fa07917?fm=jpg&q=80&w=800&auto=format&fit=crop') center/cover;
-}
-.city-img--okinawa {
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.72) 0%, rgba(210,255,245,0.60) 100%),
-    url('https://images.unsplash.com/photo-1488160123651-40201d96a304?fm=jpg&q=80&w=800&auto=format&fit=crop') center/cover;
-}
-.city-img--kyoto    { background: linear-gradient(145deg, #ffffff 40%, #ead8ff 100%); }
-.city-img--fukuoka  { background: linear-gradient(145deg, #ffffff 40%, #d8ffe6 100%); }
-.city-img--hiroshima { background: linear-gradient(145deg, #ffffff 40%, #fff0d8 100%); }
-.city-img--nagoya   { background: linear-gradient(145deg, #ffffff 40%, #d8d8ff 100%); }
+/* Photo backgrounds with dark overlay */
+.city-img--tokyo   { background: url('img/city-tokyo.jpg') center/cover; }
+.city-img--osaka   { background: url('img/city-osaka.jpg') center/cover; }
+.city-img--sapporo { background: url('img/city-sapporo.jpg') center/cover; }
+.city-img--okinawa { background: url('img/city-okinawa.jpg') center/cover; }
+.city-img--kyoto    { background: linear-gradient(145deg, #2a2a3a 0%, #1a1a2e 100%); }
+.city-img--fukuoka  { background: linear-gradient(145deg, #1a2a1a 0%, #0f1f0f 100%); }
+.city-img--hiroshima { background: linear-gradient(145deg, #2a1a1a 0%, #1f0f0f 100%); }
+.city-img--nagoya   { background: linear-gradient(145deg, #1a1a2a 0%, #0f0f1f 100%); }
 
 .city-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.04) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.55) 100%);
   z-index: 1;
 }
 
@@ -709,28 +693,28 @@ img { max-width: 100%; display: block; }
   transform: translateY(-52%);
   font-size: 5.5rem;
   font-weight: 900;
-  color: rgba(0,0,0,0.06);
+  color: rgba(255,255,255,0.10);
   line-height: 1;
   z-index: 2;
   pointer-events: none;
   user-select: none;
   transition: color 0.35s ease;
 }
-.city-card:hover .city-card__kanji { color: rgba(0,0,0,0.10); }
+.city-card:hover .city-card__kanji { color: rgba(255,255,255,0.16); }
 
 .city-card__content {
   position: relative;
   z-index: 3;
 }
 .city-card__content h4 {
-  color: var(--text);
+  color: #fff;
   font-size: 0.92rem;
   font-weight: 800;
   margin-bottom: 2px;
   letter-spacing: -0.2px;
 }
 .city-card__content p {
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.82);
   font-size: 0.78rem;
   font-weight: 500;
   margin-bottom: 10px;
@@ -779,10 +763,10 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 20px 48px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.05);
 }
 
-.multi-img--jpcn   { background: linear-gradient(145deg, #ffffff 40%, #ffd8d8 100%); }
-.multi-img--jpkr   { background: linear-gradient(145deg, #ffffff 40%, #d8e8ff 100%); }
-.multi-img--jpkrcn { background: linear-gradient(145deg, #ffffff 40%, #ead8ff 100%); }
-.multi-img--asia   { background: linear-gradient(145deg, #ffffff 40%, #d8fff0 100%); }
+.multi-img--jpcn   { background: url('img/multi-jpcn.jpg') center/cover; }
+.multi-img--jpkr   { background: url('img/multi-jpkr.jpg') center/cover; }
+.multi-img--jpkrcn { background: url('img/multi-jpkrcn.jpg') center/cover; }
+.multi-img--asia   { background: url('img/multi-asia.jpg') center/cover; }
 
 /* SIMカード切り欠き */
 .multi-card__notch {
@@ -801,7 +785,7 @@ img { max-width: 100%; display: block; }
 .multi-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.04) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.55) 100%);
   z-index: 1;
 }
 
@@ -882,11 +866,11 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   pointer-events: none;
   user-select: none;
-  opacity: 0.30;
+  opacity: 0.40;
   transition: opacity 0.35s ease;
   letter-spacing: 2px;
 }
-.multi-card:hover .multi-card__kanji { opacity: 0.45; }
+.multi-card:hover .multi-card__kanji { opacity: 0.60; }
 
 .multi-card__content {
   position: relative;
@@ -897,18 +881,18 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: rgba(255,255,255,0.70);
   margin-bottom: 4px;
 }
 .multi-card__content h4 {
-  color: var(--text);
+  color: #fff;
   font-size: 0.92rem;
   font-weight: 800;
   margin-bottom: 4px;
   letter-spacing: -0.2px;
 }
 .multi-card__price {
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.82);
   font-size: 0.78rem;
   font-weight: 500;
   margin-bottom: 10px;
