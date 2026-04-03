@@ -1244,7 +1244,20 @@ img { max-width: 100%; display: block; }
   transition: var(--transition);
 }
 .how-step:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
-.how-step__num { font-size: 0.75rem; font-weight: 700; color: var(--red); letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase; }
+.how-step__img-wrap {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+}
+.how-step__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+.how-step__num { font-size: 0.75rem; font-weight: 700; color: var(--red); letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
 .how-step__icon { font-size: 2.4rem; margin-bottom: 14px; }
 .how-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
 .how-step p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
