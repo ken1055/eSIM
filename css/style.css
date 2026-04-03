@@ -1396,7 +1396,7 @@ img { max-width: 100%; display: block; }
 /* Video guide link */
 .activate-note {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 8px;
   font-size: 0.875rem;
 }
 .activate-note__link {
