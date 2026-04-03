@@ -570,22 +570,29 @@ img { max-width: 100%; display: block; }
   gap: 16px;
 }
 
-/* カード全体：横並びレイアウト */
+/* 外側ラッパー（<a>）: ホバー＋縦並び */
 .city-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.city-card:hover { transform: translateY(-6px); }
+
+/* SIMカードビジュアル部分 */
+.city-card__sim {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 220px;
+  height: 180px;
   display: flex;
   flex-direction: row;
-  text-decoration: none;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08);
-  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.20);
+  transition: box-shadow 0.35s ease;
 }
-.city-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.28), 0 0 0 1px rgba(0,0,0,0.08);
+.city-card:hover .city-card__sim {
+  box-shadow: 0 14px 36px rgba(0,0,0,0.30);
 }
 
 /* SIMカード切り欠き（右上コーナー） */
@@ -602,25 +609,13 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-/* 左40%：写真エリア */
-.city-card__photo {
-  width: 40%;
-  flex-shrink: 0;
-  background-size: cover;
-  background-position: center;
-}
-.city-img--tokyo   { background: url('../img/city-tokyo.jpg') center/cover; }
-.city-img--osaka   { background: url('../img/city-osaka.jpg') center/cover; }
-.city-img--sapporo { background: url('../img/city-sapporo.jpg') center/cover; }
-.city-img--okinawa { background: url('../img/city-okinawa.jpg') center/cover; }
-
-/* 右60%：白エリア */
+/* 左60%：白エリア（チップ+ロゴ） */
 .city-card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 14px 46px 14px 14px;
+  justify-content: flex-start;
+  padding: 14px 14px 14px 14px;
   background: #fff;
 }
 
@@ -633,7 +628,7 @@ img { max-width: 100%; display: block; }
 }
 
 .city-card__logo {
-  height: 36px;
+  height: 34px;
   width: auto;
   display: block;
 }
@@ -671,8 +666,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   left: 50%;
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   width: 1px;
   background: rgba(0,0,0,0.12);
   transform: translateX(-50%);
@@ -681,25 +675,38 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   height: 1px;
   background: rgba(0,0,0,0.12);
   transform: translateY(-50%);
 }
 
-/* テキスト（下部） */
-.city-card__content { }
-.city-card__content h4 {
-  color: var(--text);
-  font-size: 0.88rem;
+/* 右40%：写真エリア */
+.city-card__photo {
+  width: 40%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+.city-img--tokyo   { background: url('../img/city-tokyo.jpg') center/cover; }
+.city-img--osaka   { background: url('../img/city-osaka.jpg') center/cover; }
+.city-img--sapporo { background: url('../img/city-sapporo.jpg') center/cover; }
+.city-img--okinawa { background: url('../img/city-okinawa.jpg') center/cover; }
+
+/* テキスト：SIMカードの下 */
+.city-card__info {
+  padding: 10px 4px 0;
+}
+.city-card__info h4 {
+  color: #fff;
+  font-size: 0.90rem;
   font-weight: 800;
   margin-bottom: 2px;
   letter-spacing: -0.2px;
 }
-.city-card__content p {
-  color: var(--text-mid);
-  font-size: 0.75rem;
+.city-card__info p {
+  color: rgba(255,255,255,0.70);
+  font-size: 0.76rem;
   font-weight: 500;
   margin-bottom: 8px;
 }
@@ -714,9 +721,9 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 100px;
-  transition: background 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
-.city-card:hover .city-card__cta { opacity: 0.88; }
+.city-card:hover .city-card__cta { opacity: 0.85; }
 
 /* ===== MULTI-COUNTRY ===== */
 .multi-section { background: #0a0a0f; }
@@ -729,23 +736,30 @@ img { max-width: 100%; display: block; }
   margin-bottom: 32px;
 }
 
-/* カード全体：縦並び、全面写真 */
+/* 外側ラッパー（<a>）: ホバー＋縦並び */
+.multi-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.multi-item:hover { transform: translateY(-6px); }
+
+/* SIMカードビジュアル（全面写真） */
 .multi-card {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 220px;
+  height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
+  justify-content: flex-start;
   padding: 14px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08);
-  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.20);
+  transition: box-shadow 0.35s ease;
 }
-.multi-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.28), 0 0 0 1px rgba(0,0,0,0.08);
+.multi-item:hover .multi-card {
+  box-shadow: 0 14px 36px rgba(0,0,0,0.32);
 }
 
 .multi-img--jpcn   { background: url('../img/multi-jpcn.jpg') center/cover; }
@@ -771,7 +785,7 @@ img { max-width: 100%; display: block; }
 .multi-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.60) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%);
   z-index: 1;
 }
 
@@ -787,7 +801,7 @@ img { max-width: 100%; display: block; }
 }
 
 .multi-card__logo {
-  height: 36px;
+  height: 34px;
   width: auto;
   display: block;
   filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
@@ -826,8 +840,7 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   left: 50%;
-  top: 0;
-  bottom: 0;
+  top: 0; bottom: 0;
   width: 1px;
   background: rgba(0,0,0,0.12);
   transform: translateX(-50%);
@@ -836,27 +849,25 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   height: 1px;
   background: rgba(0,0,0,0.12);
   transform: translateY(-50%);
 }
 
-/* テキスト（下部） */
-.multi-card__content {
-  position: relative;
-  z-index: 3;
+/* テキスト：SIMカードの下 */
+.multi-card__info {
+  padding: 10px 4px 0;
 }
 .multi-card__region {
   font-size: 0.60rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.65);
   margin-bottom: 3px;
 }
-.multi-card__content h4 {
+.multi-card__info h4 {
   color: #fff;
   font-size: 0.88rem;
   font-weight: 800;
@@ -864,8 +875,8 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.2px;
 }
 .multi-card__price {
-  color: rgba(255,255,255,0.85);
-  font-size: 0.75rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.76rem;
   font-weight: 500;
   margin-bottom: 8px;
   display: block;
@@ -881,9 +892,9 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 100px;
-  transition: background 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
-.multi-card:hover .multi-card__cta { opacity: 0.88; }
+.multi-item:hover .multi-card__cta { opacity: 0.85; }
 
 .see-all-wrap { text-align: center; margin-top: 8px; }
 .btn-see-all {
@@ -2122,8 +2133,8 @@ img { max-width: 100%; display: block; }
   .section { padding: 52px 0; }
   .city-grid  { grid-template-columns: repeat(2, 1fr); }
   .multi-grid { grid-template-columns: repeat(2, 1fr); }
-  .city-card  { height: auto; min-height: 160px; }
-  .multi-card { height: auto; aspect-ratio: 5/3; }
+  .city-card__sim { height: 150px; }
+  .multi-card { height: 150px; }
   .why-grid   { grid-template-columns: 1fr; gap: 24px; }
   .reviews-carousel { padding: 0 40px; }
   .review-card { padding: 22px 20px; height: 280px; max-height: 280px; }
@@ -2159,21 +2170,21 @@ img { max-width: 100%; display: block; }
   .btn-shop { font-size: 0.9rem; padding: 13px 24px; }
   .city-grid    { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .multi-grid   { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .city-card    { height: auto; min-height: 130px; }
-  .multi-card   { height: auto; aspect-ratio: 5/4; padding: 10px; }
-  .city-card__body  { padding: 10px 38px 10px 10px; }
-  .city-card__logo  { height: 26px; }
-  .multi-card__logo { height: 26px; }
-  .city-card__chip  { width: 30px; height: 23px; }
-  .multi-card__chip { width: 30px; height: 23px; }
-  .city-card__content h4  { font-size: 0.75rem; }
-  .multi-card__content h4 { font-size: 0.75rem; }
-  .city-card__content p   { font-size: 0.65rem; margin-bottom: 5px; }
-  .multi-card__price      { font-size: 0.65rem; margin-bottom: 5px; }
-  .multi-card__region     { font-size: 0.55rem; margin-bottom: 2px; }
+  .city-card__sim   { height: 120px; }
+  .city-card__body  { padding: 10px; }
+  .multi-card   { height: 120px; padding: 10px; }
+  .city-card__logo  { height: 24px; }
+  .multi-card__logo { height: 24px; }
+  .city-card__chip  { width: 28px; height: 21px; }
+  .multi-card__chip { width: 28px; height: 21px; }
+  .city-card__info h4  { font-size: 0.78rem; }
+  .multi-card__info h4 { font-size: 0.78rem; }
+  .city-card__info p   { font-size: 0.66rem; margin-bottom: 5px; }
+  .multi-card__price   { font-size: 0.66rem; margin-bottom: 5px; }
+  .multi-card__region  { font-size: 0.55rem; }
   .city-card__cta  { font-size: 0.65rem; padding: 4px 9px; }
   .multi-card__cta { font-size: 0.65rem; padding: 4px 9px; }
-  .city-card__head { gap: 5px; }
+  .city-card__head  { gap: 5px; }
   .multi-card__head { gap: 5px; }
   .footer-grid  { grid-template-columns: 1fr; }
 }
