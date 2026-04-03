@@ -1305,7 +1305,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== HOW TO ACTIVATE ===== */
-.activate-section { background: var(--white); }
+.activate-section { background: var(--white); padding-bottom: 40px; }
 .activate-section .section-title { text-align: center; }
 .activate-section .section-sub { text-align: center; }
 
@@ -1396,7 +1396,7 @@ img { max-width: 100%; display: block; }
 /* Video guide link */
 .activate-note {
   text-align: center;
-  margin-top: 32px;
+  margin-top: 16px;
   font-size: 0.875rem;
 }
 .activate-note__link {
@@ -1427,7 +1427,7 @@ img { max-width: 100%; display: block; }
 /* 1枚画像ガイド */
 .activate-guide-img-wrap {
   text-align: center;
-  padding: 8px 0 16px;
+  padding: 8px 0 0;
 }
 .activate-guide-img {
   max-width: 100%;
