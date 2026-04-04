@@ -2137,7 +2137,7 @@ img { max-width: 100%; display: block; }
   .multi-card { height: 150px; }
   .why-grid   { grid-template-columns: 1fr; gap: 24px; }
   .reviews-carousel { padding: 0 40px; }
-  .review-card { padding: 22px 20px; height: 320px; max-height: 320px; }
+  .review-card { padding: 22px 20px 28px; height: 320px; max-height: 320px; }
   .reviews-track { height: 320px; }
   .review-text { height: 110px; }
   .how-steps { flex-direction: column; }
