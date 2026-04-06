@@ -2137,10 +2137,9 @@ img { max-width: 100%; display: block; }
   .multi-card { height: 150px; }
   .why-grid   { grid-template-columns: 1fr; gap: 24px; }
   .reviews-carousel { padding: 0 40px; }
-  .review-card { padding: 22px 20px 36px; height: 360px; max-height: 360px; }
-  .reviews-track { height: 360px; }
+  .review-card { padding: 22px 20px 24px; height: auto; min-height: 300px; max-height: none; overflow: visible; }
+  .reviews-track { height: auto; min-height: 300px; }
   .review-text { height: 110px; }
-  .review-plan-tag { margin-bottom: 4px; }
   .how-steps { flex-direction: column; }
   .how-arrow { transform: rotate(90deg); padding: 4px 0; opacity: 0.4; }
   .flow-steps { grid-template-columns: 1fr; gap: 28px; }
