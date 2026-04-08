@@ -60,7 +60,7 @@
       'cov.title': 'Coverage Across Japan',
       'cov.sub':   'Stay connected everywhere you travel',
       /* why */
-      'why.title': 'Why getjapanesim.com is Best for Japan eSIM',
+      'why.title': 'Why Getjapanesim.com is Best for Japan eSIM',
       /* support */
       'sup.title': '24/7 real human support,<br>ready when you need it',
       'sup.p':     "We're here before, during, and after your trip. Reach us via email or WhatsApp — a real person always responds.",
@@ -146,7 +146,7 @@
       'cov.title': 'Netzabdeckung in Japan',
       'cov.sub':   'Überall verbunden auf Ihren Reisen',
       /* why */
-      'why.title': 'Warum getjapanesim.com die beste Wahl für Japan eSIM ist',
+      'why.title': 'Warum Getjapanesim.com die beste Wahl für Japan eSIM ist',
       /* support */
       'sup.title': '24/7 echter menschlicher Support,<br>immer für Sie bereit',
       'sup.p':     'Wir sind vor, während und nach Ihrer Reise für Sie da. Kontaktieren Sie uns per E-Mail oder WhatsApp.',
@@ -232,7 +232,7 @@
       'cov.title': '日本全境网络覆盖',
       'cov.sub':   '无论您走到哪里，都能保持联网',
       /* why */
-      'why.title': '为什么getjapanesim.com是日本eSIM的最佳选择',
+      'why.title': '为什么Getjapanesim.com是日本eSIM的最佳选择',
       /* support */
       'sup.title': '24/7真人客服，<br>随时为您解答',
       'sup.p':     '从出发前到旅途中，再到返回后，我们全程陪伴。通过邮件或WhatsApp联系我们，真人实时响应。',
