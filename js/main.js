@@ -124,6 +124,30 @@
     document.querySelectorAll('.util-dropdown').forEach(el => el.classList.remove('active'));
   });
 
+  // ===== Coverage section city switcher =====
+  const coverageData = {
+    tokyo:    { name: 'Tokyo',    network: 'Docomo, SoftBank, AU', speed: '~120 Mbps', signal: 'Excellent',  desc: 'Reliable high-speed coverage across metro lines, business districts, and tourist hotspots.' },
+    osaka:    { name: 'Osaka',    network: 'Docomo, SoftBank',     speed: '~105 Mbps', signal: 'Very good',  desc: 'Strong coverage across shopping districts, transit hubs, and central neighborhoods. Minor drops may occur in crowded areas.' },
+    kyoto:    { name: 'Kyoto',    network: 'Docomo, SoftBank',     speed: '~110 Mbps', signal: 'Very good',  desc: 'Reliable coverage in city center and major temple districts. Some rural edges may vary.' },
+    hokkaido: { name: 'Hokkaido', network: 'Docomo',               speed: '~85 Mbps',  signal: 'Good',       desc: 'Stable coverage in cities and popular travel areas. Remote and mountainous regions may experience reduced speeds.' },
+    okinawa:  { name: 'Okinawa',  network: 'SoftBank, AU',         speed: '~75 Mbps',  signal: 'Good',       desc: 'Reliable coverage in main towns, beaches, and resorts. Some remote islands and coastal areas may have weaker connectivity.' },
+    sapporo:  { name: 'Sapporo',  network: 'Docomo, SoftBank',     speed: '~95 Mbps',  signal: 'Very good',  desc: 'Consistent performance in urban areas, shopping zones, and transit routes. Slight variation possible during peak seasons.' },
+  };
+  document.querySelectorAll('.coverage-city').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const city = btn.dataset.city;
+      const data = coverageData[city];
+      if (!data) return;
+      document.querySelectorAll('.coverage-city').forEach(b => b.classList.remove('coverage-city--active'));
+      btn.classList.add('coverage-city--active');
+      document.getElementById('cov-city-name').textContent = data.name;
+      document.getElementById('cov-network').textContent   = data.network;
+      document.getElementById('cov-speed').textContent     = data.speed;
+      document.getElementById('cov-signal').textContent    = data.signal;
+      document.getElementById('cov-desc').textContent      = data.desc;
+    });
+  });
+
   // ===== Plans section tab switcher =====
   document.querySelectorAll('.plans-tab').forEach(tab => {
     tab.addEventListener('click', () => {

@@ -519,49 +519,57 @@
     <h2 class="section-title section-title--center" data-i18n="cov.title">Coverage Across Japan</h2>
     <p class="section-sub section-sub--center" data-i18n="cov.sub">Stay connected everywhere you travel</p>
 
+    <!-- 都市タブ -->
     <div class="coverage-cities">
-      <div class="coverage-city">
+      <button class="coverage-city coverage-city--active" data-city="tokyo">
         <span class="coverage-city__icon">🗼</span>
         <span class="coverage-city__name">Tokyo</span>
-      </div>
-      <div class="coverage-city">
+      </button>
+      <button class="coverage-city" data-city="osaka">
         <span class="coverage-city__icon">🏯</span>
         <span class="coverage-city__name">Osaka</span>
-      </div>
-      <div class="coverage-city">
+      </button>
+      <button class="coverage-city" data-city="kyoto">
         <span class="coverage-city__icon">⛩️</span>
         <span class="coverage-city__name">Kyoto</span>
-      </div>
-      <div class="coverage-city">
-        <span class="coverage-city__icon">🦌</span>
+      </button>
+      <button class="coverage-city" data-city="hokkaido">
+        <span class="coverage-city__icon">❄️</span>
         <span class="coverage-city__name">Hokkaido</span>
-      </div>
-      <div class="coverage-city">
+      </button>
+      <button class="coverage-city" data-city="okinawa">
         <span class="coverage-city__icon">🌺</span>
         <span class="coverage-city__name">Okinawa</span>
-      </div>
-      <div class="coverage-city">
-        <span class="coverage-city__icon">🗻</span>
-        <span class="coverage-city__name">Mt Fuji</span>
-      </div>
+      </button>
+      <button class="coverage-city" data-city="sapporo">
+        <span class="coverage-city__icon">🏔️</span>
+        <span class="coverage-city__name">Sapporo</span>
+      </button>
     </div>
 
-    <p class="coverage-desc">Full 4G/LTE coverage throughout Japan — urban cities and rural destinations alike.</p>
-
-    <div class="coverage-stats">
-      <div class="coverage-stat">
-        <span class="coverage-stat__label">NETWORK</span>
-        <span class="coverage-stat__value">NTT Docomo / KDDI / SoftBank</span>
+    <!-- 詳細カード -->
+    <div class="coverage-card" id="coverage-card">
+      <div class="coverage-card__header">
+        <h3 class="coverage-card__city" id="cov-city-name">Tokyo</h3>
+        <span class="coverage-card__badge">Full Coverage</span>
       </div>
-      <div class="coverage-stat">
-        <span class="coverage-stat__label">SPEED</span>
-        <span class="coverage-stat__value">4G LTE</span>
+      <div class="coverage-card__metrics">
+        <div class="coverage-metric">
+          <span class="coverage-metric__label">NETWORK</span>
+          <span class="coverage-metric__value" id="cov-network">Docomo, SoftBank, AU</span>
+        </div>
+        <div class="coverage-metric">
+          <span class="coverage-metric__label">AVG SPEED</span>
+          <span class="coverage-metric__value" id="cov-speed">~120 Mbps</span>
+        </div>
+        <div class="coverage-metric">
+          <span class="coverage-metric__label">SIGNAL</span>
+          <span class="coverage-metric__value" id="cov-signal">Excellent</span>
+        </div>
       </div>
-      <div class="coverage-stat">
-        <span class="coverage-stat__label">COVERAGE</span>
-        <span class="coverage-stat__value">Nationwide Japan</span>
-      </div>
+      <p class="coverage-card__desc" id="cov-desc">Reliable high-speed coverage across metro lines, business districts, and tourist hotspots.</p>
     </div>
+
   </div>
 </section>
 
