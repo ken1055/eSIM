@@ -1015,6 +1015,8 @@ img { max-width: 100%; display: block; }
 /* ===== WHY BEST ===== */
 .why-section { background: var(--white); }
 .why-section .section-title { text-align: center; }
+.why-title { text-align: center; }
+.why-title--accent { color: var(--red); }
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
