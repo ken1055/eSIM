@@ -71,6 +71,7 @@ img { max-width: 100%; display: block; }
 .main-nav__list {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0;
   height: 62px;
 }
