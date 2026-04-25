@@ -15,42 +15,35 @@
 <!-- ===== HEADER ===== -->
 <header class="site-header" id="site-header">
   <div class="header-inner container">
+    <!-- Logo -->
     <a href="index.html" class="site-logo">
-      <img src="img/logo-transparent.png" alt="Get Japan eSIM" class="logo-img">
+      <span class="logo-icon-wrap" aria-hidden="true">
+        <svg width="38" height="42" viewBox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="42" rx="8" fill="#E8392A"/>
+          <rect x="7" y="5" width="24" height="32" rx="4" fill="white"/>
+          <path d="M7 12 L14 5 L7 5 Z" fill="#E8392A"/>
+          <rect x="12" y="13" width="5" height="3.5" rx="1" fill="#ccc"/>
+          <rect x="21" y="13" width="5" height="3.5" rx="1" fill="#ccc"/>
+          <rect x="12" y="18.5" width="5" height="3.5" rx="1" fill="#ccc"/>
+          <rect x="21" y="18.5" width="5" height="3.5" rx="1" fill="#ccc"/>
+          <circle cx="19" cy="30" r="4.5" fill="#E8392A"/>
+        </svg>
+      </span>
+      <span class="logo-text-wrap">
+        <span class="logo-text-get">Get</span>
+        <span class="logo-text-name">Japan <strong>eSIM</strong></span>
+      </span>
     </a>
 
+    <!-- Desktop Nav -->
     <nav class="main-nav" id="main-nav">
       <ul class="main-nav__list">
         <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link"><span data-i18n="nav.nationwide">Nationwide Plans</span> <span class="caret">▾</span></a>
+          <a href="#plans" class="nav-link">Plans <span class="caret">▾</span></a>
           <div class="dropdown">
-            <a href="#plans">5G Unlimited Max Data</a>
-            <a href="#plans">Unlimited Data</a>
-            <a href="#plans">Fixed Data</a>
-            <a href="#plans">Daily Data</a>
-          </div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link"><span data-i18n="nav.multi">Multi-Country Plans</span> <span class="caret">▾</span></a>
-          <div class="dropdown">
-            <a href="#multi">eSIM Japan &amp; Korea Fixed Data</a>
-            <a href="#multi">eSIM Japan &amp; China Fixed Data</a>
-            <a href="#multi">eSIM Japan-Korea-Taiwan Unlimited</a>
-            <a href="#multi">eSIM Asia Unlimited</a>
-            <a href="#multi">eSIM Global Unlimited</a>
-          </div>
-        </li>
-        <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link"><span data-i18n="nav.city">City Plans</span> <span class="caret">▾</span></a>
-          <div class="dropdown dropdown--wide">
-            <a href="#city">eSIM Tokyo</a>
-            <a href="#city">eSIM Osaka</a>
-            <a href="#city">eSIM Kyoto</a>
-            <a href="#city">eSIM Sapporo</a>
-            <a href="#city">eSIM Fukuoka</a>
-            <a href="#city">eSIM Okinawa</a>
-            <a href="#city">eSIM Nagoya</a>
-            <a href="#city">eSIM Hiroshima</a>
+            <a href="#plans">Nationwide Plans</a>
+            <a href="#multi">Multi-Country Plans</a>
+            <a href="#city">City Plans</a>
           </div>
         </li>
         <li class="nav-item has-dropdown">
@@ -58,40 +51,31 @@
           <div class="dropdown">
             <a href="#devices" data-i18n="nav.compat">eSIM Compatible Phones</a>
             <a href="#install" data-i18n="nav.activate">eSIM Activation Guide</a>
-            <a href="#faq">FAQ</a>
             <a href="mailto:support@Getjapanesim.com" data-i18n="nav.contact">Contact</a>
           </div>
         </li>
-        <li class="nav-item has-dropdown">
-          <a href="#" class="nav-link"><span data-i18n="nav.lab">Connectivity Lab</span> <span class="caret">▾</span></a>
-          <div class="dropdown">
-            <a href="#" data-i18n="nav.daily">Daily Report</a>
-            <a href="#" data-i18n="nav.weekly">Weekly Reports</a>
-          </div>
+        <li class="nav-item">
+          <a href="#faq" class="nav-link">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a href="mailto:support@Getjapanesim.com" class="nav-link">Contact us</a>
         </li>
       </ul>
     </nav>
 
+    <!-- Language picker (dark pill) -->
     <div class="header-utils">
-      <div class="util-dropdown" id="lang-dropdown">
-        <button class="util-btn" id="lang-btn">EN <span class="caret">▾</span></button>
+      <div class="util-dropdown util-dropdown--lang-pill" id="lang-dropdown">
+        <button class="util-btn util-btn--pill" id="lang-btn">En <span class="caret">▾</span></button>
         <div class="util-menu">
           <a href="#" data-lang="en">English</a>
           <a href="#" data-lang="de">Deutsch</a>
           <a href="#" data-lang="zh">简体中文</a>
-        </div>
-      </div>
-      <div class="util-dropdown" id="curr-dropdown">
-        <button class="util-btn" id="curr-btn">USD <span class="caret">▾</span></button>
-        <div class="util-menu">
+          <hr style="border:none;border-top:1px solid #eee;margin:4px 0;">
           <a href="#" data-currency="USD">USD</a>
           <a href="#" data-currency="EUR">EUR</a>
         </div>
       </div>
-      <a href="#" class="cart-btn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        <span class="cart-count">0</span>
-      </a>
     </div>
 
     <button class="hamburger" id="hamburger" aria-label="Menu">

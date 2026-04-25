@@ -52,19 +52,42 @@ img { max-width: 100%; display: block; }
   height: 72px;
 }
 
-/* Logo: SVG image */
+/* Logo: icon + text */
 .site-logo {
   display: flex;
   align-items: center;
+  gap: 10px;
   flex-shrink: 0;
-  margin-right: 24px;
+  margin-right: 28px;
   text-decoration: none;
 }
-.logo-img {
-  height: 56px;
-  width: auto;
-  display: block;
+.logo-icon-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.logo-text-get {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: 0.01em;
+}
+.logo-text-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+}
+.logo-text-name strong {
+  font-weight: 800;
+}
+/* fallback for old logo-img if used elsewhere */
+.logo-img { height: 56px; width: auto; display: block; }
 
 /* Main Nav */
 .main-nav { flex: 1; }
@@ -80,9 +103,9 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 0 14px;
+  padding: 0 16px;
   height: 100%;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--text);
   white-space: nowrap;
@@ -97,7 +120,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 220px;
+  min-width: 200px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -126,7 +149,7 @@ img { max-width: 100%; display: block; }
 }
 .dropdown a:hover { background: var(--bg-light); color: var(--red); }
 
-/* Header Utils */
+/* Header Utils — language pill only */
 .header-utils {
   display: flex;
   align-items: center;
@@ -135,6 +158,8 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 .util-dropdown { position: relative; }
+
+/* Default util-btn (kept for possible reuse) */
 .util-btn {
   display: flex;
   align-items: center;
@@ -149,6 +174,21 @@ img { max-width: 100%; display: block; }
   transition: var(--transition);
 }
 .util-btn:hover { border-color: var(--red); color: var(--red); }
+
+/* Dark pill language button */
+.util-btn--pill {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  gap: 6px;
+  cursor: pointer;
+}
+.util-btn--pill:hover { background: #333; color: #fff; border-color: transparent; }
+.util-btn--pill .caret { opacity: 0.8; }
 .util-menu {
   position: absolute;
   top: calc(100% + 6px);
@@ -2166,6 +2206,9 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .header-inner { height: 60px; }
+  .logo-icon-wrap svg { width: 30px; height: 34px; }
+  .logo-text-get  { font-size: 0.72rem; }
+  .logo-text-name { font-size: 0.82rem; }
   .logo-img { height: 44px; }
   .hero-section { margin-top: 60px; }
   .hero-title { font-size: 2.8rem; }
@@ -2200,6 +2243,8 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
   .header-inner { height: 56px; }
+  .logo-icon-wrap svg { width: 26px; height: 30px; }
+  .logo-text-wrap { display: none; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
   .hero-title   { font-size: 1.75rem; }

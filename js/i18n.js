@@ -308,9 +308,9 @@
     });
 
     /* Update lang button label */
-    var labels = { en: 'EN', de: 'DE', zh: '中文' };
+    var labels = { en: 'En', de: 'De', zh: '中文' };
     var btn = document.getElementById('lang-btn');
-    if (btn) btn.innerHTML = (labels[lang] || lang.toUpperCase()) + ' <span class="caret">▾</span>';
+    if (btn) btn.innerHTML = (labels[lang] || lang) + ' <span class="caret">▾</span>';
 
     /* Sync mobile select */
     var mobLang = document.getElementById('mob-lang');
