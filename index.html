@@ -153,63 +153,161 @@
 <!-- ===== BEST PLANS ===== -->
 <section class="section plans-section" id="plans">
   <div class="container">
-    <h2 class="section-title" data-i18n="plans.title">Plans</h2>
+    <h2 class="section-title plans-section__title" data-i18n="plans.title">Get your eSIM data plan now and travel smarter!</h2>
     <p class="section-sub" data-i18n="plans.sub">Choose the plan that fits your trip</p>
 
-    <div class="plans-grid">
+    <!-- タブ切り替え -->
+    <div class="plans-tabs">
+      <button class="plans-tab plans-tab--active" data-tab="city" data-i18n="plans.tab.city">City Traveler</button>
+      <button class="plans-tab" data-tab="multi" data-i18n="plans.tab.multi">Multi-country</button>
+    </div>
 
-      <!-- Plan 1: 3GB/5days -->
-      <div class="plan-card">
-        <div class="plan-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+    <!-- City Traveler プラン -->
+    <div class="plans-panel" id="plans-panel-city">
+      <div class="plans-grid">
+
+        <!-- Plan 1: 3GB/5days -->
+        <div class="plan-card">
+          <p class="plan-best-for" data-i18n="plan.city.bestfor1">Best For: Short Trips</p>
+          <h3 class="plan-title">3GB for 5 days</h3>
+          <div class="plan-price-main" data-jpy="1800"><span class="plan-price-amount">$12.00</span><span class="plan-price-usd">/USD</span></div>
+          <div class="plan-features-table">
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.speed">Speed</span>
+              <span class="plan-feat-value">4G LTE<br><small>Upto 150 Mbps, slowdown after limit</small></span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.hotspot">Hotspot</span>
+              <span class="plan-feat-value" data-i18n="plan.feat.yes">Yes</span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.days">Days Valid</span>
+              <span class="plan-feat-value">5 days</span>
+            </div>
+          </div>
+          <a href="#" class="btn-buy" data-i18n="plan.buy">Get Your eSIM Instantly</a>
         </div>
-        <div class="plan-data-size">3GB</div>
-        <div class="plan-period" data-i18n="plan.period1">/ 5 days</div>
-        <div class="plan-price-main" data-jpy="1800">$12.00 <span>USD</span></div>
-        <ul class="plan-features">
-          <li data-i18n="plan.feat1">High-speed 4G/LTE</li>
-          <li data-i18n="plan.feat2">Instant QR delivery</li>
-          <li data-i18n="plan.feat3">Activates on first use in Japan</li>
-          <li data-i18n="plan.feat4">Powered by Docomo / SoftBank</li>
-        </ul>
-        <a href="#" class="btn-buy" data-i18n="plan.buy">Buy Now</a>
-      </div>
 
-      <!-- Plan 2: 10GB/10days - Featured -->
-      <div class="plan-card plan-card--featured">
-        <span class="popular-badge" data-i18n="plan.popular">★ MOST POPULAR</span>
-        <div class="plan-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        <!-- Plan 2: 10GB/10days - Featured -->
+        <div class="plan-card plan-card--featured">
+          <span class="popular-badge" data-i18n="plan.popular">★ MOST POPULAR ★</span>
+          <p class="plan-best-for" data-i18n="plan.city.bestfor2">Best For: Mid Length Trips</p>
+          <h3 class="plan-title">10GB for 10 days</h3>
+          <div class="plan-price-main" data-jpy="2250"><span class="plan-price-amount">$15.00</span><span class="plan-price-usd">/USD</span></div>
+          <div class="plan-features-table">
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.speed">Speed</span>
+              <span class="plan-feat-value">4G LTE<br><small>Upto 150 Mbps, slowdown after limit</small></span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.hotspot">Hotspot</span>
+              <span class="plan-feat-value" data-i18n="plan.feat.yes">Yes</span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.days">Days Valid</span>
+              <span class="plan-feat-value">10 days</span>
+            </div>
+          </div>
+          <a href="#" class="btn-buy" data-i18n="plan.buy">Get Your eSIM Instantly</a>
         </div>
-        <div class="plan-data-size">10GB</div>
-        <div class="plan-period" data-i18n="plan.period2">/ 10 days</div>
-        <div class="plan-price-main" data-jpy="2250">$15.00 <span>USD</span></div>
-        <ul class="plan-features">
-          <li data-i18n="plan.feat1">High-speed 4G/LTE</li>
-          <li data-i18n="plan.feat2">Instant QR delivery</li>
-          <li data-i18n="plan.feat3">Activates on first use in Japan</li>
-          <li data-i18n="plan.feat4">Powered by Docomo / SoftBank</li>
-        </ul>
-        <a href="#" class="btn-buy" data-i18n="plan.buy">Buy Now</a>
-      </div>
 
-      <!-- Plan 3: Unlimited/30days -->
-      <div class="plan-card">
-        <div class="plan-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <!-- Plan 3: Unlimited/30days -->
+        <div class="plan-card">
+          <p class="plan-best-for" data-i18n="plan.city.bestfor3">Best For: Long Stays</p>
+          <h3 class="plan-title" data-i18n="plan.city.title3">Unlimited for 30 days</h3>
+          <div class="plan-price-main" data-jpy="5400"><span class="plan-price-amount">$36.00</span><span class="plan-price-usd">/USD</span></div>
+          <div class="plan-features-table">
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.speed">Speed</span>
+              <span class="plan-feat-value">4G LTE<br><small>Upto 150 Mbps, slowdown after 20GB</small></span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.hotspot">Hotspot</span>
+              <span class="plan-feat-value" data-i18n="plan.feat.yes">Yes</span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.days">Days Valid</span>
+              <span class="plan-feat-value">30 days</span>
+            </div>
+          </div>
+          <a href="#" class="btn-buy" data-i18n="plan.buy">Get Your eSIM Instantly</a>
         </div>
-        <div class="plan-data-size" data-i18n="plan.unlimited">Unlimited</div>
-        <div class="plan-period" data-i18n="plan.period3">/ 30 days</div>
-        <div class="plan-price-main" data-jpy="5400">$36.00 <span>USD</span></div>
-        <ul class="plan-features">
-          <li data-i18n="plan.feat1">High-speed 4G/LTE</li>
-          <li data-i18n="plan.feat2">Instant QR delivery</li>
-          <li data-i18n="plan.feat3">Activates on first use in Japan</li>
-          <li data-i18n="plan.feat4">Powered by Docomo / SoftBank</li>
-        </ul>
-        <a href="#" class="btn-buy" data-i18n="plan.buy">Buy Now</a>
-      </div>
 
+      </div>
+    </div>
+
+    <!-- Multi-country プラン -->
+    <div class="plans-panel plans-panel--hidden" id="plans-panel-multi">
+      <div class="plans-grid">
+
+        <!-- Plan 1: 3GB/5days -->
+        <div class="plan-card">
+          <p class="plan-best-for" data-i18n="plan.multi.bestfor1">Best For: Quick Multi-Country Trips</p>
+          <h3 class="plan-title">3GB for 5 days</h3>
+          <div class="plan-price-main" data-jpy="2100"><span class="plan-price-amount">$14.00</span><span class="plan-price-usd">/USD</span></div>
+          <div class="plan-features-table">
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.speed">Speed</span>
+              <span class="plan-feat-value">4G LTE<br><small>Upto 150 Mbps, slowdown after limit</small></span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.hotspot">Hotspot</span>
+              <span class="plan-feat-value" data-i18n="plan.feat.yes">Yes</span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.days">Days Valid</span>
+              <span class="plan-feat-value">5 days</span>
+            </div>
+          </div>
+          <a href="#" class="btn-buy" data-i18n="plan.buy">Get Your eSIM Instantly</a>
+        </div>
+
+        <!-- Plan 2: 10GB/10days - Featured -->
+        <div class="plan-card plan-card--featured">
+          <span class="popular-badge" data-i18n="plan.popular">★ MOST POPULAR ★</span>
+          <p class="plan-best-for" data-i18n="plan.multi.bestfor2">Best For: Multi-Country Travel</p>
+          <h3 class="plan-title">10GB for 10 days</h3>
+          <div class="plan-price-main" data-jpy="3300"><span class="plan-price-amount">$22.00</span><span class="plan-price-usd">/USD</span></div>
+          <div class="plan-features-table">
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.speed">Speed</span>
+              <span class="plan-feat-value">4G LTE<br><small>Upto 150 Mbps, slowdown after limit</small></span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.hotspot">Hotspot</span>
+              <span class="plan-feat-value" data-i18n="plan.feat.yes">Yes</span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.days">Days Valid</span>
+              <span class="plan-feat-value">10 days</span>
+            </div>
+          </div>
+          <a href="#" class="btn-buy" data-i18n="plan.buy">Get Your eSIM Instantly</a>
+        </div>
+
+        <!-- Plan 3: Unlimited/30days -->
+        <div class="plan-card">
+          <p class="plan-best-for" data-i18n="plan.multi.bestfor3">Best For: Extended Multi-Country Stays</p>
+          <h3 class="plan-title" data-i18n="plan.multi.title3">Unlimited for 30 days</h3>
+          <div class="plan-price-main" data-jpy="6750"><span class="plan-price-amount">$45.00</span><span class="plan-price-usd">/USD</span></div>
+          <div class="plan-features-table">
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.speed">Speed</span>
+              <span class="plan-feat-value">4G LTE<br><small>Upto 150 Mbps, slowdown after 20GB</small></span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.hotspot">Hotspot</span>
+              <span class="plan-feat-value" data-i18n="plan.feat.yes">Yes</span>
+            </div>
+            <div class="plan-feat-row">
+              <span class="plan-feat-label" data-i18n="plan.feat.days">Days Valid</span>
+              <span class="plan-feat-value">30 days</span>
+            </div>
+          </div>
+          <a href="#" class="btn-buy" data-i18n="plan.buy">Get Your eSIM Instantly</a>
+        </div>
+
+      </div>
     </div>
 
     <!-- 決済方法 -->

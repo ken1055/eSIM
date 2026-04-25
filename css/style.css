@@ -372,24 +372,66 @@ img { max-width: 100%; display: block; }
 .plans-section .section-title { text-align: center; }
 .plans-section .section-sub { text-align: center; }
 .plans-section { background: #f0f2f5; }
+
+/* セクションタイトル（プランセクション用に大きめ） */
+.plans-section__title {
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1.2;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* タブ切り替え */
+.plans-tabs {
+  display: flex;
+  justify-content: center;
+  background: #e8e8e8;
+  border-radius: 100px;
+  padding: 4px;
+  width: fit-content;
+  margin: 0 auto 36px;
+  gap: 0;
+}
+.plans-tab {
+  padding: 10px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #555;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.plans-tab--active {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+/* パネル表示制御 */
+.plans-panel--hidden { display: none; }
+
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  align-items: center;
+  align-items: start;
 }
 
 .plan-card {
   background: #fff;
-  border: 2px solid transparent;
+  border: 2px solid #e8e8e8;
   border-radius: 20px;
-  padding: 32px 28px;
+  padding: 28px 24px 24px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   position: relative;
 }
 .plan-card:hover {
@@ -402,18 +444,17 @@ img { max-width: 100%; display: block; }
   background: var(--red);
   border-color: var(--red);
   color: white;
-  transform: scale(1.04);
-  z-index: 2;
+  padding-top: 40px;
   box-shadow: 0 8px 40px rgba(232,57,42,0.35);
 }
 .plan-card--featured:hover {
-  transform: scale(1.04) translateY(-4px);
+  transform: translateY(-4px);
   box-shadow: 0 16px 48px rgba(232,57,42,0.45);
 }
 
 .popular-badge {
   position: absolute;
-  top: -18px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   display: inline-block;
@@ -427,85 +468,89 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 
-.plan-icon-wrap {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(232,57,42,0.10);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  color: var(--red);
+/* Best For ラベル */
+.plan-best-for {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 4px;
+  font-weight: 400;
 }
-.plan-card--featured .plan-icon-wrap {
-  background: rgba(255,255,255,0.20);
-  color: white;
-}
+.plan-card--featured .plan-best-for { color: rgba(255,255,255,0.75); }
 
-.plan-data-size {
-  font-size: 2.4rem;
-  font-weight: 900;
+/* プラン名 */
+.plan-title {
+  font-size: 1.45rem;
+  font-weight: 800;
   color: var(--text);
-  line-height: 1;
-  margin-bottom: 2px;
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
-.plan-card--featured .plan-data-size { color: white; }
+.plan-card--featured .plan-title { color: white; }
 
-.plan-period {
-  font-size: 1rem;
-  color: var(--text-mid);
-  margin-bottom: 16px;
-}
-.plan-card--featured .plan-period { color: rgba(255,255,255,0.75); }
-
+/* 価格 */
 .plan-price-main {
-  font-size: 1.9rem;
-  font-weight: 900;
-  color: var(--text);
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 4px;
   margin-bottom: 20px;
-  justify-content: center;
 }
-.plan-price-main span {
+.plan-price-amount {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+}
+.plan-price-usd {
   font-size: 0.82rem;
   font-weight: 500;
-  color: var(--text-mid);
-  letter-spacing: 0.1px;
+  color: #999;
 }
-.plan-card--featured .plan-price-main { color: white; }
-.plan-card--featured .plan-price-main span { color: rgba(255,255,255,0.72); }
+.plan-card--featured .plan-price-amount { color: white; }
+.plan-card--featured .plan-price-usd { color: rgba(255,255,255,0.72); }
 
-.plan-features {
-  list-style: none;
+/* フィーチャーテーブル */
+.plan-features-table {
   width: 100%;
-  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-}
-.plan-features li {
-  padding: 10px 0;
+  margin-bottom: 24px;
   border-top: 1px solid #f0f0f0;
-  font-size: 0.88rem;
-  color: var(--text-mid);
+}
+.plan-card--featured .plan-features-table { border-top-color: rgba(255,255,255,0.20); }
+
+.plan-feat-row {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  text-align: left;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 12px;
 }
-.plan-features li::before {
-  content: "✓";
-  color: var(--red);
-  font-weight: 800;
+.plan-card--featured .plan-feat-row { border-bottom-color: rgba(255,255,255,0.20); }
+
+.plan-feat-label {
+  font-size: 0.85rem;
+  color: #777;
   flex-shrink: 0;
+  padding-top: 1px;
 }
-.plan-card--featured .plan-features li {
-  border-color: rgba(255,255,255,0.20);
-  color: rgba(255,255,255,0.92);
+.plan-card--featured .plan-feat-label { color: rgba(255,255,255,0.72); }
+
+.plan-feat-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+  line-height: 1.4;
 }
-.plan-card--featured .plan-features li::before { color: rgba(255,255,255,0.95); }
+.plan-feat-value small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #999;
+}
+.plan-card--featured .plan-feat-value { color: white; }
+.plan-card--featured .plan-feat-value small { color: rgba(255,255,255,0.65); }
 
 .btn-buy {
   display: block;
@@ -514,9 +559,9 @@ img { max-width: 100%; display: block; }
   background: var(--red);
   color: white;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 100px;
   border: none;
   transition: all 0.2s ease;
   margin-top: auto;
@@ -2104,6 +2149,9 @@ img { max-width: 100%; display: block; }
   }
 
   .plans-grid    { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .plans-tabs    { width: calc(100% - 32px); }
+  .plans-tab     { flex: 1; padding: 10px 16px; font-size: 0.88rem; }
+  .plans-section__title { font-size: 1.4rem; }
   .city-grid     { grid-template-columns: repeat(2, 1fr); }
   .multi-grid    { grid-template-columns: repeat(2, 1fr); }
   .why-grid      { grid-template-columns: repeat(2, 1fr); }
