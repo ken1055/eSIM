@@ -1571,13 +1571,57 @@ img { max-width: 100%; display: block; }
 .faq-a a { color: var(--red); text-decoration: underline; }
 
 /* ===== ABOUT ===== */
-.about-section { background: var(--navy); }
-.about-inner { max-width: 800px; margin: 0 auto; text-align: center; padding: 72px 24px; }
-.about-inner p { font-size: 0.95rem; color: rgba(255,255,255,0.80); line-height: 1.8; margin-bottom: 12px; }
-.about-inner p:last-of-type { margin-bottom: 24px; }
+.about-section { background: #111; }
+.about-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 24px;
+}
+.about-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.about-desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.70);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+/* バッジ一覧 */
+.about-badges {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+.about-badges li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #2a2a2a;
+  border-radius: 100px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+.about-badge-check {
+  color: #22C55E;
+  font-size: 1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
 .btn-explore {
   display: inline-block;
-  margin-top: 16px;
   padding: 15px 42px;
   background: var(--red);
   color: white;

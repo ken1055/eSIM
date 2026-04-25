@@ -93,9 +93,12 @@
       /* faq */
       'faq.title': 'Frequently Asked Questions',
       /* about */
-      'about.p1':  'Get Japan eSIM is provided by COCODAKE Co., Ltd., a Japan-based company trusted by travelers worldwide. We deliver fast, reliable 4G LTE connectivity with instant activation and 24/7 real human support.',
-      'about.p2':  'Stay connected anywhere in Japan — from Tokyo to Okinawa — with no physical SIM required. Just scan and go.',
-      'about.btn': 'Get your eSIM now',
+      'about.title':  'Ready to connect in Japan?',
+      'about.desc':   'Fast, reliable 4G LTE from Tokyo to Okinawa, instant QR delivery, no physical SIM required, and 24/7 real human support whenever you need it.',
+      'about.badge1': '4.8/5 rating',
+      'about.badge2': '50,000+ travelers',
+      'about.badge3': 'Secure checkout',
+      'about.btn':    'Get Your eSIM Instantly',
       /* footer */
       'footer.tagline': 'Explore Japan with confidence.',
       'footer.desc':    'Enjoy instant activation, no hidden fees, and reliable nationwide coverage. Get connected in just minutes — no SIM card required.',
@@ -186,9 +189,12 @@
       /* faq */
       'faq.title': 'Häufig gestellte Fragen',
       /* about */
-      'about.p1':  'Get Japan eSIM wird von COCODAKE Co., Ltd. bereitgestellt, einem japanischen Unternehmen, dem Reisende weltweit vertrauen. Wir bieten schnelles, zuverlässiges 4G LTE mit Sofortaktivierung und 24/7 persönlichem Support.',
-      'about.p2':  'Bleiben Sie überall in Japan verbunden — von Tokio bis Okinawa — ganz ohne physische SIM-Karte. Einfach scannen und loslegen.',
-      'about.btn': 'Jetzt eSIM kaufen',
+      'about.title':  'Bereit, in Japan verbunden zu sein?',
+      'about.desc':   'Schnelles, zuverlässiges 4G LTE von Tokio bis Okinawa, sofortige QR-Lieferung, keine physische SIM-Karte und 24/7 persönlicher Support.',
+      'about.badge1': '4,8/5 Bewertung',
+      'about.badge2': '50.000+ Reisende',
+      'about.badge3': 'Sicher bezahlen',
+      'about.btn':    'Jetzt eSIM holen',
       /* footer */
       'footer.tagline': 'Japan entdecken — mit Zuversicht.',
       'footer.desc':    'Sofortaktivierung, keine versteckten Gebühren, zuverlässige landesweite Abdeckung. In wenigen Minuten verbunden — ohne SIM-Karte.',
@@ -279,9 +285,12 @@
       /* faq */
       'faq.title': '常见问题解答',
       /* about */
-      'about.p1':  'Get Japan eSIM 由总部位于日本的COCODAKE Co., Ltd.提供，深受全球旅行者信赖。我们提供即时激活的高速4G LTE连接及24/7真人客服支持。',
-      'about.p2':  '无论您在东京还是冲绳，都能轻松联网 — 无需实体SIM卡，扫码即用。',
-      'about.btn': '立即购买eSIM',
+      'about.title':  '准备好在日本联网了吗？',
+      'about.desc':   '从东京到冲绳，高速可靠的4G LTE，即时QR码发送，无需实体SIM卡，24/7真人客服随时待命。',
+      'about.badge1': '4.8/5 好评',
+      'about.badge2': '50,000+ 旅行者',
+      'about.badge3': '安全结账',
+      'about.btn':    '立即获取eSIM',
       /* footer */
       'footer.tagline': '自信探索日本。',
       'footer.desc':    '即时激活，无隐藏费用，全国可靠覆盖。几分钟内即可联网 — 无需实体SIM卡。',
