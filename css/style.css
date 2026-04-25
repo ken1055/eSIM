@@ -52,41 +52,14 @@ img { max-width: 100%; display: block; }
   height: 72px;
 }
 
-/* Logo: icon + text */
+/* Logo */
 .site-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
   margin-right: 28px;
   text-decoration: none;
 }
-.logo-icon-wrap {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-.logo-text-wrap {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-.logo-text-get {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #333;
-  letter-spacing: 0.01em;
-}
-.logo-text-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #111;
-  white-space: nowrap;
-}
-.logo-text-name strong {
-  font-weight: 800;
-}
-/* fallback for old logo-img if used elsewhere */
 .logo-img { height: 56px; width: auto; display: block; }
 
 /* Main Nav */
@@ -2249,9 +2222,6 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .header-inner { height: 60px; }
-  .logo-icon-wrap svg { width: 30px; height: 34px; }
-  .logo-text-get  { font-size: 0.72rem; }
-  .logo-text-name { font-size: 0.82rem; }
   .logo-img { height: 44px; }
   .hero-section { margin-top: 60px; }
   .hero-title { font-size: 2.6rem; }
@@ -2286,8 +2256,6 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
   .header-inner { height: 56px; }
-  .logo-icon-wrap svg { width: 26px; height: 30px; }
-  .logo-text-wrap { display: none; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
   .hero-title   { font-size: 1.9rem; letter-spacing: -0.5px; }
