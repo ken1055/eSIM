@@ -25,11 +25,12 @@
       'nav.daily':      'Daily Report',
       'nav.weekly':     'Weekly Reports',
       /* hero */
-      'hero.title':    'Stay connected in Japan instantly<br><span style="font-size:0.75em;font-weight:600;opacity:0.88">No SIM card. No waiting.<br>Scan the QR code and get online in 2 minutes.</span>',
+      'hero.title':    'Stay <span class="hero-title--accent">Connected</span> the Moment You Land in Japan',
+      'hero.sub':      "Enjoy instant internet access on Japan's fastest carriers, no physical SIM card, and no expensive roaming fees.",
       'hero.check1':   'Instant activation',
       'hero.check2':   'No SIM swap',
       'hero.check3':   'Unlimited data',
-      'hero.btn':      'Get Your eSIM Instantly',
+      'hero.btn':      'Get Connected in Japan',
       'hero.trusted1': 'Used by travelers from 80+ countries',
       'hero.trusted2': 'Trusted by 50,000+ travelers worldwide',
       /* plans */
@@ -117,11 +118,12 @@
       'nav.daily':      'Tagesbericht',
       'nav.weekly':     'Wochenberichte',
       /* hero */
-      'hero.title':    'Sofort in Japan online —<br><span style="font-size:0.75em;font-weight:600;opacity:0.88">Keine SIM-Karte. Kein Warten.<br>QR-Code scannen und in 2 Minuten verbunden.</span>',
+      'hero.title':    'Bleiben Sie <span class="hero-title--accent">verbunden</span> — vom ersten Moment in Japan',
+      'hero.sub':      'Sofortiger Internetzugang über Japans schnellste Mobilfunknetze – ohne SIM-Karte, ohne teure Roaming-Gebühren.',
       'hero.check1':   'Sofortaktivierung',
       'hero.check2':   'Kein SIM-Wechsel nötig',
       'hero.check3':   'Unbegrenzte Daten',
-      'hero.btn':      'eSIM jetzt holen',
+      'hero.btn':      'In Japan verbunden bleiben',
       'hero.trusted1': 'Genutzt von Reisenden aus 80+ Ländern',
       'hero.trusted2': 'Weltweit vertraut von 50.000+ Reisenden',
       /* plans */
@@ -209,11 +211,12 @@
       'nav.daily':      '每日报告',
       'nav.weekly':     '每周报告',
       /* hero */
-      'hero.title':    '立刻连上日本网络<br><span style="font-size:0.75em;font-weight:600;opacity:0.88">无需实体SIM卡，无需等待。<br>扫描二维码，两分钟内上线。</span>',
+      'hero.title':    '落地日本，即刻<span class="hero-title--accent">连网</span>',
+      'hero.sub':      '即时使用日本最快运营商网络，无需实体SIM卡，无需昂贵漫游费。',
       'hero.check1':   '即时激活',
       'hero.check2':   '无需换卡',
       'hero.check3':   '无限流量',
-      'hero.btn':      '立即获取eSIM',
+      'hero.btn':      '立即在日本联网',
       'hero.trusted1': '来自80多个国家的旅行者使用中',
       'hero.trusted2': '全球50,000+旅行者信赖之选',
       /* plans */
