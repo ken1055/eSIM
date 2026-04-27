@@ -1218,7 +1218,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== HOW TO ACTIVATE ===== */
-.activate-section { background: var(--white); padding-bottom: 40px; }
+.activate-section { background: var(--white); padding-bottom: 40px; overflow-x: hidden; }
 .activate-section .section-title { text-align: center; }
 .activate-section .section-sub { text-align: center; }
 
@@ -1322,7 +1322,11 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1.4;
 }
 .activate-note__btn:hover {
   background: #1a1a1a;
@@ -1344,6 +1348,15 @@ img { max-width: 100%; display: block; }
   .phone-shot { width: 115px; height: 208px; border-radius: 12px; }
   .shot-caption { font-size: 0.75rem; max-width: 100px; }
   .activate-steps { gap: 10px; }
+  .activate-note { padding: 0 4px; }
+  .activate-note__btn {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    box-sizing: border-box;
+  }
 }
 
 /* 1枚画像ガイド */
