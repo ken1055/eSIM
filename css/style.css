@@ -1943,13 +1943,15 @@ img { max-width: 100%; display: block; }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px 14px;
+    gap: 4px 20px;
     text-align: center;
+    margin-bottom: 14px;
   }
-  .footer-links-row a { font-size: 0.78rem; }
-  .footer-links-row--sm { gap: 6px 14px; }
+  .footer-links-row a { font-size: 0.82rem; color: #aaa; }
+  .footer-links-row--sm { display: none; }
 
-  .footer-copy { font-size: 0.75rem; padding: 16px 0 32px; }
+  .footer-divider { margin: 0 0 20px; }
+  .footer-copy { font-size: 0.78rem; padding: 0 0 32px; margin-top: 4px; }
 }
 
 /* ===== SAKURA CANVAS ===== */
