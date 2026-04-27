@@ -865,7 +865,7 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
   margin-top: 1px;
 }
-.support-cta { display: inline-block; }
+.support-cta { display: block; text-align: center; }
 
 /* ===== REVIEWS ===== */
 .reviews-section .section-title { text-align: center; }
