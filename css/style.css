@@ -1919,26 +1919,35 @@ img { max-width: 100%; display: block; }
   .footer-top {
     grid-template-columns: 1fr;
     gap: 32px;
+    padding-bottom: 36px;
+    margin-bottom: 28px;
   }
-
-  .footer-links-row {
-    gap: 8px 16px;
-  }
+  .footer-links-row { gap: 8px 16px; }
 }
+
 @media (max-width: 480px) {
+  .footer-top { gap: 28px; padding-bottom: 28px; margin-bottom: 20px; }
+  .footer-tagline { font-size: 1rem; }
+  .footer-desc { font-size: 0.82rem; }
+
   .footer-cols {
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 20px 16px;
   }
+  .footer-col h4 { font-size: 0.72rem; margin-bottom: 10px; }
+  .footer-col li a { font-size: 0.82rem; }
+
   .footer-links-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
     text-align: center;
   }
-  .footer-links-row--sm {
-    grid-template-columns: 1fr;
-  }
+  .footer-links-row a { font-size: 0.78rem; }
+  .footer-links-row--sm { gap: 6px 14px; }
+
+  .footer-copy { font-size: 0.75rem; padding: 16px 0 32px; }
 }
 
 /* ===== SAKURA CANVAS ===== */
