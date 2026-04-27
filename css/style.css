@@ -516,13 +516,14 @@ img { max-width: 100%; display: block; }
   transform: translateX(-50%);
   display: inline-block;
   padding: 6px 20px;
-  background: #1a1a1a;
-  color: white;
+  background: #fff;
+  color: #1a1a1a;
   font-size: 0.72rem;
   font-weight: 700;
   border-radius: 100px;
   letter-spacing: 0.8px;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* Best For ラベル */
@@ -2087,48 +2088,6 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
-  /* === Plans: featured card → white bg + red top banner on mobile === */
-  .plan-card--featured {
-    background: #fff;
-    border-color: #e8e8e8;
-    color: var(--text);
-    padding-top: 52px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-  }
-  .plan-card--featured:hover {
-    box-shadow: 0 8px 32px rgba(232,57,42,0.12);
-    transform: translateY(-4px);
-  }
-  .popular-badge {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    width: 100%;
-    transform: none;
-    border-radius: 16px 16px 0 0;
-    text-align: center;
-    padding: 10px 24px;
-    background: var(--red);
-    color: #fff;
-  }
-  .plan-card--featured .plan-best-for  { color: #888; }
-  .plan-card--featured .plan-title     { color: var(--text); }
-  .plan-card--featured .plan-price-amount { color: var(--red); }
-  .plan-card--featured .plan-price-usd { color: #999; }
-  .plan-card--featured .plan-features-table { border-top-color: #f0f0f0; }
-  .plan-card--featured .plan-feat-row  { border-bottom-color: #f0f0f0; }
-  .plan-card--featured .plan-feat-label { color: #777; }
-  .plan-card--featured .plan-feat-value { color: var(--text); }
-  .plan-card--featured .plan-feat-value small { color: #999; }
-  .plan-card--featured .btn-buy {
-    background: transparent;
-    color: #1a1a1a;
-    border: 2px solid #1a1a1a;
-  }
-  .plan-card--featured .btn-buy:hover {
-    background: #f5f5f5;
-    box-shadow: none;
-  }
-
   /* === City Travelers: 1 column on mobile === */
   .city-section .dest-grid { grid-template-columns: 1fr; }
   .city-section .dest-card__img { height: 210px; }
