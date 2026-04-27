@@ -58,11 +58,11 @@
       /* city */
       'city.title': 'For City Travelers',
       'city.sub':   "Connect to Japan's best local network, city by city",
-      'city.shop':  'Shop Now →',
+      'city.shop':  'Get Connected in Japan',
       /* multi */
       'multi.title': 'For Multi-Country Travelers',
-      'multi.sub':   'One eSIM, multiple destinations — seamless connectivity across Asia',
-      'multi.view':  'View Plans →',
+      'multi.sub':   'One eSIM, multiple destinations seamless connectivity across Asia',
+      'multi.view':  'View Plans',
       /* coverage */
       'cov.title': 'Coverage Across Japan',
       'cov.sub':   'Stay connected everywhere you travel',
@@ -154,11 +154,11 @@
       /* city */
       'city.title': 'Für Städtereisende',
       'city.sub':   'Verbinden Sie sich mit dem besten lokalen Netz, Stadt für Stadt',
-      'city.shop':  'Jetzt kaufen →',
+      'city.shop':  'Get Connected in Japan',
       /* multi */
       'multi.title': 'Für Reisende in mehrere Länder',
       'multi.sub':   'Eine eSIM, mehrere Ziele — nahtlos durch ganz Asien',
-      'multi.view':  'Tarife ansehen →',
+      'multi.view':  'View Plans',
       /* coverage */
       'cov.title': 'Netzabdeckung in Japan',
       'cov.sub':   'Überall verbunden auf Ihren Reisen',
@@ -250,11 +250,11 @@
       /* city */
       'city.title': '城市旅行者专区',
       'city.sub':   '接入日本各城市最优质的本地网络',
-      'city.shop':  '立即购买 →',
+      'city.shop':  'Get Connected in Japan',
       /* multi */
       'multi.title': '多国旅行者专区',
       'multi.sub':   '一张eSIM，多个目的地 — 畅游全亚洲',
-      'multi.view':  '查看套餐 →',
+      'multi.view':  'View Plans',
       /* coverage */
       'cov.title': '日本全境网络覆盖',
       'cov.sub':   '无论您走到哪里，都能保持联网',
