@@ -51,7 +51,6 @@
   const header = document.getElementById('site-header');
   function onScroll() {
     header.style.boxShadow = window.scrollY > 20 ? '0 2px 12px rgba(0,0,0,0.10)' : '';
-    updateMobCta();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -90,15 +89,6 @@
       }
     });
   });
-
-  // ===== Mobile CTA =====
-  const mobCta = document.getElementById('mob-cta');
-  const hero   = document.querySelector('.hero-section');
-
-  function updateMobCta() {
-    if (!mobCta || !hero) return;
-    mobCta.classList.toggle('visible', hero.getBoundingClientRect().bottom < 0);
-  }
 
   // ===== Smooth Scroll =====
   document.querySelectorAll('a[href^="#"]').forEach(a => {
