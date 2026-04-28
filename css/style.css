@@ -2177,16 +2177,30 @@ img { max-width: 100%; display: block; }
   .btn-shop { width: 100%; max-width: 340px; }
 
   .hero-image-mobile {
+    position: relative;
     display: block;
     width: 100%;
-    line-height: 0;
-  }
-  .hero-image-mobile img {
-    display: block;
-    width: 100%;
-    height: auto;
     aspect-ratio: 375 / 436;
-    object-fit: cover;
+    background-image: url('../img/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Center the pagoda (originally on the right side of the source) */
+    background-position: 78% center;
+    overflow: hidden;
+  }
+  .hero-image-mobile img { display: none; }
+  /* Soft gradient on the TOP edge only: blends into the dark hero bg above */
+  .hero-image-mobile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      #0a0812 0%,
+      rgba(10, 8, 18, 0.6) 6%,
+      rgba(10, 8, 18, 0) 16%
+    );
   }
 
   .header-inner { height: 60px; }
