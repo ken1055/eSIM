@@ -1392,6 +1392,7 @@ img { max-width: 100%; display: block; }
 .faq-item:last-child { border-bottom: none; }
 .faq-q {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -1421,23 +1422,16 @@ img { max-width: 100%; display: block; }
 .faq-a p:last-child { margin-bottom: 0; }
 .faq-a a { color: var(--red); text-decoration: underline; }
 
-/* One line on narrow lists (343px): long question needs slightly smaller type */
-.faq-q--payment {
-  flex-wrap: nowrap;
-  align-items: center;
-}
-.faq-q--payment .faq-nowrap {
+/* Question labels: always one line; size scales down on narrow viewports */
+.faq-q > span:first-child {
   flex: 1 1 auto;
   min-width: 0;
   white-space: nowrap;
   word-break: normal;
   overflow-wrap: normal;
-  font-size: clamp(11px, 3.25vw, 14px);
-  letter-spacing: -0.03em;
+  font-size: clamp(9px, 2.85vw, 16px);
+  letter-spacing: -0.025em;
   line-height: 1.2;
-}
-.faq-q--payment .faq-icon {
-  flex-shrink: 0;
 }
 
 /* ===== ABOUT ===== */
@@ -3423,18 +3417,12 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid #E5E7EB;
   }
   .faq-q {
-    padding: 22px 8px;
+    padding: 22px 6px;
     font-size: 16px;
     line-height: 19px;
     font-weight: 600;
     color: #151515;
-    gap: 12px;
-  }
-  /* Extra horizontal room for the longest question line */
-  .faq-q--payment {
-    gap: 8px;
-    padding-left: 6px;
-    padding-right: 6px;
+    gap: 10px;
   }
   .faq-q:hover { background: transparent; }
   .faq-icon {
