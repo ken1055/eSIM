@@ -2864,7 +2864,7 @@ img { max-width: 100%; display: block; }
   }
 
   /* === 24/7 SUPPORT section (Figma exact, vertical order) =========== */
-  .support-section { background: #FFFFFF; padding: 40px 0; }
+  .support-section { background: rgba(240, 242, 245, 0.68); padding: 40px 0; }
   .support-inner {
     display: flex;
     flex-direction: column;
