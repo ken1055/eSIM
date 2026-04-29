@@ -3420,4 +3420,72 @@ img { max-width: 100%; display: block; }
     color: #FFFFFF;
     padding: 16px 0 32px;
   }
+
+  /* === Ready to connect in Japan? (about-section, Figma exact) ====== */
+  .about-section { background: #151515; padding: 40px 0; }
+  .about-inner {
+    max-width: 343px;
+    padding: 0 16px;
+    text-align: center;
+  }
+  .about-title {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    white-space: nowrap;
+  }
+  .about-desc {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+  }
+  /* Badge group: 2 in first row, 1 centered in second */
+  .about-badges {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .about-badges li {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 8px 14px;
+    gap: 6px;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  .about-badge-check {
+    color: #00AD11;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  /* Red CTA: 343x50, radius 40, Inter 700 20/30 */
+  .btn-explore {
+    display: flex;
+    width: 343px;
+    height: 50px;
+    padding: 0;
+    margin: 0 auto;
+    background: #DC2625;
+    border-radius: 40px;
+    box-shadow: none;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-explore:hover {
+    background: #DC2625;
+    transform: none;
+    box-shadow: none;
+  }
 }
