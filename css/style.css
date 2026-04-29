@@ -2241,8 +2241,8 @@ img { max-width: 100%; display: block; }
     margin: 28px 0 0;
     box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
-    /* Pagoda is right-of-center in source — pull crop right so tower lands at visual center */
-    background-position: 72% 50%;
+    /* Pagoda sits ~70% across the source — push crop further right to center it */
+    background-position: 90% 50%;
     background-size: cover;
     background-repeat: no-repeat;
   }
