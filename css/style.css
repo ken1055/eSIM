@@ -2186,21 +2186,24 @@ img { max-width: 100%; display: block; }
     right: 0;
     top: 0;
     z-index: 0;
-    background-image: url('../img/hero-mobile-top.png');
+    /* Replaced top photo with a dark→warm gradient (matches Figma upper region) */
+    background-image: linear-gradient(
+      180deg,
+      #0F0F0F 0%,
+      #151515 38%,
+      #1C1715 62%,
+      #2A1F18 82%,
+      #3A2618 100%
+    );
     background-position: center top;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 610px;
   }
   .hero-bg::after {
-    /* Dark gradient over the upper text area (not the bottom image) */
+    /* No additional overlay needed on a flat gradient — keep transparent */
     inset: 0;
-    background: linear-gradient(
-      180deg,
-      #151515 0%,
-      rgba(21, 21, 21, 0.7) 45%,
-      rgba(21, 21, 21, 0) 100%
-    );
+    background: transparent;
   }
   /* Title ~80px from frame top (Figma): hero margin clears header + this gap */
   .hero-container {
