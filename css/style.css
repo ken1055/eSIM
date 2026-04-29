@@ -2137,66 +2137,43 @@ img { max-width: 100%; display: block; }
   .city-section .dest-card__img { height: 210px; }
   .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* === Hero: stack text + image vertically on mobile === */
+  /* === Hero (mobile, per Figma 375 frame) ===
+     - Full-bleed cherry-blossom bg image (60-942px, height ~882)
+     - Dark gradient overlay covering top portion only (60-747px)
+     - Centered text content positioned by Figma top offsets       */
   .hero-section {
-    flex-direction: column;
-    min-height: 0;
-    background: #0a0812;
+    display: block;
+    min-height: 882px;
+    background: transparent;
     align-items: stretch;
+    overflow: hidden;
   }
-  .hero-bg { display: none; }
+  .hero-bg {
+    display: block;
+    background-position: center;
+  }
+  .hero-bg::after {
+    /* Figma: linear-gradient(180deg, #151515 0%, rgba(21,21,21,0.7) 45.39%, rgba(21,21,21,0) 100%)
+       The gradient spans 687/882 ≈ 78% of the hero height. */
+    background: linear-gradient(
+      180deg,
+      #151515 0%,
+      rgba(21, 21, 21, 0.7) calc(45.39% * 0.78),
+      rgba(21, 21, 21, 0) 78%
+    );
+  }
   .hero-container {
     padding: 80px 16px 32px;
     align-items: stretch;
-    justify-content: center;
+    justify-content: flex-start;
+    max-width: 375px;
   }
-  .hero-text { text-align: center; max-width: 100%; }
-  .hero-checks { justify-content: center; }
-  .hero-trust-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .hero-trust-rating {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .hero-trust-flags {
-    align-items: center;
-    gap: 8px;
-  }
-  .hero-trust-divider { display: none; }
-  .btn-shop { width: 100%; max-width: 340px; }
-
-  .hero-image-mobile {
-    position: relative;
-    display: block;
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
     width: 100%;
-    aspect-ratio: 375 / 436;
-    background-image: url('../img/hero-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* Center the pagoda (originally on the right side of the source) */
-    background-position: 78% center;
-    overflow: hidden;
   }
-  .hero-image-mobile img { display: none; }
-  /* Soft gradient on the TOP edge only: blends into the dark hero bg above */
-  .hero-image-mobile::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      #0a0812 0%,
-      rgba(10, 8, 18, 0.6) 6%,
-      rgba(10, 8, 18, 0) 16%
-    );
-  }
+  .btn-shop { width: 100%; max-width: 343px; }
 
   .header-inner { height: 60px; }
   .logo-img { height: 44px; }
@@ -2224,40 +2201,121 @@ img { max-width: 100%; display: block; }
   .header-inner { height: 56px; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
-  /* Match Figma spec: Inter 800 / 35px / 45px line-height */
+  /* === Hero typography & spacing (Figma exact) === */
   .hero-title {
     font-size: 35px;
     line-height: 45px;
     font-weight: 800;
     letter-spacing: 0;
     text-shadow: none;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .hero-sub {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 12px;
     text-shadow: none;
   }
   .hero-text    { max-width: 100%; }
   .hero-text--mobile { display: none; }
-  .hero-container { align-items: stretch; padding: 80px 16px 32px; }
-  .hero-checks  { gap: 8px; margin-bottom: 24px; }
-  .hero-checks li { font-size: 0.82rem; padding: 5px 11px; }
-  .hero-trust-row { flex-direction: column; gap: 12px; align-items: center; }
+
+  /* Chips (Figma Frame 8): wrap, gap 9, bg rgba(0,0,0,.3), border .3 */
+  .hero-checks {
+    gap: 9px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-checks li {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    padding: 7px 12px;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    backdrop-filter: none;
+    height: 33px;
+  }
+  .hero-check {
+    color: #00AD11;
+    font-size: 12px;
+    line-height: 1;
+    width: 12px;
+    height: 12px;
+  }
+
+  /* CTA (Figma Frame 9): 343x50, radius 40, bg #DC2625, Inter 700/20/30 */
+  .btn-shop {
+    width: 100%;
+    max-width: 343px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    border-radius: 40px;
+    background: #DC2625;
+    box-shadow: none;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Trust group (Group 2 = Frame 14 + Frame 16) */
+  .hero-trust-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
   .hero-trust-rating {
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
-  .hero-trust-flags { align-items: center; }
+  .hero-trust-stars { gap: 6px; }
+  .hero-star {
+    color: #FFB700;
+    font-size: 22px;
+    line-height: 1;
+    text-shadow: none;
+  }
+  .hero-rating-num {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+  .hero-trust-flags {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
   .hero-trust-divider { display: none; }
-  .hero-flags   { gap: 6px; }
-  .hero-flags span { font-size: 1.2rem; }
-  .hero-trusted { font-size: 0.8rem; }
-  .btn-shop { font-size: 0.92rem; padding: 13px 28px; }
+  .hero-flags {
+    gap: 15px;
+    justify-content: center;
+  }
+  .hero-flags span {
+    font-size: 25px;
+    line-height: 1;
+  }
+  .hero-trusted {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+  .hero-trust-flags .hero-trusted {
+    line-height: 17px;
+  }
   .city-section .dest-grid  { grid-template-columns: 1fr; gap: 12px; }
   .city-section .dest-card__img { height: 190px; }
   .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
