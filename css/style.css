@@ -2206,7 +2206,7 @@ img { max-width: 100%; display: block; }
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    padding: 120px 16px 0;
+    padding: 168px 16px 0;
     align-items: stretch;
     justify-content: flex-start;
     max-width: 375px;
