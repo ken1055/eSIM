@@ -2553,15 +2553,17 @@ img { max-width: 100%; display: block; }
     background-size: cover;
     background-position: center;
   }
-  /* Bottom gradient (Figma Rectangle 23) */
+  /* Bottom gradient: image stays clear up to ~55%, then darkens sharply */
   .city-section .dest-card::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(38, 38, 38, 0) 0%,
-      rgba(38, 38, 38, 0.9) 56.73%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(38, 38, 38, 0.85) 65%,
+      #262626 75%,
       #262626 100%
     );
     pointer-events: none;
@@ -2570,6 +2572,8 @@ img { max-width: 100%; display: block; }
   /* Text row (Frame 22): name left, price right, on top of gradient */
   .city-section .dest-card__overlay {
     position: absolute;
+    inset: auto; /* override base inset:0 */
+    top: auto;
     left: 14px;
     right: 14px;
     bottom: 65px; /* button(40) + gap(15) + bottom inset(10) */
@@ -2588,14 +2592,17 @@ img { max-width: 100%; display: block; }
     line-height: 22px;
     font-weight: 800;
     color: #E6A016;
+    text-align: left;
   }
   .city-section .dest-card__price {
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
     color: #FFFFFF;
+    text-align: right;
+    white-space: nowrap;
   }
-  /* Red CTA button inside the card (Frame 9) */
+  /* Red CTA button inside the card (Frame 9, ~315x40 centered) */
   .city-section .dest-card__btn {
     position: absolute;
     left: 14px;
@@ -2611,6 +2618,9 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     color: #FFFFFF;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* === FOR MULTI-COUNTRY TRAVELERS section (Figma exact) ============ */
