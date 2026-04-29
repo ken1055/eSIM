@@ -2934,5 +2934,120 @@ img { max-width: 100%; display: block; }
     margin: 0 auto;
   }
 
+  /* === REVIEWS section (Figma exact) ================================ */
+  .reviews-section { background: #FFFFFF; padding: 40px 0; }
+  .reviews-section .section-title {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 800;
+    color: #151515;
+    margin-bottom: 24px;
+  }
+  .reviews-carousel {
+    max-width: 343px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .reviews-track {
+    height: auto;
+    min-height: 282px;
+  }
+  .review-card {
+    width: 343px;
+    height: 282px;
+    min-height: 282px;
+    max-height: 282px;
+    padding: 20px 12px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  .review-stars {
+    font-size: 17.6px;
+    line-height: 28px;
+    letter-spacing: 2px;
+    color: #F5A623;
+    margin-bottom: 0;
+  }
+  .review-text {
+    font-size: 16px;
+    line-height: 26px;
+    font-style: italic;
+    color: #151515;
+    height: 104px;
+    margin-top: 7px;
+  }
+  .review-plan-tag {
+    background: #F2F4F6;
+    color: #888888;
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: 400;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 12px;
+    align-self: flex-start;
+  }
+  .review-bottom { margin-top: 8px; }
+  .review-top {
+    align-items: center;
+    gap: 12px;
+  }
+  .review-avatar {
+    width: 42px;
+    height: 42px;
+    background: #1B2035;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 800;
+  }
+  .review-name {
+    font-size: 14.4px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #151515;
+  }
+  .review-badge {
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #888888;
+    margin-top: 2px;
+  }
+  .review-score {
+    font-size: 14.4px;
+    line-height: 23px;
+    font-weight: 800;
+    color: #E8392A;
+  }
+
+  /* Carousel arrows: 35x35 white circles, BELOW the card on mobile */
+  .reviews-carousel { position: relative; padding-bottom: 70px; }
+  .carousel-btn {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+    background: #FFFFFF;
+    color: #151515;
+    font-size: 22px;
+    line-height: 27px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .carousel-btn:hover {
+    background: #FFFFFF;
+    color: #151515;
+    border-color: #E5E7EB;
+  }
+  .carousel-btn--prev { left: calc(50% - 22.5px); }
+  .carousel-btn--next { right: calc(50% - 22.5px); }
+  .carousel-dots { display: none; }
+
   .footer-grid  { grid-template-columns: 1fr; }
 }
