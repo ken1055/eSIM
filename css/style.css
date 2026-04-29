@@ -2512,12 +2512,106 @@ img { max-width: 100%; display: block; }
     justify-content: center;
   }
 
-  .city-section .dest-grid  { grid-template-columns: 1fr; gap: 12px; }
-  .city-section .dest-card__img { height: 190px; }
+  /* === FOR CITY TRAVELERS section (Figma exact) ====================== */
+  .city-section.dest-section { background: #151515; padding: 40px 0; }
+  .city-section .section-title {
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 9px;
+  }
+  .city-section .section-sub {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #FFFFFF;
+    max-width: 300px;
+    margin: 0 auto 18px;
+  }
+  .city-section .dest-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  /* Card: 343x269 with full bg image, dark border, bottom gradient overlay */
+  .city-section .dest-card {
+    position: relative;
+    width: 343px;
+    height: 269px;
+    margin: 0 auto;
+    border: 1px solid #3D3D3D;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .city-section .dest-card:hover { transform: none; box-shadow: none; }
+  .city-section .dest-card__img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  /* Bottom gradient (Figma Rectangle 23) */
+  .city-section .dest-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(38, 38, 38, 0) 0%,
+      rgba(38, 38, 38, 0.9) 56.73%,
+      #262626 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* Text row (Frame 22): name left, price right, on top of gradient */
+  .city-section .dest-card__overlay {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 65px; /* button(40) + gap(15) + bottom inset(10) */
+    height: 22px;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    z-index: 2;
+  }
+  .city-section .dest-card__name {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 800;
+    color: #E6A016;
+  }
+  .city-section .dest-card__price {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+  /* Red CTA button inside the card (Frame 9) */
+  .city-section .dest-card__btn {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 10px;
+    width: auto;
+    height: 40px;
+    padding: 0 10px;
+    background: #DC2625;
+    border-radius: 40px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #FFFFFF;
+    z-index: 2;
+  }
+
   .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .multi-section .dest-card__img { height: 150px; }
-  .dest-card__name  { font-size: 0.78rem; }
-  .dest-card__price { font-size: 0.65rem; }
-  .dest-card__btn   { font-size: 0.72rem; padding: 9px 12px; }
   .footer-grid  { grid-template-columns: 1fr; }
 }
