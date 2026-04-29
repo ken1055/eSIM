@@ -2240,7 +2240,8 @@ img { max-width: 100%; display: block; }
     margin: 28px 0 32px;
     box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
-    background-position: center center;
+    /* Pagoda sits camera-right in asset — bias X so tower reads centered like Figma */
+    background-position: 64% 44%;
     background-size: cover;
     background-repeat: no-repeat;
   }
