@@ -2174,7 +2174,7 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     align-items: stretch;
     min-height: auto;
-    padding-bottom: 8px;
+    padding-bottom: 0;
     background: #151515;
     overflow-x: hidden;
     overflow-y: visible;
@@ -2238,7 +2238,7 @@ img { max-width: 100%; display: block; }
     max-width: none;
     /* Portrait-ish container (Figma 375×506 ≈ 0.741) → forces side-crop with cover */
     aspect-ratio: 375 / 506;
-    margin: 28px 0 32px;
+    margin: 28px 0 0;
     box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
     /* Pagoda is right-of-center in source — pull crop right so tower lands at visual center */
