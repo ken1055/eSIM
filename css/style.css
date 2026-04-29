@@ -836,7 +836,8 @@ img { max-width: 100%; display: block; }
 /* テキストエリア */
 .sup-mobile-br,
 .about-mobile-br,
-.faq-mobile-br { display: none; }
+.faq-mobile-br,
+.activate-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -3143,6 +3144,7 @@ img { max-width: 100%; display: block; }
     text-align: center;
     margin-bottom: 24px;
   }
+  .activate-mobile-br { display: inline; }
   /* Tab switcher: 2px #E0E0E0 border with radius 8, dark navy active */
   .activate-tabs {
     display: flex;
