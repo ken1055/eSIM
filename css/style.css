@@ -2202,11 +2202,12 @@ img { max-width: 100%; display: block; }
       rgba(21, 21, 21, 0) 100%
     );
   }
+  /* Title ~80px from frame top (Figma): hero margin clears header + this gap */
   .hero-container {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    padding: 168px 16px 0;
+    padding: 20px 16px 0;
     align-items: stretch;
     justify-content: flex-start;
     max-width: 375px;
@@ -2264,9 +2265,10 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
-  /* .container の shorthand が hero の上余白まで消すため、ヒーローだけ別指定 */
+  /* .container の shorthand が hero の上余白まで消すため、ヒーローだけ別指定
+     56px(header clearance) + 24px ≈ Figma 見出し Top 80px */
   .hero-container {
-    padding: 192px 16px 0;
+    padding: 24px 16px 0;
   }
   .header-inner { height: 56px; }
   .logo-img     { height: 38px; }
