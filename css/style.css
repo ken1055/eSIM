@@ -839,7 +839,8 @@ img { max-width: 100%; display: block; }
 .faq-mobile-br,
 .activate-mobile-br,
 .how-mobile-br,
-.ftime-mobile-br { display: none; }
+.ftime-mobile-br,
+.why-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -1419,6 +1420,25 @@ img { max-width: 100%; display: block; }
 .faq-a p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; padding-top: 16px; margin-bottom: 10px; }
 .faq-a p:last-child { margin-bottom: 0; }
 .faq-a a { color: var(--red); text-decoration: underline; }
+
+/* One line on narrow lists (343px): long question needs slightly smaller type */
+.faq-q--payment {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.faq-q--payment .faq-nowrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+  font-size: clamp(11px, 3.25vw, 14px);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.faq-q--payment .faq-icon {
+  flex-shrink: 0;
+}
 
 /* ===== ABOUT ===== */
 .about-section { background: #111; }
@@ -2890,6 +2910,7 @@ img { max-width: 100%; display: block; }
     color: #151515;
     margin-bottom: 24px;
   }
+  .why-mobile-br { display: inline; }
   .why-title--accent { color: var(--red); }
   .why-grid {
     grid-template-columns: 1fr;
@@ -3408,6 +3429,12 @@ img { max-width: 100%; display: block; }
     font-weight: 600;
     color: #151515;
     gap: 12px;
+  }
+  /* Extra horizontal room for the longest question line */
+  .faq-q--payment {
+    gap: 8px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
   .faq-q:hover { background: transparent; }
   .faq-icon {
