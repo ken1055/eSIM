@@ -2703,5 +2703,122 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     color: #FFFFFF;
   }
+
+  /* === COVERAGE ACROSS JAPAN section (Figma exact) ================== */
+  .coverage-section { background: rgba(240, 242, 245, 0.68); padding: 40px 0; }
+  .coverage-section .section-title {
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 800;
+    color: #151515;
+    margin-bottom: 8px;
+  }
+  .coverage-section .section-sub {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #303030;
+    margin-bottom: 28px;
+  }
+  /* City picker: 2 rows x 3 cities, gap 16/20, centered */
+  .coverage-cities {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 16px 20px;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+  }
+  .coverage-city {
+    flex: none;
+    width: 100px;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-shadow: none;
+  }
+  .coverage-city--active {
+    background: #FFFFFF;
+    border: 1px solid #C9C9C9;
+    width: 108px;
+    padding: 10px 15px;
+    box-shadow: none;
+  }
+  .coverage-city__icon { font-size: 60px; line-height: 1; height: 60px; display: flex; align-items: center; }
+  .coverage-city__name {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #151515;
+    white-space: nowrap;
+  }
+
+  /* Detail card */
+  .coverage-card {
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 15px;
+    padding: 18px 15px;
+    box-shadow: none;
+    margin-top: 32px;
+  }
+  .coverage-card__header {
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .coverage-card__city {
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 800;
+    color: #151515;
+  }
+  .coverage-card__badge {
+    background: #DEFFEA;
+    color: #2DA555;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 30px;
+  }
+  .coverage-card__metrics {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 18px;
+  }
+  .coverage-metric {
+    background: #F5F7F9;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    padding: 10px;
+    gap: 5px;
+  }
+  .coverage-metric__label {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    color: rgba(21, 21, 21, 0.7);
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+  .coverage-metric__value {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    color: #151515;
+  }
+  .coverage-card__desc {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #303030;
+  }
+
   .footer-grid  { grid-template-columns: 1fr; }
 }
