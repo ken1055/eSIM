@@ -2227,7 +2227,7 @@ img { max-width: 100%; display: block; }
     margin-right: auto;
   }
   .btn-shop { width: 100%; max-width: 343px; }
-  /* Bottom panel: full viewport width (no 375px pillarbox gaps on tablets/wide phones) */
+  /* Bottom panel: full viewport width — taller than image so cover crops the sides */
   .hero-bottom-image {
     display: block;
     position: relative;
@@ -2236,12 +2236,13 @@ img { max-width: 100%; display: block; }
     align-self: stretch;
     width: 100%;
     max-width: none;
-    aspect-ratio: 1024 / 682;
+    /* Portrait-ish container (Figma 375×506 ≈ 0.741) → forces side-crop with cover */
+    aspect-ratio: 375 / 506;
     margin: 28px 0 32px;
     box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
-    /* Pagoda sits camera-right in asset — bias X so tower reads centered like Figma */
-    background-position: 64% 44%;
+    /* Pagoda is right-of-center in source — pull crop right so tower lands at visual center */
+    background-position: 72% 50%;
     background-size: cover;
     background-repeat: no-repeat;
   }
