@@ -2161,12 +2161,10 @@ img { max-width: 100%; display: block; }
   .city-section .dest-card__img { height: 210px; }
   .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* === Hero (mobile, per Figma 375 frame) ===
-     - hero-bg: top portion of source image cropped to upper-left
-       (sky/sunset/Fuji region; pagoda not shown)
-     - hero-bottom-image: 375x436 panel UNDER the hero text content
-       showing the same source image with the pagoda centered
-     - Dark gradient overlay sits on the upper text area for readability */
+  /* === Hero (mobile): separate Figma exports — top + bottom panels ==========
+     - hero-mobile-top.png (Rectangle 15): area behind headline / upper scene
+     - hero-mobile-bottom.png (Rectangle 35): wide pagoda + blossoms (~375×454)
+     Layout/spacing follows Figma screenshots (right column refs). */
   .hero-section {
     display: block;
     min-height: auto;
@@ -2176,12 +2174,11 @@ img { max-width: 100%; display: block; }
   }
   .hero-bg {
     display: block;
-    /* Show the upper-left of the source: sky + Mt. Fuji, pagoda hidden */
-    background-image: url('../img/hero-fuji-pagoda.png');
-    background-position: 22% 0%;
-    background-size: 220% auto;
+    background-image: url('../img/hero-mobile-top.png');
+    background-position: center top;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 610px; /* image area covers only the text region */
+    height: 610px;
     inset: auto 0 auto 0;
     top: 0;
   }
@@ -2211,14 +2208,16 @@ img { max-width: 100%; display: block; }
     width: 100%;
   }
   .btn-shop { width: 100%; max-width: 343px; }
-  /* Bottom image: 375x436 with the 5-tier pagoda visually centered */
+  /* Bottom panel: Figma export — pagoda scene; scales with width */
   .hero-bottom-image {
     order: 2;
-    width: 375px;
-    height: 436px;
+    align-self: center;
+    width: min(375px, calc(100% + 32px));
+    max-width: none;
+    aspect-ratio: 375 / 454;
     margin: 28px -16px 0;
-    background-image: url('../img/hero-fuji-pagoda.png');
-    background-position: 70% center;
+    background-image: url('../img/hero-mobile-bottom.png');
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
   }
