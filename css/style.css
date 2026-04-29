@@ -834,6 +834,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* テキストエリア */
+.sup-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -2863,27 +2864,37 @@ img { max-width: 100%; display: block; }
   }
 
   /* === 24/7 SUPPORT section (Figma exact, vertical order) =========== */
-  .support-section { background: rgba(240, 242, 245, 0.68); padding: 40px 0; }
+  .support-section { background: #FFFFFF; padding: 40px 0; }
   .support-inner {
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-width: 343px;
+    align-items: center;
+    width: 100%;
+    max-width: 375px;
+    padding: 0 16px;
     margin: 0 auto;
+    box-sizing: border-box;
   }
   /* Flatten .support-text so its children participate in the parent flex */
   .support-text { display: contents; }
   .support-text h2 {
     order: 1;
-    font-size: 25px;
-    line-height: 35px;
+    width: 100%;
+    max-width: 343px;
+    font-size: 22px;
+    line-height: 30px;
     font-weight: 800;
     color: #151515;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
+  /* Force line break only on mobile via the <br class="sup-mobile-br"> */
+  .sup-mobile-br { display: inline; }
   .support-text p {
     order: 2;
+    width: 100%;
+    max-width: 343px;
     font-size: 16px;
     line-height: 26px;
     font-weight: 400;
@@ -2894,12 +2905,14 @@ img { max-width: 100%; display: block; }
   .support-photo {
     order: 3;
     width: 343px;
+    max-width: 100%;
     height: 252px;
-    margin: 0 auto 24px;
+    margin: 0 0 24px;
     border-radius: 15px;
     aspect-ratio: auto;
     background: transparent;
     overflow: hidden;
+    align-self: center;
   }
   .support-photo__img {
     width: 100%;
@@ -2909,30 +2922,36 @@ img { max-width: 100%; display: block; }
   }
   .support-list {
     order: 4;
+    width: 100%;
+    max-width: 343px;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    align-self: center;
   }
   .support-list li {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 26px;
     font-weight: 400;
-    color: #303030;
-    gap: 7px;
+    color: #151515;
+    gap: 10px;
     align-items: flex-start;
   }
   .support-check {
     color: #00AD11;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 26px;
     width: 20px;
-    height: 28px;
+    height: 26px;
     margin-top: 0;
+    flex-shrink: 0;
   }
-  /* CTA reuses .btn-shop (already 343x50) */
+  /* CTA: 343x50 red pill, centered */
   .support-cta {
     order: 5;
     width: 343px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    align-self: center;
   }
 
   /* === REVIEWS section (Figma exact) ================================ */
