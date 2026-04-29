@@ -2745,13 +2745,14 @@ img { max-width: 100%; display: block; }
     text-align: left;
   }
   .multi-section .dest-card__region {
-    font-size: 10px;
+    font-size: 8.5px;
     line-height: 12px;
     font-weight: 700;
     color: #BABABA;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     text-align: left;
+    white-space: nowrap;
   }
   .multi-section .dest-card__name {
     font-size: 16px;
