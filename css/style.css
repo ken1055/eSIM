@@ -838,7 +838,8 @@ img { max-width: 100%; display: block; }
 .about-mobile-br,
 .faq-mobile-br,
 .activate-mobile-br,
-.how-mobile-br { display: none; }
+.how-mobile-br,
+.ftime-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -3246,6 +3247,7 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     color: #151515;
   }
+  .ftime-mobile-br { display: inline; }
   .ft-arrow {
     color: #E8392A;
     font-size: 22.4px;
