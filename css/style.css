@@ -3046,8 +3046,9 @@ img { max-width: 100%; display: block; }
     color: #151515;
     border-color: #E5E7EB;
   }
-  .carousel-btn--prev { left: calc(50% - 22.5px); }
-  .carousel-btn--next { right: calc(50% - 22.5px); }
+  /* Center two 35px arrows with a 10px gap below the card */
+  .carousel-btn--prev { left: calc(50% - 40px); right: auto; }
+  .carousel-btn--next { left: calc(50% + 5px); right: auto; }
   .carousel-dots { display: none; }
 
   /* === HOW TO ACTIVATE section (Figma exact) ======================== */
