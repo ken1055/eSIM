@@ -2208,7 +2208,7 @@ img { max-width: 100%; display: block; }
     flex-direction: column;
     flex-shrink: 0;
     padding: 20px 16px 0;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-start;
     max-width: 375px;
     margin-left: auto;
@@ -2218,10 +2218,13 @@ img { max-width: 100%; display: block; }
     width: 100%;
     box-sizing: border-box;
   }
+  /* Figma: heading / copy column width 343px (375 − 16 − 16) */
   .hero-text {
     text-align: center;
-    max-width: 100%;
+    max-width: 343px;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .btn-shop { width: 100%; max-width: 343px; }
   /* Bottom panel: full viewport width (no 375px pillarbox gaps on tablets/wide phones) */
