@@ -276,6 +276,11 @@ img { max-width: 100%; display: block; }
 /* Mobile-only stacked image (hidden on desktop) */
 .hero-image-mobile { display: none; }
 
+/* Pagoda panel: only used under max-width 768px (shown in mobile query below) */
+.hero-bottom-image {
+  display: none;
+}
+
 /* Title */
 .hero-title {
   font-size: 3.6rem;
@@ -2161,26 +2166,31 @@ img { max-width: 100%; display: block; }
   .city-section .dest-card__img { height: 210px; }
   .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* === Hero (mobile): separate Figma exports — top + bottom panels ==========
-     - hero-mobile-top.png (Rectangle 15): area behind headline / upper scene
-     - hero-mobile-bottom.png (Rectangle 35): wide pagoda + blossoms (~375×454)
-     Layout/spacing follows Figma screenshots (right column refs). */
+  /* === Hero (mobile): top PNG + text container + bottom PNG (all inside .hero-section) ==
+     - hero-mobile-top.png (Rectangle 15): upper scene behind headline
+     - hero-mobile-bottom.png (Rectangle 35): pagoda — sibling under .container */
   .hero-section {
-    display: block;
-    min-height: auto;
-    background: transparent;
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
-    overflow: hidden;
+    min-height: auto;
+    padding-bottom: 8px;
+    background: #151515;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   .hero-bg {
     display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
     background-image: url('../img/hero-mobile-top.png');
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
     height: 610px;
-    inset: auto 0 auto 0;
-    top: 0;
   }
   .hero-bg::after {
     /* Dark gradient over the upper text area (not the bottom image) */
@@ -2195,27 +2205,36 @@ img { max-width: 100%; display: block; }
   .hero-container {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     padding: 120px 16px 0;
     align-items: stretch;
     justify-content: flex-start;
     max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
   }
   .hero-text {
-    order: 1;
     text-align: center;
     max-width: 100%;
     width: 100%;
   }
   .btn-shop { width: 100%; max-width: 343px; }
-  /* Bottom panel: Figma export — pagoda scene; scales with width */
+  /* Bottom panel: direct child of .hero-section — scrolls with hero, same background band */
   .hero-bottom-image {
-    order: 2;
+    display: block;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
     align-self: center;
-    width: min(375px, calc(100% + 32px));
-    max-width: none;
+    width: 100%;
+    max-width: 375px;
     aspect-ratio: 375 / 454;
-    margin: 28px -16px 0;
+    margin: 28px auto 32px;
+    box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
     background-position: center center;
     background-size: cover;
