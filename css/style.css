@@ -3460,11 +3460,15 @@ img { max-width: 100%; display: block; }
     color: #FFFFFF;
     margin-top: 4px;
   }
-  /* Two columns: COMPANY + TRAVEL */
+  /* Two columns: COMPANY + TRAVEL, centered as a pair with a wide gap */
   .footer-cols {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 70px;
+    row-gap: 0;
   }
+  .footer-col { min-width: 100px; }
   .footer-col h4 {
     font-size: 12px;
     line-height: 16px;
@@ -3472,14 +3476,15 @@ img { max-width: 100%; display: block; }
     color: #888888;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
-  .footer-col ul { gap: 14px; }
+  .footer-col ul { gap: 16px; }
   .footer-col li a {
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
     color: #D8D8D8;
+    white-space: nowrap;
   }
   .footer-divider {
     border-top-color: #2A2A2A;
