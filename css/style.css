@@ -2186,14 +2186,14 @@ img { max-width: 100%; display: block; }
     right: 0;
     top: 0;
     z-index: 0;
-    /* Replaced top photo with a dark→warm gradient (matches Figma upper region) */
+    /* Sunset-inspired gradient (visible) — dark navy/charcoal at top → warm amber */
     background-image: linear-gradient(
       180deg,
-      #0F0F0F 0%,
-      #151515 38%,
-      #1C1715 62%,
-      #2A1F18 82%,
-      #3A2618 100%
+      #050507 0%,
+      #15161D 28%,
+      #2C1F1F 55%,
+      #5C2C1B 78%,
+      #B25A28 100%
     );
     background-position: center top;
     background-size: 100% 100%;
