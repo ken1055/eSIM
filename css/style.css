@@ -3294,5 +3294,54 @@ img { max-width: 100%; display: block; }
   /* Hide horizontal arrows on mobile (cards stack vertically) */
   .how-arrow { display: none; }
 
+  /* === FAQ section (Figma exact) ==================================== */
+  .faq-section { background: rgba(240, 242, 245, 0.68); padding: 40px 0; }
+  .faq-section .section-title {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 800;
+    color: #151515;
+    margin-bottom: 24px;
+  }
+  .faq-list {
+    max-width: 343px;
+    margin: 0 auto;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    background: #FFFFFF;
+  }
+  .faq-item {
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .faq-q {
+    padding: 22px 8px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 600;
+    color: #151515;
+    gap: 12px;
+  }
+  .faq-q:hover { background: transparent; }
+  .faq-icon {
+    font-size: 22.4px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #E8392A;
+    width: 16px;
+    text-align: right;
+  }
+  .faq-a {
+    padding: 0 16px 16px;
+    border-top: 1px solid #E5E7EB;
+    background: transparent;
+  }
+  .faq-a p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #444444;
+    padding-top: 12px;
+    margin-bottom: 8px;
+  }
+
   .footer-grid  { grid-template-columns: 1fr; }
 }
