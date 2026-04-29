@@ -2146,13 +2146,29 @@ img { max-width: 100%; display: block; }
   }
   .hero-bg { display: none; }
   .hero-container {
-    padding: 48px 20px 32px;
+    padding: 80px 16px 32px;
     align-items: stretch;
     justify-content: center;
   }
   .hero-text { text-align: center; max-width: 100%; }
   .hero-checks { justify-content: center; }
-  .hero-trust-row { justify-content: center; }
+  .hero-trust-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-trust-rating {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hero-trust-flags {
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-trust-divider { display: none; }
   .btn-shop { width: 100%; max-width: 340px; }
 
   .hero-image-mobile {
@@ -2208,14 +2224,35 @@ img { max-width: 100%; display: block; }
   .header-inner { height: 56px; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
-  .hero-title   { font-size: 1.9rem; letter-spacing: -0.5px; }
-  .hero-sub     { font-size: 0.88rem; }
+  /* Match Figma spec: Inter 800 / 35px / 45px line-height */
+  .hero-title {
+    font-size: 35px;
+    line-height: 45px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-shadow: none;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-shadow: none;
+  }
   .hero-text    { max-width: 100%; }
   .hero-text--mobile { display: none; }
-  .hero-container { align-items: stretch; padding: 40px 16px 32px; }
-  .hero-checks  { gap: 8px; }
+  .hero-container { align-items: stretch; padding: 80px 16px 32px; }
+  .hero-checks  { gap: 8px; margin-bottom: 24px; }
   .hero-checks li { font-size: 0.82rem; padding: 5px 11px; }
-  .hero-trust-row { flex-direction: column; gap: 14px; align-items: center; }
+  .hero-trust-row { flex-direction: column; gap: 12px; align-items: center; }
+  .hero-trust-rating {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hero-trust-flags { align-items: center; }
   .hero-trust-divider { display: none; }
   .hero-flags   { gap: 6px; }
   .hero-flags span { font-size: 1.2rem; }
