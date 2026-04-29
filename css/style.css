@@ -2820,5 +2820,46 @@ img { max-width: 100%; display: block; }
     color: #303030;
   }
 
+  /* === WHY GetJapaneSIM section (Figma exact) ======================== */
+  .why-section { background: #FFFFFF; padding: 40px 0; }
+  .why-title {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 800;
+    color: #151515;
+    margin-bottom: 24px;
+  }
+  .why-title--accent { color: var(--red); }
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .why-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .why-icon {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #E8392A;
+    background: #FFF5F4;
+    border-radius: 26px;
+  }
+  .why-icon svg { width: 26px; height: 26px; }
+  .why-content h3 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #151515;
+    margin-bottom: 5px;
+  }
+  .why-content p {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #444444;
+  }
+
   .footer-grid  { grid-template-columns: 1fr; }
 }
