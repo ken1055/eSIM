@@ -2140,42 +2140,66 @@ img { max-width: 100%; display: block; }
   .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* === Hero (mobile, per Figma 375 frame) ===
-     - Full-bleed cherry-blossom bg image (60-942px, height ~882)
-     - Dark gradient overlay covering top portion only (60-747px)
-     - Centered text content positioned by Figma top offsets       */
+     - hero-bg: top portion of source image cropped to upper-left
+       (sky/sunset/Fuji region; pagoda not shown)
+     - hero-bottom-image: 375x436 panel UNDER the hero text content
+       showing the same source image with the pagoda centered
+     - Dark gradient overlay sits on the upper text area for readability */
   .hero-section {
     display: block;
-    min-height: 882px;
+    min-height: auto;
     background: transparent;
     align-items: stretch;
     overflow: hidden;
   }
   .hero-bg {
     display: block;
-    background-position: center;
+    /* Show the upper-left of the source: sky + Mt. Fuji, pagoda hidden */
+    background-image: url('../img/hero-fuji-pagoda.png');
+    background-position: 22% 0%;
+    background-size: 220% auto;
+    background-repeat: no-repeat;
+    height: 610px; /* image area covers only the text region */
+    inset: auto 0 auto 0;
+    top: 0;
   }
   .hero-bg::after {
-    /* Figma: linear-gradient(180deg, #151515 0%, rgba(21,21,21,0.7) 45.39%, rgba(21,21,21,0) 100%)
-       The gradient spans 687/882 ≈ 78% of the hero height. */
+    /* Dark gradient over the upper text area (not the bottom image) */
+    inset: 0;
     background: linear-gradient(
       180deg,
       #151515 0%,
-      rgba(21, 21, 21, 0.7) calc(45.39% * 0.78),
-      rgba(21, 21, 21, 0) 78%
+      rgba(21, 21, 21, 0.7) 45%,
+      rgba(21, 21, 21, 0) 100%
     );
   }
   .hero-container {
-    padding: 80px 16px 32px;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 16px 0;
     align-items: stretch;
     justify-content: flex-start;
     max-width: 375px;
+    position: relative;
   }
   .hero-text {
+    order: 1;
     text-align: center;
     max-width: 100%;
     width: 100%;
   }
   .btn-shop { width: 100%; max-width: 343px; }
+  /* Bottom image: 375x436 with the 5-tier pagoda visually centered */
+  .hero-bottom-image {
+    order: 2;
+    width: 375px;
+    height: 436px;
+    margin: 28px -16px 0;
+    background-image: url('../img/hero-fuji-pagoda.png');
+    background-position: 70% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   .header-inner { height: 60px; }
   .logo-img { height: 44px; }
@@ -2301,12 +2325,23 @@ img { max-width: 100%; display: block; }
   }
   .hero-trust-divider { display: none; }
   .hero-flags {
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
   }
+  /* Round country flag emojis: clip into a perfect circle */
   .hero-flags span {
-    font-size: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #FFFFFF;
+    font-size: 32px;
     line-height: 1;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   }
   .hero-trusted {
     font-size: 14px;
