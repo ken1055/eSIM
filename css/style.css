@@ -751,7 +751,7 @@ img { max-width: 100%; display: block; }
 .city-img--tokyo   { background-image: url('../img/city-tokyo.jpg'); }
 .city-img--osaka   {
   background-image: url('../img/city-osaka.jpg');
-  background-position: 100% 42%;
+  background-position: 110% 42%;
 }
 .city-img--sapporo { background-image: url('../img/city-sapporo.jpg'); }
 .city-img--okinawa { background-image: url('../img/city-okinawa.jpg'); }
@@ -2612,7 +2612,7 @@ img { max-width: 100%; display: block; }
   }
   /* Osaka: emphasize right side of photo (castle / skyline) */
   .city-section .dest-card__img.city-img--osaka {
-    background-position: 100% 42%;
+    background-position: 110% 42%;
   }
   /* Bottom gradient: image stays clear up to ~55%, then darkens sharply */
   .city-section .dest-card::before {
