@@ -2766,6 +2766,9 @@ img { max-width: 100%; display: block; }
     bottom: 12px;
     left: 12px;
     right: 12px;
+    width: auto; /* override base .dest-card__btn width:100% — avoids overflow with left/right */
+    max-width: none;
+    box-sizing: border-box;
     height: 35px;
     padding: 0 12px;
     background: #DC2625;
