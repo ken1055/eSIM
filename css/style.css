@@ -837,7 +837,8 @@ img { max-width: 100%; display: block; }
 .sup-mobile-br,
 .about-mobile-br,
 .faq-mobile-br,
-.activate-mobile-br { display: none; }
+.activate-mobile-br,
+.how-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -3309,19 +3310,20 @@ img { max-width: 100%; display: block; }
   /* === HOW DOES eSIM WORK section (Figma exact) ===================== */
   .how-section { background: rgba(240, 242, 245, 0.68); padding: 40px 0; }
   .how-section .section-title {
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 32px;
+    line-height: 42px;
     font-weight: 800;
     color: #151515;
     margin-bottom: 12px;
   }
   .how-section .section-sub {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 28px;
     font-weight: 400;
     color: #444444;
     margin-bottom: 24px;
   }
+  .how-mobile-br { display: inline; }
   .how-steps {
     flex-direction: column;
     align-items: center;
