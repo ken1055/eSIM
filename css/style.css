@@ -2611,7 +2611,97 @@ img { max-width: 100%; display: block; }
     z-index: 2;
   }
 
-  .multi-section .dest-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .multi-section .dest-card__img { height: 150px; }
+  /* === FOR MULTI-COUNTRY TRAVELERS section (Figma exact) ============ */
+  .multi-section.dest-section { background: #151515; padding: 40px 0; }
+  .multi-section .section-title {
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+  .multi-section .section-sub {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #FFFFFF;
+    max-width: 343px;
+    margin: 0 auto 30px;
+  }
+  .multi-section .dest-grid {
+    grid-template-columns: repeat(2, 169px);
+    gap: 5px;
+    justify-content: center;
+    align-items: stretch;
+  }
+  /* Card 169x245: dark plate with image at top, text + CTA stacked below */
+  .multi-section .dest-card {
+    position: relative;
+    width: 169px;
+    height: 245px;
+    background: #222020;
+    border: 1px solid #3D3D3D;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .multi-section .dest-card:hover { transform: none; box-shadow: none; }
+  .multi-section .dest-card__img {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    right: 5px;
+    height: 111px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  /* Text stack below the image (Figma top:121 inside card) */
+  .multi-section .dest-card__overlay {
+    position: absolute;
+    top: 121px;
+    left: 8px;
+    right: 8px;
+    background: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+  .multi-section .dest-card__region {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 700;
+    color: #BABABA;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .multi-section .dest-card__name {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 800;
+    color: #E6A016;
+  }
+  .multi-section .dest-card__price {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #FFFFFF;
+  }
+  /* "View Plans" CTA absolute at bottom (Figma 153x35) */
+  .multi-section .dest-card__btn {
+    position: absolute;
+    bottom: 14px;
+    left: 8px;
+    right: 8px;
+    height: 35px;
+    padding: 0 12px;
+    background: #DC2625;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
   .footer-grid  { grid-template-columns: 1fr; }
 }
