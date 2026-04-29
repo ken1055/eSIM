@@ -2168,7 +2168,7 @@ img { max-width: 100%; display: block; }
 
   /* === Hero (mobile): top PNG + text container + bottom PNG (all inside .hero-section) ==
      - hero-mobile-top.png (Rectangle 15): upper scene behind headline
-     - hero-mobile-bottom.png (Rectangle 35): pagoda — sibling under .container */
+     - hero-mobile-bottom.png: pagoda + Fuji + sakura (full-width strip) */
   .hero-section {
     display: flex;
     flex-direction: column;
@@ -2232,7 +2232,7 @@ img { max-width: 100%; display: block; }
     align-self: stretch;
     width: 100%;
     max-width: none;
-    aspect-ratio: 375 / 454;
+    aspect-ratio: 1024 / 682;
     margin: 28px 0 32px;
     box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
