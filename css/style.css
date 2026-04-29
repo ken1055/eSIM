@@ -834,7 +834,8 @@ img { max-width: 100%; display: block; }
 }
 
 /* テキストエリア */
-.sup-mobile-br { display: none; }
+.sup-mobile-br,
+.about-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -3516,7 +3517,7 @@ img { max-width: 100%; display: block; }
   /* === Ready to connect in Japan? (about-section, Figma exact) ====== */
   .about-section { background: #151515; padding: 40px 0; }
   .about-inner {
-    max-width: 343px;
+    max-width: 375px;
     padding: 0 16px;
     text-align: center;
   }
@@ -3529,12 +3530,13 @@ img { max-width: 100%; display: block; }
     white-space: nowrap;
   }
   .about-desc {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 26px;
     font-weight: 400;
     color: #FFFFFF;
     margin-bottom: 24px;
   }
+  .about-mobile-br { display: inline; }
   /* Badge group: 2 in first row, 1 centered in second */
   .about-badges {
     flex-wrap: wrap;
