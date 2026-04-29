@@ -2264,6 +2264,10 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 480px) {
   .container    { padding: 0 16px; }
+  /* .container の shorthand が hero の上余白まで消すため、ヒーローだけ別指定 */
+  .hero-container {
+    padding: 192px 16px 0;
+  }
   .header-inner { height: 56px; }
   .logo-img     { height: 38px; }
   .hero-section { margin-top: 56px; }
