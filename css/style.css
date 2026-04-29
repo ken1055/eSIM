@@ -835,7 +835,8 @@ img { max-width: 100%; display: block; }
 
 /* テキストエリア */
 .sup-mobile-br,
-.about-mobile-br { display: none; }
+.about-mobile-br,
+.faq-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -3377,12 +3378,13 @@ img { max-width: 100%; display: block; }
   /* === FAQ section (Figma exact) ==================================== */
   .faq-section { background: rgba(240, 242, 245, 0.68); padding: 40px 0; }
   .faq-section .section-title {
-    font-size: 25px;
-    line-height: 35px;
+    font-size: 32px;
+    line-height: 42px;
     font-weight: 800;
     color: #151515;
     margin-bottom: 24px;
   }
+  .faq-mobile-br { display: inline; }
   .faq-list {
     max-width: 343px;
     margin: 0 auto;
