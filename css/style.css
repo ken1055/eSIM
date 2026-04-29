@@ -3049,5 +3049,76 @@ img { max-width: 100%; display: block; }
   .carousel-btn--next { right: calc(50% - 22.5px); }
   .carousel-dots { display: none; }
 
+  /* === HOW TO ACTIVATE section (Figma exact) ======================== */
+  .activate-section { padding: 40px 0; }
+  .activate-section .section-title {
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 800;
+    color: #151515;
+    margin-bottom: 12px;
+  }
+  .activate-section .section-sub {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #444444;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  /* Tab switcher: 2px #E0E0E0 border with radius 8, dark navy active */
+  .activate-tabs {
+    display: flex;
+    width: 343px;
+    margin: 0 auto 24px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: transparent;
+  }
+  .activate-tab {
+    flex: 1;
+    padding: 11px 0;
+    font-size: 15.2px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #888888;
+    background: transparent;
+    border: none;
+  }
+  .activate-tab--active {
+    background: #1B2035;
+    color: #FFFFFF;
+  }
+  /* Activation guide image (Figma 343x229) */
+  .activate-guide-img-wrap { padding: 0; }
+  .activate-guide-img {
+    width: 343px;
+    height: 229px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  /* Video guide button: full-width outline, capitalized */
+  .activate-note { padding: 0; margin-top: 18px; }
+  .activate-note__btn {
+    display: flex;
+    width: 343px;
+    height: 44px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border: 1px solid #151515;
+    border-radius: 40px;
+    background: transparent;
+    color: #151515;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+  }
+  .activate-note__btn:hover { background: transparent; color: #151515; }
+
   .footer-grid  { grid-template-columns: 1fr; }
 }
