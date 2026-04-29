@@ -3497,4 +3497,81 @@ img { max-width: 100%; display: block; }
     transform: none;
     box-shadow: none;
   }
+
+  /* === COMPANY section (Figma exact) ================================ */
+  .company-section { background: #FFFFFF; padding: 40px 0; }
+  .company-section .container { padding: 0 16px; }
+  /* Title with red left bar */
+  .company-section .section-title {
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 800;
+    color: #151515;
+    text-align: left;
+    padding-left: 12px;
+    border-left: 4px solid #E8392A;
+    margin-bottom: 8px;
+  }
+  /* Stack: dl on top, note box below */
+  .company-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  /* Definition list rows: label-left, value-right with bottom border */
+  .company-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    align-items: start;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .company-row:first-child { border-top: 1px solid #E5E7EB; }
+  .company-row dt {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding-top: 2px;
+  }
+  .company-row dd {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #151515;
+    margin: 0;
+  }
+  .company-row dd a {
+    color: #E8392A;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    word-break: break-all;
+  }
+  /* Light grey rounded note box with green check list */
+  .company-note {
+    background: #F5F7F9;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 18px 16px;
+  }
+  .company-note__list { gap: 12px; }
+  .company-note__list li {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #151515;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .company-note__check {
+    color: #00AD11;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    width: 18px;
+    margin-top: 0;
+  }
 }
