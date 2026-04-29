@@ -3350,75 +3350,84 @@ img { max-width: 100%; display: block; }
     color: #FFFFFF;
     padding: 40px 0 0;
   }
+  .site-footer .container { padding: 0 24px; }
   .footer-top {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding-bottom: 32px;
-    margin-bottom: 24px;
+    padding-bottom: 28px;
+    margin-bottom: 22px;
     border-bottom: 1px solid #2A2A2A;
   }
   .footer-brand { gap: 14px; align-items: flex-start; }
+  /* Title: "Explore Japan with confidence." - bold white */
   .footer-tagline {
-    font-size: 14px;
-    line-height: 26px;
-    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
     color: #FFFFFF;
     max-width: 343px;
+    margin: 0;
   }
   .footer-desc {
     font-size: 14px;
-    line-height: 26px;
+    line-height: 22px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #B5B5B5;
+    margin: 0;
   }
   .footer-email {
     font-size: 14px;
-    line-height: 19px;
+    line-height: 22px;
     font-weight: 400;
     color: #FFFFFF;
+    margin-top: 4px;
   }
+  /* Two columns: COMPANY + TRAVEL */
   .footer-cols {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
   }
   .footer-col h4 {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 12px;
+    line-height: 16px;
     font-weight: 700;
-    color: #DC2625;
-    text-transform: none;
-    letter-spacing: 0;
-    margin-bottom: 12px;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
   }
-  .footer-col ul { gap: 10px; }
+  .footer-col ul { gap: 14px; }
   .footer-col li a {
     font-size: 14px;
-    line-height: 19px;
+    line-height: 22px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #D8D8D8;
   }
   .footer-divider {
     border-top-color: #2A2A2A;
     margin: 0 0 18px;
   }
+  /* Bottom inline links row */
   .footer-links-row {
-    gap: 6px 20px;
-    margin-bottom: 12px;
+    justify-content: center;
+    gap: 6px 22px;
+    margin-bottom: 10px;
   }
   .footer-links-row a {
     font-size: 13px;
-    line-height: 19px;
+    line-height: 20px;
     font-weight: 400;
-    color: #FFFFFF;
+    color: #B5B5B5;
   }
-  .footer-links-row--sm { display: flex; }
-  .footer-links-row--sm a { font-size: 13px; color: #FFFFFF; }
+  .footer-links-row--sm { display: none; }
   .footer-copy {
-    font-size: 14px;
-    line-height: 26px;
+    font-size: 13px;
+    line-height: 22px;
     font-weight: 400;
-    color: #FFFFFF;
-    padding: 16px 0 32px;
+    color: #B5B5B5;
+    text-align: center;
+    padding: 4px 0 32px;
+    margin-top: 0;
   }
 
   /* === Ready to connect in Japan? (about-section, Figma exact) ====== */
