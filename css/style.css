@@ -2223,17 +2223,17 @@ img { max-width: 100%; display: block; }
     width: 100%;
   }
   .btn-shop { width: 100%; max-width: 343px; }
-  /* Bottom panel: direct child of .hero-section — scrolls with hero, same background band */
+  /* Bottom panel: full viewport width (no 375px pillarbox gaps on tablets/wide phones) */
   .hero-bottom-image {
     display: block;
     position: relative;
     z-index: 1;
     flex-shrink: 0;
-    align-self: center;
+    align-self: stretch;
     width: 100%;
-    max-width: 375px;
+    max-width: none;
     aspect-ratio: 375 / 454;
-    margin: 28px auto 32px;
+    margin: 28px 0 32px;
     box-sizing: border-box;
     background-image: url('../img/hero-mobile-bottom.png');
     background-position: center center;
