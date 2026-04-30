@@ -479,37 +479,47 @@ img { max-width: 100%; display: block; }
   font-size: 1.9rem;
   font-weight: 900;
   line-height: 1.2;
-  max-width: 640px;
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
+  white-space: nowrap;
 }
 
-/* タブ切り替え */
+/* タブ切り替え (Figma: white pill outer, dark inner pill for active) */
 .plans-tabs {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  background: #e8e8e8;
-  border-radius: 100px;
+  gap: 4px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 999px;
   padding: 4px;
   width: fit-content;
   margin: 0 auto 36px;
-  gap: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 .plans-tab {
-  padding: 10px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 28px;
   font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 100px;
+  border-radius: 999px;
   border: none;
   cursor: pointer;
   background: transparent;
-  color: #555;
+  color: #151515;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
-.plans-tab--active {
-  background: #1a1a1a;
-  color: #fff;
+.plans-tab:hover { color: #151515; background: #F2F4F6; }
+.plans-tab--active,
+.plans-tab--active:hover {
+  background: #151515;
+  color: #FFFFFF;
 }
 
 /* パネル表示制御 */
@@ -519,7 +529,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch; /* equal heights so buy buttons line up at the bottom */
 }
 
 .plan-card {
@@ -617,6 +627,8 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   margin-bottom: 24px;
   border-top: 1px solid #f0f0f0;
+  /* Push the CTA button to the very bottom even when content varies in length */
+  flex-grow: 1;
 }
 .plan-card--featured .plan-features-table { border-top-color: rgba(255,255,255,0.20); }
 
