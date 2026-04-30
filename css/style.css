@@ -726,20 +726,25 @@ img { max-width: 100%; display: block; }
 .dest-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 18px;
+  align-items: stretch;
 }
 
 .dest-card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  border-radius: 16px;
+  background: #1A1A1F;
+  border: 1px solid #2A2A30;
+  border-radius: 14px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 8px 8px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.2s ease;
 }
 .dest-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+  transform: translateY(-4px);
+  border-color: #3D3D3D;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
 }
 
 /* 写真エリア */
@@ -749,56 +754,109 @@ img { max-width: 100%; display: block; }
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* 下部グラデーションオーバーレイ */
+/* Bottom-right info row inside the photo (City) */
 .dest-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.78) 100%);
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
   padding: 14px 14px 12px;
-  gap: 2px;
+  gap: 8px;
 }
 
 .dest-card__region {
-  font-size: 0.60rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.75);
 }
 
 .dest-card__name {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 800;
-  color: #f5c842;
+  color: #E6A016;
   line-height: 1.2;
 }
 
 .dest-card__price {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
+  white-space: nowrap;
 }
 
-/* 赤ボタン */
+/* Red rounded CTA button — sits below the photo on the dark card body */
 .dest-card__btn {
   width: 100%;
-  background: var(--red);
-  color: #fff;
+  background: #DC2625;
+  color: #FFFFFF;
   border: none;
-  padding: 12px 16px;
-  font-size: 0.82rem;
+  border-radius: 999px;
+  padding: 10px 18px;
+  margin: 12px 0 0;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
   text-align: center;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
 }
-.dest-card:hover .dest-card__btn { background: #c0192a; }
+.dest-card:hover .dest-card__btn { background: #C42E21; transform: translateY(-1px); }
+
+/* === MULTI-COUNTRY: image on top, info band below image, button at the bottom === */
+.multi-section .dest-card { padding: 0; }
+.multi-section .dest-card__img {
+  height: 130px;
+  border-radius: 0;
+}
+/* Plain image (no gradient) for multi cards — info lives in the band below */
+.multi-section .dest-card__overlay {
+  position: static;
+  inset: auto;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  column-gap: 10px;
+  row-gap: 2px;
+  padding: 12px 14px 0;
+}
+.multi-section .dest-card__region {
+  grid-column: 1 / -1;
+  font-size: 0.62rem;
+  letter-spacing: 1.4px;
+  color: #BABABA;
+  margin-bottom: 4px;
+}
+.multi-section .dest-card__name {
+  grid-column: 1 / 2;
+  text-align: left;
+  font-size: 1.02rem;
+  color: #E6A016;
+}
+.multi-section .dest-card__price {
+  grid-column: 2 / 3;
+  text-align: right;
+  font-size: 0.88rem;
+  color: #FFFFFF;
+  align-self: end;
+}
+.multi-section .dest-card__btn {
+  margin: 12px 14px 14px;
+  width: auto;
+}
 
 /* 背景画像クラス */
 .city-img--tokyo   { background-image: url('../img/city-tokyo.jpg'); }
@@ -2670,10 +2728,13 @@ img { max-width: 100%; display: block; }
     width: 343px;
     height: 269px;
     margin: 0 auto;
+    background: transparent;
+    padding: 0;
     border: 1px solid #3D3D3D;
     border-radius: 10px;
     overflow: hidden;
   }
+  .city-section .dest-card__img { border-radius: 0; }
   .city-section .dest-card:hover { transform: none; box-shadow: none; }
   .city-section .dest-card__img {
     position: absolute;
@@ -2784,11 +2845,13 @@ img { max-width: 100%; display: block; }
     position: relative;
     width: 169px;
     height: 245px;
+    padding: 0;
     background: #222020;
     border: 1px solid #3D3D3D;
     border-radius: 10px;
     overflow: hidden;
   }
+  .multi-section .dest-card__img { border-radius: 10px; }
   .multi-section .dest-card:hover { transform: none; box-shadow: none; }
   .multi-section .dest-card__img {
     position: absolute;
