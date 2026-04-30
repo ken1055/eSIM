@@ -3119,8 +3119,9 @@ img { max-width: 100%; display: block; }
   }
   /* Force line break only on mobile via the <br class="sup-mobile-br"> */
   .sup-mobile-br { display: inline; }
-  /* Desktop-only break (before "WhatsApp") — hide on mobile so wrapping stays natural */
-  .sup-desk-br { display: none; }
+  /* Desktop-only breaks — hide on mobile so wrapping stays natural */
+  .sup-desk-br,
+  .about-desk-br { display: none; }
   .support-text p {
     order: 2;
     width: 100%;
