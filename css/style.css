@@ -492,21 +492,21 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 
-/* タブ切り替え (Figma: white pill outer, dark inner pill for active) */
+/* タブ切り替え (Figma: dark pill outer, white inner pill for active) */
 .plans-tabs {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: #151515;
+  border: 1px solid #151515;
   border-radius: 999px;
   padding: 4px;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 36px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 .plans-tab {
   display: inline-flex;
@@ -520,15 +520,15 @@ img { max-width: 100%; display: block; }
   border: none;
   cursor: pointer;
   background: transparent;
-  color: #151515;
+  color: #FFFFFF;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
-.plans-tab:hover { color: #151515; background: #F2F4F6; }
+.plans-tab:hover { color: #FFFFFF; background: rgba(255, 255, 255, 0.10); }
 .plans-tab--active,
 .plans-tab--active:hover {
-  background: #151515;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: #151515;
 }
 
 /* パネル表示制御 */
