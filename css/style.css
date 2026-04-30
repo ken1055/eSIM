@@ -2982,6 +2982,13 @@ img.coverage-city__icon {
     overflow: visible;
     padding: 0;
   }
+  /* Mobile-only: swap Osaka and Kyoto positions in the 3x2 grid */
+  .coverage-cities .coverage-city[data-city="tokyo"]    { order: 1; }
+  .coverage-cities .coverage-city[data-city="kyoto"]    { order: 2; }
+  .coverage-cities .coverage-city[data-city="osaka"]    { order: 3; }
+  .coverage-cities .coverage-city[data-city="hokkaido"] { order: 4; }
+  .coverage-cities .coverage-city[data-city="okinawa"]  { order: 5; }
+  .coverage-cities .coverage-city[data-city="sapporo"]  { order: 6; }
   .coverage-city {
     flex: none;
     width: 100px;
