@@ -992,7 +992,10 @@ img { max-width: 100%; display: block; }
 .support-cta { display: block; text-align: center; }
 
 /* ===== REVIEWS ===== */
-.reviews-section .section-title { text-align: center; }
+.reviews-section .section-title {
+  text-align: center;
+  margin-bottom: 64px;
+}
 
 /* ===== Reviews Carousel ===== */
 .reviews-carousel {
@@ -1181,19 +1184,19 @@ img { max-width: 100%; display: block; }
 .advantage-item strong { display: block; font-size: 0.9rem; margin-bottom: 4px; color: var(--text); }
 .advantage-item p { font-size: 0.875rem; color: var(--text-mid); margin: 0; }
 
-/* Still have Questions? */
+/* Still have Questions? — Figma desktop: small avatar left + title/button stacked right */
 .ft-still {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   margin-top: 48px;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: left;
 }
 .ft-still__img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
@@ -1201,31 +1204,36 @@ img { max-width: 100%; display: block; }
 }
 .ft-still__text {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: nowrap;
 }
 .ft-still__text strong {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text);
-  white-space: normal;
+  white-space: nowrap;
+  line-height: 1.2;
 }
 .ft-still__btn {
-  display: inline-block;
-  padding: 10px 28px;
-  border: 2px solid #1a1a1a;
-  border-radius: 100px;
-  background: transparent;
-  color: #1a1a1a;
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 22px;
+  border: 1.5px solid #151515;
+  border-radius: 999px;
+  background: #FFFFFF;
+  color: #151515;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
   flex-shrink: 0;
+  height: 32px;
 }
-.ft-still__btn:hover { background: #1a1a1a; color: #fff; }
+.ft-still__btn:hover { background: #151515; color: #fff; }
 
 @media (max-width: 600px) {
   .ft-still {
