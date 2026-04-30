@@ -1443,7 +1443,7 @@ img { max-width: 100%; display: block; }
 /* Video guide button */
 .activate-note {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 4px;
 }
 .activate-note__btn {
   display: inline-block;
