@@ -1801,6 +1801,13 @@ img { max-width: 100%; display: block; }
 .coverage-city__icon {
   font-size: 2.4rem;
   line-height: 1;
+  display: block;
+}
+img.coverage-city__icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 .coverage-city__name {
   font-size: 0.88rem;
@@ -1955,6 +1962,7 @@ img { max-width: 100%; display: block; }
     gap: 8px;
   }
   .coverage-city__icon { font-size: 2.2rem; }
+  img.coverage-city__icon { width: 50px; height: 50px; }
   .coverage-city__name { font-size: 0.80rem; }
   .coverage-card { padding: 20px 16px; }
   .coverage-card__metrics { grid-template-columns: repeat(3, 1fr); gap: 6px; }
@@ -2980,6 +2988,7 @@ img { max-width: 100%; display: block; }
     box-shadow: none;
   }
   .coverage-city__icon { font-size: 60px; line-height: 1; height: 60px; display: flex; align-items: center; }
+  img.coverage-city__icon { width: 60px; height: 60px; display: block; }
   .coverage-city__name {
     font-size: 18px;
     line-height: 22px;
