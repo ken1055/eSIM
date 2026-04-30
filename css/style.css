@@ -2186,24 +2186,22 @@ img { max-width: 100%; display: block; }
     right: 0;
     top: 0;
     z-index: 0;
-    /* Sunset-inspired gradient (visible) — dark navy/charcoal at top → warm amber */
-    background-image: linear-gradient(
-      180deg,
-      #050507 0%,
-      #15161D 28%,
-      #2C1F1F 55%,
-      #5C2C1B 78%,
-      #B25A28 100%
-    );
-    background-position: center top;
-    background-size: 100% 100%;
+    /* Top photo: sunset sky → warm horizon (Mt. Fuji silhouette at bottom) */
+    background-image: url('../img/hero-mobile-top.png');
+    background-position: center bottom;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 610px;
   }
   .hero-bg::after {
-    /* No additional overlay needed on a flat gradient — keep transparent */
+    /* Soft dark overlay for headline legibility on the sunset photo */
     inset: 0;
-    background: transparent;
+    background: linear-gradient(
+      180deg,
+      rgba(8, 8, 16, 0.55) 0%,
+      rgba(8, 8, 16, 0.35) 45%,
+      rgba(8, 8, 16, 0.0) 100%
+    );
   }
   /* Title ~80px from frame top (Figma): hero margin clears header + this gap */
   .hero-container {
