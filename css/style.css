@@ -27,8 +27,8 @@
 
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; width: 100%; }
-body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; min-width: 100%; max-width: 100vw; margin: 0; }
+html { scroll-behavior: smooth; width: 100%; max-width: 100%; overflow-x: hidden; }
+body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; width: 100%; max-width: 100%; margin: 0; position: relative; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; }
@@ -2554,6 +2554,7 @@ img.coverage-city__icon {
     color: #151515;
     max-width: 343px;
     margin-bottom: 15px;
+    white-space: normal; /* override desktop nowrap so title wraps on mobile */
   }
   .plans-section .section-sub {
     font-size: 16px;
