@@ -825,9 +825,12 @@ img { max-width: 100%; display: block; }
 .dest-card:hover .dest-card__btn { background: #C42E21; transform: translateY(-1px); }
 
 /* === MULTI-COUNTRY: image on top, info band below image, button at the bottom === */
-.multi-section .dest-card { padding: 0; }
+.multi-section .dest-card {
+  padding: 0;
+  background: #151515;
+}
 .multi-section .dest-card__img {
-  height: 130px;
+  height: 160px;
   border-radius: 0;
 }
 /* Plain image (no gradient) for multi cards — info lives in the band below */
@@ -840,7 +843,7 @@ img { max-width: 100%; display: block; }
   align-items: end;
   column-gap: 10px;
   row-gap: 2px;
-  padding: 12px 14px 0;
+  padding: 14px 16px 0;
 }
 .multi-section .dest-card__region {
   grid-column: 1 / -1;
