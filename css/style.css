@@ -977,7 +977,8 @@ img { max-width: 100%; display: block; }
 .activate-mobile-br,
 .how-mobile-br,
 .ftime-mobile-br,
-.why-mobile-br { display: none; }
+.why-mobile-br,
+.plans-mobile-br { display: none; }
 .support-text h2 {
   font-size: 1.75rem;
   font-weight: 800;
@@ -3175,6 +3176,7 @@ img.coverage-city__icon {
   }
   /* Force line break only on mobile via the <br class="sup-mobile-br"> */
   .sup-mobile-br { display: inline; }
+  .plans-mobile-br { display: inline; }
   /* Desktop-only breaks — hide on mobile so wrapping stays natural */
   .sup-desk-br,
   .about-desk-br { display: none; }
