@@ -381,7 +381,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 28px;
   flex-wrap: nowrap;
   margin-top: 28px;
 }
@@ -410,7 +410,14 @@ img { max-width: 100%; display: block; }
   color: #FFFFFF;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
-.hero-trust-divider { display: none; }
+.hero-trust-divider {
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.35);
+  flex-shrink: 0;
+  align-self: center;
+}
 .hero-trust-flags {
   display: inline-flex;
   flex-direction: column;
