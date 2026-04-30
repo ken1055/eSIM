@@ -381,8 +381,8 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 56px;
-  flex-wrap: wrap;
+  gap: 40px;
+  flex-wrap: nowrap;
   margin-top: 28px;
 }
 .hero-trust-rating {
