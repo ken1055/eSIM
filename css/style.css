@@ -374,68 +374,66 @@ img { max-width: 100%; display: block; }
 }
 .btn-shop:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,57,42,0.55); }
 
-/* Trust row: rating left | divider | flags right (single-line layout per side) */
+/* Trust row (Figma desktop):
+   Left  = ★ icon + "4.8/5" stacked vertically | "Trusted by 50,000+ travelers worldwide" (2 lines)
+   Right = "Used by travelers from 80+ countries" on top | row of circular flags below */
 .hero-trust-row {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: flex-start;
+  gap: 56px;
   flex-wrap: wrap;
+  margin-top: 28px;
 }
 .hero-trust-rating {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
-  white-space: nowrap;
+  gap: 14px;
 }
 .hero-trust-stars {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
+  flex-shrink: 0;
 }
 .hero-star {
   color: #F5A623;
-  font-size: 1.25rem;
+  font-size: 1.85rem;
   line-height: 1;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 .hero-rating-num {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: #FFFFFF;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
-.hero-trust-divider {
-  width: 1px;
-  height: 44px;
-  background: rgba(255,255,255,0.30);
-  flex-shrink: 0;
-  align-self: center;
-}
+.hero-trust-divider { display: none; }
 .hero-trust-flags {
   display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   flex-wrap: nowrap;
-  white-space: nowrap;
 }
 .hero-flags {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
 }
 /* Round country flag bitmaps (replaces emoji rendering for consistency) */
 .hero-flag {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: #FFFFFF;
   object-fit: cover;
   display: block;
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 /* Legacy emoji style kept for backward compatibility */
 .hero-flags span {
@@ -444,11 +442,20 @@ img { max-width: 100%; display: block; }
   filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
 }
 .hero-trusted {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  color: #FFFFFF;
   font-weight: 500;
+  line-height: 1.35;
   text-shadow: 0 1px 4px rgba(0,0,0,0.4);
   display: block;
+}
+/* Force the left-side tagline to wrap onto two lines (Figma) */
+.hero-trust-rating .hero-trusted {
+  max-width: 220px;
+  white-space: normal;
+}
+.hero-trust-flags .hero-trusted {
+  white-space: nowrap;
 }
 
 /* ===== SECTIONS BASE ===== */
@@ -2480,7 +2487,7 @@ img.coverage-city__icon {
     gap: 8px;
     flex-wrap: nowrap;
   }
-  .hero-trust-stars { gap: 6px; }
+  .hero-trust-stars { flex-direction: row; align-items: center; gap: 6px; }
   .hero-star {
     color: #FFB700;
     font-size: 22px;
