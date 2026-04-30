@@ -399,9 +399,22 @@ img { max-width: 100%; display: block; }
 }
 .hero-flags {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
+/* Round country flag bitmaps (replaces emoji rendering for consistency) */
+.hero-flag {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+/* Legacy emoji style kept for backward compatibility */
 .hero-flags span {
   font-size: 1.4rem;
   line-height: 1;
@@ -2380,19 +2393,11 @@ img { max-width: 100%; display: block; }
     gap: 12px;
     justify-content: center;
   }
-  /* Round country flag emojis: clip into a perfect circle */
-  .hero-flags span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
+  /* Round country flag bitmaps on mobile (override base size) */
+  .hero-flag {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    overflow: hidden;
-    background: #FFFFFF;
-    font-size: 32px;
-    line-height: 1;
-    flex-shrink: 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   }
   .hero-trusted {
