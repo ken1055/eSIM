@@ -1088,6 +1088,20 @@
 <!-- Sakura Canvas -->
 <canvas id="sakura-canvas"></canvas>
 
+<!-- Wire plan "Buy" buttons to the checkout flow -->
+<script>
+(function () {
+  var MAP = { 1800: 'city-3gb', 2250: 'city-10gb', 5400: 'city-unlim',
+              2100: 'multi-3gb', 3300: 'multi-10gb', 6750: 'multi-unlim' };
+  document.querySelectorAll('.plan-card').forEach(function (card) {
+    var price = card.querySelector('.plan-price-main[data-jpy]');
+    var btn   = card.querySelector('.btn-buy');
+    if (!price || !btn) return;
+    var id = MAP[parseInt(price.getAttribute('data-jpy'), 10)];
+    if (id) btn.setAttribute('href', 'checkout.html?plan=' + id);
+  });
+})();
+</script>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>

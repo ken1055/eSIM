@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <meta name="robots" content="noindex">
+  <title>Checkout – Get Japan eSIM</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== HEADER (simplified) ===== -->
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+    <a href="index.html" class="site-logo">
+      <img src="img/logo-transparent.png" alt="Get Japan eSIM" class="logo-img">
+    </a>
+    <div style="flex:1"></div>
+    <div class="header-utils">
+      <div class="util-dropdown util-dropdown--lang-pill" id="lang-dropdown">
+        <button class="util-btn util-btn--pill" id="lang-btn">En <span class="caret">▾</span></button>
+        <div class="util-menu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="zh">简体中文</a>
+          <hr style="border:none;border-top:1px solid #eee;margin:4px 0;">
+          <a href="#" data-currency="USD">USD</a>
+          <a href="#" data-currency="EUR">EUR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="checkout-main">
+  <div class="checkout-wrap">
+
+    <!-- Step indicator -->
+    <div class="steps">
+      <div class="step step--active">
+        <span class="step__num">1</span>
+        <span class="step__label">Details</span>
+      </div>
+      <span class="step__line"></span>
+      <div class="step">
+        <span class="step__num">2</span>
+        <span class="step__label">Payment</span>
+      </div>
+    </div>
+
+    <form class="checkout-grid" id="checkout-form" novalidate>
+
+      <!-- ===== LEFT: form ===== -->
+      <div class="checkout-left">
+
+        <!-- Device compatibility -->
+        <div class="co-card">
+          <div class="co-card__head">
+            <div class="co-card__icon">📱</div>
+            <div>
+              <div class="co-card__title">Device Compatibility</div>
+              <div class="co-card__sub">Confirm your phone supports eSIM</div>
+            </div>
+          </div>
+          <label class="co-check">
+            <input type="checkbox" id="chk-esim" required>
+            <span>My device supports eSIM</span>
+          </label>
+          <p class="co-hint">🔍 Not sure if your phone supports eSIM? <a href="index.html#devices">Check compatibility</a></p>
+          <label class="co-check">
+            <input type="checkbox" id="chk-unlocked" required>
+            <span>My device is carrier-unlocked</span>
+            <span class="co-check__warn" title="Your device must be carrier-unlocked to use an eSIM.">ⓘ</span>
+          </label>
+        </div>
+
+        <!-- Your details -->
+        <div class="co-card">
+          <div class="co-card__head">
+            <div class="co-card__icon">👤</div>
+            <div>
+              <div class="co-card__title">Your Details</div>
+              <div class="co-card__sub">Your eSIM will be sent here instantly after payment</div>
+            </div>
+          </div>
+
+          <div class="co-row">
+            <div class="co-field">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Alex" autocomplete="given-name">
+            </div>
+            <div class="co-field">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Smith" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="co-field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="alex@email.com" autocomplete="email" required>
+            <p class="co-field__note">We'll send your eSIM QR code and setup guide to this email instantly after payment.</p>
+            <p class="co-error" id="err-email">Please enter a valid email address.</p>
+          </div>
+
+          <div class="co-field">
+            <label for="email2">Confirm Email Address <span class="req">*</span></label>
+            <input type="email" id="email2" name="email2" placeholder="alex@email.com" autocomplete="email" required>
+            <p class="co-error" id="err-email2">Email addresses do not match.</p>
+          </div>
+
+          <div class="co-field">
+            <label for="startDate">Travel Start Date <span class="req">*</span></label>
+            <input type="date" id="startDate" name="startDate" required>
+            <p class="co-field__note">Choose the day you want your eSIM to start working. You can install it before your trip.</p>
+            <p class="co-error" id="err-date">Please choose your travel start date.</p>
+          </div>
+
+          <!-- Promo code -->
+          <button type="button" class="co-promo" id="promo-toggle">
+            <span>Have a promo code?</span>
+            <span class="chev">›</span>
+          </button>
+          <div class="co-field co-promo-field" id="promo-field">
+            <input type="text" id="promo" name="promo" placeholder="Enter promo code">
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="co-submit" id="co-submit">
+          <span class="co-submit__lock">🔒</span> Continue to Secure Payment
+        </button>
+
+        <div class="co-trust">
+          <span>🔒 Secure checkout</span>
+          <span>⚡ Instant eSIM delivery</span>
+          <span>📘 Setup guide included</span>
+        </div>
+        <p class="co-help">Need help before buying? <a href="mailto:support@getjapanesim.com">Chat with us</a></p>
+      </div>
+
+      <!-- ===== RIGHT: plan summary ===== -->
+      <aside class="summary" id="summary">
+        <div class="summary__top">
+          <div class="summary__rating">
+            <span class="star">★</span> <strong>4.8/5</strong>&nbsp;|&nbsp;Trusted by 50,000+ travelers worldwide
+          </div>
+          <span class="summary__badge" id="sum-badge">Most Popular</span>
+          <div class="summary__plan" id="sum-plan">10GB / 10 Days</div>
+          <div class="summary__plandesc" id="sum-plandesc">Japan Nationwide · Best for Mid-Length Trips</div>
+          <div class="summary__price"><span id="sum-price" data-jpy="2250">$15.00 USD</span></div>
+        </div>
+        <div class="summary__rows">
+          <div class="summary__row"><span class="k">Data</span><span class="v v--green" id="sum-data">10 GB</span></div>
+          <div class="summary__row"><span class="k">Validity</span><span class="v" id="sum-validity">10 Days</span></div>
+          <div class="summary__row"><span class="k">Speed</span><span class="v">4G LTE · 150 Mbps</span></div>
+          <div class="summary__row"><span class="k">Coverage</span><span class="v">Nationwide Japan</span></div>
+          <div class="summary__row"><span class="k">Carrier</span><span class="v">Docomo / SoftBank</span></div>
+          <div class="summary__row"><span class="k">Delivery</span><span class="v v--green">Instant by email</span></div>
+        </div>
+        <div class="summary__change"><a href="index.html#plans">Change plan</a></div>
+      </aside>
+
+    </form>
+  </div>
+</main>
+
+<!-- ===== Processing overlay (mock) ===== -->
+<div class="pay-overlay" id="pay-overlay">
+  <div class="pay-modal">
+    <div class="pay-spinner"></div>
+    <h3>Redirecting to secure payment…</h3>
+    <p>Powered by Stripe. Please don't close this window.</p>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

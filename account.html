@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>My eSIMs – Get Japan eSIM</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== HEADER (simplified) ===== -->
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+    <a href="index.html" class="site-logo">
+      <img src="img/logo-transparent.png" alt="Get Japan eSIM" class="logo-img">
+    </a>
+    <div style="flex:1"></div>
+    <div class="header-utils">
+      <div class="util-dropdown util-dropdown--lang-pill" id="lang-dropdown">
+        <button class="util-btn util-btn--pill" id="lang-btn">En <span class="caret">▾</span></button>
+        <div class="util-menu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="zh">简体中文</a>
+          <hr style="border:none;border-top:1px solid #eee;margin:4px 0;">
+          <a href="#" data-currency="USD">USD</a>
+          <a href="#" data-currency="EUR">EUR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="checkout-main">
+  <div class="portal">
+
+    <div class="portal__head">
+      <div>
+        <div class="portal__title">Your all e-SIM purchases</div>
+        <div class="portal__email" id="portal-email">xyz@gmail.com</div>
+      </div>
+      <a href="index.html#plans" class="portal__back">← Back to store</a>
+    </div>
+
+    <div id="esim-list"><!-- cards injected by JS --></div>
+
+  </div>
+</main>
+
+<!-- ===== QR re-issue modal ===== -->
+<div class="qr-modal-overlay" id="qr-modal">
+  <div class="qr-modal">
+    <button class="qr-modal__close" id="qr-close" aria-label="Close">✕</button>
+    <h3 id="qr-modal-title">Your eSIM QR Code</h3>
+    <p class="qr-modal__sub" id="qr-modal-sub">Order JP-00000</p>
+    <canvas id="qr-modal-canvas" width="200" height="200" aria-label="eSIM QR code"></canvas>
+    <p class="qr-note">Scan in your phone's Mobile Data / Cellular settings.</p>
+    <span class="qr-mock-tag">SAMPLE QR — not a live eSIM</span>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/qr.js"></script>
+<script>
+(function () {
+  'use strict';
+  var RATES = { USD: 150, EUR: 160 }, SYM = { USD: '$', EUR: '€' };
+
+  function fmtDate(d) {
+    if (!d) return '—';
+    var dt = new Date(d + 'T00:00:00');
+    if (isNaN(dt)) return d;
+    return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  function todayISO() {
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+  }); }
+
+  // ---- Load purchases (real ones first, then demo seed) ----
+  var DEMO = [
+    { orderId: 'JP-48291', country: 'Japan', planName: '10GB / 10 Days', data: '10 GB', days: '10 Days',
+      purchased: '2026-06-08', validUntil: '2026-06-18', carrier: 'Docomo / SoftBank', email: 'xyz@gmail.com', planId: 'city-10gb' },
+    { orderId: 'JP-31042', country: 'Japan', planName: '3GB / 7 Days', data: '3 GB', days: '7 Days',
+      purchased: '2026-02-03', validUntil: '2026-02-10', carrier: 'Docomo / SoftBank', email: 'xyz@gmail.com', planId: 'city-3gb' }
+  ];
+  var list = [];
+  try { list = JSON.parse(localStorage.getItem('esim_purchases') || '[]'); } catch (e) {}
+  var purchases = list.concat(DEMO);
+
+  // Email shown = most recent purchaser's email if available
+  if (purchases.length && purchases[0].email) {
+    document.getElementById('portal-email').textContent = purchases[0].email;
+  }
+
+  function isActive(p) { return p.validUntil >= todayISO(); }
+
+  function cardHTML(p, idx) {
+    var active = isActive(p);
+    var status = active
+      ? '<span class="esim-status esim-status--active">📶 Active</span>'
+      : '<span class="esim-status esim-status--expired">⚠ Expired</span>';
+    var actions = active
+      ? '<div class="esim-actions">' +
+          '<button class="esim-btn" data-qr="' + idx + '">▦ View QR Code</button>' +
+          '<button class="esim-btn" data-resend="' + idx + '">✉ Resend by email</button>' +
+        '</div>'
+      : '<div class="esim-note"><span class="i">ⓘ</span> This plan expired on ' + fmtDate(p.validUntil) +
+          '. Purchase a new plan for your next trip.</div>' +
+        '<div class="esim-actions">' +
+          '<a class="esim-btn esim-btn--full" href="checkout.html?plan=' + esc(p.planId || 'city-10gb') + '">↻ Buy this plan again</a>' +
+        '</div>';
+
+    return '<div class="esim-card">' +
+      '<div class="esim-card__top">' +
+        '<span class="esim-flag" aria-hidden="true"></span>' +
+        '<div>' +
+          '<div class="esim-card__name">' + esc(p.country || 'Japan') + '</div>' +
+          '<div class="esim-card__plan">' + esc(p.data) + ' · ' + esc(p.days) + '</div>' +
+        '</div>' + status +
+      '</div>' +
+      '<div class="esim-meta">' +
+        '<div><div class="esim-meta__k">Purchased</div><div class="esim-meta__v">' + fmtDate(p.purchased) + '</div></div>' +
+        '<div><div class="esim-meta__k">Valid Until</div><div class="esim-meta__v">' + fmtDate(p.validUntil) + '</div></div>' +
+        '<div><div class="esim-meta__k">Order ID</div><div class="esim-meta__v">' + esc(p.orderId) + '</div></div>' +
+        '<div><div class="esim-meta__k">Carrier</div><div class="esim-meta__v">' + esc(p.carrier || 'Docomo / SoftBank') + '</div></div>' +
+      '</div>' + actions +
+    '</div>';
+  }
+
+  var listEl = document.getElementById('esim-list');
+  if (!purchases.length) {
+    listEl.innerHTML = '<div class="portal-empty">You have no eSIMs yet. <a href="index.html#plans">Browse plans</a></div>';
+  } else {
+    listEl.innerHTML = purchases.map(cardHTML).join('');
+  }
+
+  // ---- QR re-issue modal ----
+  var modal = document.getElementById('qr-modal');
+  function openQR(p) {
+    document.getElementById('qr-modal-sub').textContent = 'Order ' + p.orderId;
+    window.GJEsim.drawMockQR(document.getElementById('qr-modal-canvas'), p.orderId);
+    modal.classList.add('show');
+  }
+  function closeQR() { modal.classList.remove('show'); }
+  document.getElementById('qr-close').addEventListener('click', closeQR);
+  modal.addEventListener('click', function (e) { if (e.target === modal) closeQR(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeQR(); });
+
+  // ---- Delegate card buttons ----
+  listEl.addEventListener('click', function (e) {
+    var qrBtn = e.target.closest('[data-qr]');
+    if (qrBtn) { openQR(purchases[+qrBtn.getAttribute('data-qr')]); return; }
+    var rsBtn = e.target.closest('[data-resend]');
+    if (rsBtn) {
+      var orig = rsBtn.innerHTML;
+      rsBtn.innerHTML = '✓ Sent';
+      rsBtn.disabled = true;
+      setTimeout(function () { rsBtn.innerHTML = orig; rsBtn.disabled = false; }, 2500);
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Payment Complete – Get Japan eSIM</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== HEADER (simplified) ===== -->
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+    <a href="index.html" class="site-logo">
+      <img src="img/logo-transparent.png" alt="Get Japan eSIM" class="logo-img">
+    </a>
+    <div style="flex:1"></div>
+    <div class="header-utils">
+      <div class="util-dropdown util-dropdown--lang-pill" id="lang-dropdown">
+        <button class="util-btn util-btn--pill" id="lang-btn">En <span class="caret">▾</span></button>
+        <div class="util-menu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="zh">简体中文</a>
+          <hr style="border:none;border-top:1px solid #eee;margin:4px 0;">
+          <a href="#" data-currency="USD">USD</a>
+          <a href="#" data-currency="EUR">EUR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="checkout-main">
+  <div class="checkout-wrap">
+
+    <!-- Step indicator (both done) -->
+    <div class="steps">
+      <div class="step step--done">
+        <span class="step__num">✓</span>
+        <span class="step__label">Details</span>
+      </div>
+      <span class="step__line" style="background:var(--red)"></span>
+      <div class="step step--done">
+        <span class="step__num">✓</span>
+        <span class="step__label">Payment</span>
+      </div>
+    </div>
+
+    <div class="success-card">
+      <div class="success-check">✓</div>
+      <h1>Payment Complete!</h1>
+      <p class="sub">Your eSIM is ready. We've also emailed your QR code and setup guide to
+        <span class="success-email" id="ord-email">your inbox</span>.</p>
+
+      <!-- QR -->
+      <div class="qr-box">
+        <canvas id="qr-canvas" width="200" height="200" aria-label="eSIM QR code"></canvas>
+        <p class="qr-note">Scan this QR code in your phone's Mobile Data / Cellular settings.</p>
+        <span class="qr-mock-tag">SAMPLE QR — not a live eSIM</span>
+      </div>
+
+      <!-- Order summary -->
+      <div class="order-summary">
+        <div class="order-row"><span class="k">Plan</span><span class="v" id="ord-plan">10GB / 10 Days</span></div>
+        <div class="order-row"><span class="k">Order ID</span><span class="v" id="ord-id">—</span></div>
+        <div class="order-row"><span class="k">Travel start date</span><span class="v" id="ord-date">—</span></div>
+        <div class="order-row order-row--total"><span class="k">Total paid</span><span class="v" id="ord-total">$15.00 USD</span></div>
+      </div>
+
+      <!-- Install steps -->
+      <div class="success-steps">
+        <h3>How to activate</h3>
+        <ol>
+          <li>Open <strong>Settings → Mobile / Cellular</strong> on your phone.</li>
+          <li>Tap <strong>Add eSIM</strong> (or Add Data Plan) and choose <strong>Use QR Code</strong>.</li>
+          <li>Scan the QR code above and follow the on-screen steps.</li>
+          <li>Your data activates automatically when you arrive in Japan.</li>
+        </ol>
+      </div>
+
+      <div class="success-actions">
+        <a href="index.html" class="btn-outline">Back to home</a>
+        <a href="account.html" class="btn-outline">My eSIMs</a>
+        <button type="button" class="btn-solid" id="resend-btn">Resend to email</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/qr.js"></script>
+<script>
+(function () {
+  'use strict';
+  var RATES = { USD: 150, EUR: 160 }, SYM = { USD: '$', EUR: '€' };
+
+  // ---- Load order from the checkout step ----
+  var order = {};
+  try { order = JSON.parse(sessionStorage.getItem('esim_order')) || {}; } catch (e) {}
+
+  function fmtPrice(jpy, cur) {
+    cur = RATES[cur] ? cur : 'USD';
+    return SYM[cur] + (jpy / RATES[cur]).toFixed(2) + ' ' + cur;
+  }
+  function fmtDate(d) {
+    if (!d) return '—';
+    var dt = new Date(d + 'T00:00:00');
+    if (isNaN(dt)) return d;
+    return dt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  function set(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
+
+  if (order.email) set('ord-email', order.email);
+  set('ord-plan', order.planName || '10GB / 10 Days');
+  set('ord-date', fmtDate(order.startDate));
+  if (order.jpy) set('ord-total', fmtPrice(order.jpy, order.currency || 'USD'));
+
+  // Mock order id
+  var oid = 'JP-' + Math.floor(Math.random() * 90000 + 10000);
+  set('ord-id', oid);
+
+  // ---- Draw a mock QR (looks like a QR; NOT a real eSIM profile) ----
+  window.GJEsim.drawMockQR(document.getElementById('qr-canvas'), oid);
+
+  // ---- Persist purchase so the My eSIMs portal can show it ----
+  (function savePurchase() {
+    if (!order.planName) return;
+    function isoLocal(dt) {  // YYYY-MM-DD in local time (avoid UTC shift)
+      var m = String(dt.getMonth() + 1).padStart(2, '0');
+      var d = String(dt.getDate()).padStart(2, '0');
+      return dt.getFullYear() + '-' + m + '-' + d;
+    }
+    function addDays(d, n) {
+      var dt = d ? new Date(d + 'T00:00:00') : new Date();
+      if (isNaN(dt)) dt = new Date();
+      dt.setDate(dt.getDate() + n);
+      return isoLocal(dt);
+    }
+    // Parse validity days from plan name (e.g. "10GB / 10 Days")
+    var m = /(\d+)\s*Days/i.exec(order.planName);
+    var days = m ? parseInt(m[1], 10) : 10;
+    var dataM = /^([\d]+\s*GB|Unlimited)/i.exec(order.planName);
+    var purchase = {
+      orderId: oid,
+      country: 'Japan',
+      planName: order.planName,
+      data: dataM ? dataM[1].replace(/GB/i, ' GB') : '10 GB',
+      days: days + ' Days',
+      jpy: order.jpy,
+      currency: order.currency || 'USD',
+      email: order.email || '',
+      purchased: isoLocal(new Date()),
+      validUntil: addDays(order.startDate, days),
+      carrier: 'Docomo / SoftBank',
+      planId: order.planId || ''
+    };
+    try {
+      var list = JSON.parse(localStorage.getItem('esim_purchases') || '[]');
+      list.unshift(purchase);
+      localStorage.setItem('esim_purchases', JSON.stringify(list));
+    } catch (e) {}
+  })();
+
+  // ---- Resend (mock) ----
+  var btn = document.getElementById('resend-btn');
+  if (btn) btn.addEventListener('click', function () {
+    btn.textContent = 'Sent ✓';
+    btn.disabled = true;
+    setTimeout(function () { btn.textContent = 'Resend to email'; btn.disabled = false; }, 2500);
+  });
+})();
+</script>
+</body>
+</html>
