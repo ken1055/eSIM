@@ -74,21 +74,29 @@
     return order;
   }
 
-  /* ---- Date input: default min = today ---- */
-  var dateEl = $('startDate');
+  /* ---- Date field: native picker, English display (locale-independent) ---- */
+  var dateEl = $('startDate');       // hidden native <input type="date">
+  var dateText = $('startDateText'); // visible English text
   if (dateEl) {
-    var today = new Date().toISOString().slice(0, 10);
-    dateEl.min = today;
+    var t = new Date();
+    dateEl.min = t.getFullYear() + '-' +
+      String(t.getMonth() + 1).padStart(2, '0') + '-' + String(t.getDate()).padStart(2, '0');
   }
-
-  /* ---- Promo toggle ---- */
-  var promoToggle = $('promo-toggle');
-  var promoField  = $('promo-field');
-  if (promoToggle && promoField) {
-    promoToggle.addEventListener('click', function () {
-      promoToggle.classList.toggle('open');
-      promoField.classList.toggle('open');
-      if (promoField.classList.contains('open')) $('promo').focus();
+  function fmtEnglish(v) {
+    var d = new Date(v + 'T00:00:00');
+    if (isNaN(d)) return v;
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  function openPicker() {
+    if (dateEl.showPicker) { try { dateEl.showPicker(); return; } catch (e) {} }
+    dateEl.focus(); dateEl.click();
+  }
+  if (dateText && dateEl) {
+    dateText.addEventListener('click', openPicker);
+    dateText.addEventListener('focus', openPicker);
+    dateEl.addEventListener('change', function () {
+      dateText.value = dateEl.value ? fmtEnglish(dateEl.value) : '';
+      if (dateEl.value) { showError('err-date', false); dateText.classList.remove('is-invalid'); }
     });
   }
 
@@ -117,7 +125,7 @@
 
     var dateOk = !!date;
     showError('err-date', !dateOk);
-    $('startDate').classList.toggle('is-invalid', !dateOk);
+    $('startDateText').classList.toggle('is-invalid', !dateOk);
     if (!dateOk) ok = false;
 
     if (!$('chk-esim').checked || !$('chk-unlocked').checked) {
@@ -137,8 +145,7 @@
       firstName: $('firstName').value.trim(),
       lastName:  $('lastName').value.trim(),
       email:     $('email').value.trim(),
-      startDate: $('startDate').value,
-      promo:     $('promo').value.trim()
+      startDate: $('startDate').value
     });
 
     // === TODAY: mock payment ===

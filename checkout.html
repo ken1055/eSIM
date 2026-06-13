@@ -114,19 +114,14 @@
           </div>
 
           <div class="co-field">
-            <label for="startDate">Travel Start Date <span class="req">*</span></label>
-            <input type="date" id="startDate" name="startDate" required>
+            <label for="startDateText">Travel Start Date <span class="req">*</span></label>
+            <div class="co-date">
+              <input type="text" id="startDateText" class="co-date__text" placeholder="Select your travel date" readonly>
+              <input type="date" id="startDate" name="startDate" class="co-date__native" required tabindex="-1" aria-hidden="true">
+              <span class="co-date__icon" aria-hidden="true">📅</span>
+            </div>
             <p class="co-field__note">Choose the day you want your eSIM to start working. You can install it before your trip.</p>
             <p class="co-error" id="err-date">Please choose your travel start date.</p>
-          </div>
-
-          <!-- Promo code -->
-          <button type="button" class="co-promo" id="promo-toggle">
-            <span>Have a promo code?</span>
-            <span class="chev">›</span>
-          </button>
-          <div class="co-field co-promo-field" id="promo-field">
-            <input type="text" id="promo" name="promo" placeholder="Enter promo code">
           </div>
         </div>
 

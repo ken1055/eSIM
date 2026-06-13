@@ -107,26 +107,17 @@
 .co-error { font-size: 0.78rem; color: var(--red); margin-top: 5px; display: none; }
 .co-error.show { display: block; }
 
-/* Date input with calendar icon (native) */
-.co-field input[type="date"] { color: var(--text); }
-
-/* Promo toggle */
-.co-promo {
-  width: 100%;
-  display: flex; align-items: center; justify-content: space-between;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 13px 14px;
-  font-size: 0.9rem; font-weight: 600; color: var(--text-mid);
-  cursor: pointer;
-  margin-bottom: 16px;
+/* Date field: visible English text + hidden native picker */
+.co-date { position: relative; }
+.co-date__text { width: 100%; padding-right: 40px !important; cursor: pointer; background: #fff; }
+.co-date__icon {
+  position: absolute; right: 13px; top: 50%; transform: translateY(-50%);
+  pointer-events: none; font-size: 0.95rem; opacity: 0.7;
 }
-.co-promo:hover { border-color: #cfd3da; }
-.co-promo .chev { transition: transform 0.2s ease; color: var(--text-light); }
-.co-promo.open .chev { transform: rotate(90deg); }
-.co-promo-field { display: none; margin-bottom: 16px; }
-.co-promo-field.open { display: block; }
+.co-date__native {
+  position: absolute; left: 12px; bottom: 0;
+  width: 1px; height: 1px; opacity: 0; pointer-events: none; border: 0; padding: 0;
+}
 
 /* Continue button */
 .co-submit {
