@@ -55,6 +55,10 @@
       'plan.pay1':     'Secure payment powered by Stripe.',
       'plan.pay2':     'Your eSIM will be delivered instantly by email after purchase.',
       'plan.pay3':     'No physical SIM required.',
+      /* buyer help (QR re-issue) */
+      'buyer.title':   'Already purchased an eSIM?',
+      'buyer.desc':    "Re-display your QR code, or didn't receive the email? Verify your address and resend it here.",
+      'buyer.btn':     'View my eSIMs',
       /* city */
       'city.title': 'For City Travelers',
       'city.sub':   "Connect to Japan's best local network, city by city",

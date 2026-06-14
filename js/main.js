@@ -139,16 +139,28 @@
   });
 
   // ===== Plans section tab switcher =====
+  function activatePlansTab(target) {
+    document.querySelectorAll('.plans-tab').forEach(t => t.classList.remove('plans-tab--active'));
+    document.querySelectorAll('.plans-panel').forEach(p => p.classList.add('plans-panel--hidden'));
+    const tabBtn = document.querySelector('.plans-tab[data-tab="' + target + '"]');
+    if (tabBtn) tabBtn.classList.add('plans-tab--active');
+    const panel = document.getElementById('plans-panel-' + target);
+    if (panel) panel.classList.remove('plans-panel--hidden');
+  }
   document.querySelectorAll('.plans-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-      document.querySelectorAll('.plans-tab').forEach(t => t.classList.remove('plans-tab--active'));
-      document.querySelectorAll('.plans-panel').forEach(p => p.classList.add('plans-panel--hidden'));
-      tab.classList.add('plans-tab--active');
-      const panel = document.getElementById('plans-panel-' + target);
-      if (panel) panel.classList.remove('plans-panel--hidden');
-    });
+    tab.addEventListener('click', () => activatePlansTab(tab.dataset.tab));
   });
+
+  // ===== CTA routing: select the right plans tab before scrolling to #plans =====
+  // "Get Connected in Japan" -> City Traveler plans; "View Plans" -> Multi-country plans
+  function wirePlansCta(selector, tabName) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('click', () => activatePlansTab(tabName));
+    });
+  }
+  wirePlansCta('.btn-shop', 'city');          // hero CTA
+  wirePlansCta('#city .dest-card', 'city');   // city destination cards
+  wirePlansCta('#multi .dest-card', 'multi'); // multi-country "View Plans" cards
 
   // ===== Activate section tab switcher =====
   document.querySelectorAll('.activate-tab').forEach(tab => {

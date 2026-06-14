@@ -3899,3 +3899,41 @@ img.coverage-city__icon {
     margin-top: 0;
   }
 }
+
+/* ===== eSIM BUYER HELP (QR re-issue banner) ===== */
+.buyer-help-section { padding: 8px 0 40px; }
+.buyer-help {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-light, #F2F4F6);
+  border: 1px solid var(--border, #E5E7EB);
+  border-radius: 14px;
+  padding: 20px 24px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.buyer-help__icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: var(--red-light, #FFF5F4);
+  font-size: 1.4rem;
+}
+.buyer-help__text { flex: 1; min-width: 0; }
+.buyer-help__title { font-size: 1.05rem; font-weight: 800; color: var(--text, #151515); }
+.buyer-help__desc { font-size: 0.9rem; color: var(--text-mid, #444); margin-top: 3px; line-height: 1.5; }
+.buyer-help__btn {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--red, #E8392A); color: #fff;
+  font-weight: 700; font-size: 0.92rem;
+  padding: 12px 22px; border-radius: 10px;
+  white-space: nowrap;
+  transition: all 0.22s ease;
+}
+.buyer-help__btn:hover { background: var(--red-dark, #C42E21); }
+@media (max-width: 640px) {
+  .buyer-help { flex-direction: column; text-align: center; align-items: center; padding: 22px 18px; }
+  .buyer-help__btn { width: 100%; justify-content: center; }
+}

@@ -118,7 +118,11 @@
   }
   function set(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
 
-  if (order.email) set('ord-email', order.email);
+  if (order.email) {
+    set('ord-email', order.email);
+    // Buyer just verified their email at checkout — let them view eSIMs without re-verifying
+    try { sessionStorage.setItem('esim_verified_email', order.email); } catch (e) {}
+  }
   set('ord-plan', order.planName || '10GB / 10 Days');
   set('ord-date', fmtDate(order.startDate));
   if (order.jpy) set('ord-total', fmtPrice(order.jpy, order.currency || 'USD'));

@@ -196,6 +196,74 @@
 .summary__change { text-align: center; padding: 4px 0 18px; }
 .summary__change a { color: var(--red); font-weight: 600; font-size: 0.88rem; border-bottom: 1px solid var(--red); }
 
+/* ============================================================
+   Account access — email + verification (re-issue gate)
+   ============================================================ */
+.access-wrap { max-width: 440px; margin: 0 auto; padding: 0 20px; }
+.access-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  padding: 26px 24px;
+}
+.access-card__head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.access-card__icon {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 10px; display: grid; place-items: center;
+  background: var(--red-light); color: var(--red); font-size: 1.15rem;
+}
+.access-card__title { font-size: 1.05rem; font-weight: 800; color: var(--text); }
+.access-card__sub { font-size: 0.85rem; color: var(--text-light); margin-top: 3px; line-height: 1.5; }
+.access-card__sub b { color: var(--text); font-weight: 700; }
+
+.access-submit {
+  width: 100%;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--red); color: #fff; border: none;
+  border-radius: 10px; padding: 14px;
+  font-size: 0.98rem; font-weight: 700; cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 6px 16px rgba(232,57,42,0.26);
+}
+.access-submit:hover { background: var(--red-dark); }
+.access-submit:disabled { opacity: 0.6; cursor: not-allowed; box-shadow: none; }
+
+.access-foot { text-align: center; margin-top: 18px; }
+.access-foot a {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.88rem; font-weight: 600; color: var(--text-mid);
+}
+.access-foot a:hover { color: var(--red); }
+
+/* OTP code inputs */
+.otp-row { display: flex; gap: 9px; justify-content: space-between; margin-bottom: 6px; }
+.otp-row input {
+  width: 100%; aspect-ratio: 1 / 1; min-width: 0;
+  text-align: center; font-size: 1.3rem; font-weight: 700;
+  border: 1px solid var(--border); border-radius: 9px;
+  color: var(--text); font-family: inherit;
+  transition: var(--transition);
+}
+.otp-row input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(232,57,42,0.12); }
+.otp-row input.is-invalid { border-color: var(--red); }
+.otp-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 14px 0 18px; font-size: 0.82rem; color: var(--text-light);
+}
+.otp-resend {
+  background: #fff; border: 1px solid var(--border); border-radius: 8px;
+  padding: 8px 12px; font-size: 0.82rem; font-weight: 600; color: var(--text-mid);
+  cursor: pointer; transition: var(--transition);
+}
+.otp-resend:hover { border-color: var(--red); color: var(--red); }
+.access-demo-tag {
+  display: block; text-align: center; margin-top: 14px;
+  font-size: 0.72rem; color: var(--text-light);
+}
+.access-view { display: none; }
+.access-view.show { display: block; }
+
 /* ===== Processing overlay ===== */
 .pay-overlay {
   position: fixed; inset: 0; z-index: 2000;

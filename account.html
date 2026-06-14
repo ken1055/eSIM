@@ -86,21 +86,26 @@
     return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
   }); }
 
-  // ---- Load purchases (real ones first, then demo seed) ----
+  // ---- Verification gate: must come through account-access.html ----
+  var verifiedEmail = '';
+  try { verifiedEmail = sessionStorage.getItem('esim_verified_email') || ''; } catch (e) {}
+  if (!verifiedEmail) { window.location.replace('account-access.html'); return; }
+  document.getElementById('portal-email').textContent = verifiedEmail;
+
+  // ---- Load purchases for this email (real ones first, then demo seed) ----
+  // Demo eSIMs are relabeled to the verified email so the portal is never empty.
   var DEMO = [
     { orderId: 'JP-48291', country: 'Japan', planName: '10GB / 10 Days', data: '10 GB', days: '10 Days',
-      purchased: '2026-06-08', validUntil: '2026-06-18', carrier: 'Docomo / SoftBank', email: 'xyz@gmail.com', planId: 'city-10gb' },
+      purchased: '2026-06-08', validUntil: '2026-06-18', carrier: 'Docomo / SoftBank', email: verifiedEmail, planId: 'city-10gb' },
     { orderId: 'JP-31042', country: 'Japan', planName: '3GB / 7 Days', data: '3 GB', days: '7 Days',
-      purchased: '2026-02-03', validUntil: '2026-02-10', carrier: 'Docomo / SoftBank', email: 'xyz@gmail.com', planId: 'city-3gb' }
+      purchased: '2026-02-03', validUntil: '2026-02-10', carrier: 'Docomo / SoftBank', email: verifiedEmail, planId: 'city-3gb' }
   ];
   var list = [];
   try { list = JSON.parse(localStorage.getItem('esim_purchases') || '[]'); } catch (e) {}
-  var purchases = list.concat(DEMO);
-
-  // Email shown = most recent purchaser's email if available
-  if (purchases.length && purchases[0].email) {
-    document.getElementById('portal-email').textContent = purchases[0].email;
-  }
+  var mine = list.filter(function (p) {
+    return !p.email || p.email.toLowerCase() === verifiedEmail.toLowerCase();
+  });
+  var purchases = mine.concat(DEMO);
 
   function isActive(p) { return p.validUntil >= todayISO(); }
 

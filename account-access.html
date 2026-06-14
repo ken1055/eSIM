@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Access your eSIMs – Get Japan eSIM</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== HEADER (simplified) ===== -->
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+    <a href="index.html" class="site-logo">
+      <img src="img/logo-transparent.png" alt="Get Japan eSIM" class="logo-img">
+    </a>
+    <div style="flex:1"></div>
+    <div class="header-utils">
+      <div class="util-dropdown util-dropdown--lang-pill" id="lang-dropdown">
+        <button class="util-btn util-btn--pill" id="lang-btn">En <span class="caret">▾</span></button>
+        <div class="util-menu">
+          <a href="#" data-lang="en">English</a>
+          <a href="#" data-lang="de">Deutsch</a>
+          <a href="#" data-lang="zh">简体中文</a>
+          <hr style="border:none;border-top:1px solid #eee;margin:4px 0;">
+          <a href="#" data-currency="USD">USD</a>
+          <a href="#" data-currency="EUR">EUR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="checkout-main">
+  <div class="access-wrap">
+
+    <!-- Step indicator -->
+    <div class="steps">
+      <div class="step step--active" id="step-email">
+        <span class="step__num">1</span><span class="step__label">Email</span>
+      </div>
+      <span class="step__line"></span>
+      <div class="step" id="step-verify">
+        <span class="step__num">2</span><span class="step__label">Verify</span>
+      </div>
+      <span class="step__line"></span>
+      <div class="step" id="step-esims">
+        <span class="step__num">3</span><span class="step__label">My eSIMs</span>
+      </div>
+    </div>
+
+    <!-- ===== View 1: Email ===== -->
+    <div class="access-view show" id="view-email">
+      <form class="access-card" id="email-form" novalidate>
+        <div class="access-card__head">
+          <div class="access-card__icon">📲</div>
+          <div>
+            <div class="access-card__title">Access your eSIMs</div>
+            <div class="access-card__sub">Enter the email address you used at checkout and we'll send you a verification code.</div>
+          </div>
+        </div>
+
+        <div class="co-field">
+          <label for="access-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="access-email" placeholder="alex@email.com" autocomplete="email" required>
+          <p class="co-error" id="err-access-email">Please enter a valid email address.</p>
+        </div>
+
+        <button type="submit" class="access-submit" id="send-code-btn">
+          ✈ Send verification code
+        </button>
+      </form>
+      <div class="access-foot">
+        <a href="index.html#plans">← Back to store</a>
+      </div>
+    </div>
+
+    <!-- ===== View 2: Verify ===== -->
+    <div class="access-view" id="view-verify">
+      <form class="access-card" id="verify-form" novalidate>
+        <div class="access-card__head">
+          <div class="access-card__icon">✉</div>
+          <div>
+            <div class="access-card__title">Check your inbox</div>
+            <div class="access-card__sub">We sent a 6-digit code to <b id="verify-email">your email</b>. It expires in 10 minutes.</div>
+          </div>
+        </div>
+
+        <div class="co-field">
+          <label>Verification Code <span class="req">*</span></label>
+          <div class="otp-row" id="otp-row">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+          </div>
+          <p class="co-error" id="err-otp">Please enter the 6-digit code.</p>
+        </div>
+
+        <div class="otp-meta">
+          <span>Didn't get it? Check spam.</span>
+          <button type="button" class="otp-resend" id="resend-code">↻ Resend code</button>
+        </div>
+
+        <button type="submit" class="access-submit" id="verify-btn">
+          🔒 Verify &amp; view my eSIMs
+        </button>
+        <span class="access-demo-tag">Demo: any 6 digits will work.</span>
+      </form>
+      <div class="access-foot">
+        <a href="#" id="change-email">← Change email</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+  function $(id) { return document.getElementById(id); }
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  var emailVal = '';
+
+  // ---- View switching ----
+  function showVerify() {
+    $('view-email').classList.remove('show');
+    $('view-verify').classList.add('show');
+    $('step-email').classList.remove('step--active');
+    $('step-email').classList.add('step--done');
+    $('step-email').querySelector('.step__num').textContent = '✓';
+    $('step-verify').classList.add('step--active');
+    var first = $('otp-row').querySelector('input');
+    if (first) first.focus();
+  }
+  function showEmail() {
+    $('view-verify').classList.remove('show');
+    $('view-email').classList.add('show');
+    $('step-verify').classList.remove('step--active');
+    $('step-email').classList.remove('step--done');
+    $('step-email').classList.add('step--active');
+    $('step-email').querySelector('.step__num').textContent = '1';
+  }
+
+  // ---- Step 1: send code (mock) ----
+  $('email-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = $('access-email').value.trim();
+    var ok = isEmail(v);
+    $('err-access-email').classList.toggle('show', !ok);
+    $('access-email').classList.toggle('is-invalid', !ok);
+    if (!ok) return;
+    emailVal = v;
+    $('verify-email').textContent = v;
+    showVerify();
+  });
+
+  // ---- OTP auto-advance ----
+  var otpInputs = Array.prototype.slice.call($('otp-row').querySelectorAll('input'));
+  otpInputs.forEach(function (input, i) {
+    input.addEventListener('input', function () {
+      input.value = input.value.replace(/\D/g, '').slice(0, 1);
+      if (input.value && i < otpInputs.length - 1) otpInputs[i + 1].focus();
+      $('err-otp').classList.remove('show');
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Backspace' && !input.value && i > 0) otpInputs[i - 1].focus();
+    });
+    input.addEventListener('paste', function (e) {
+      e.preventDefault();
+      var digits = (e.clipboardData.getData('text') || '').replace(/\D/g, '').slice(0, 6).split('');
+      otpInputs.forEach(function (inp, idx) { inp.value = digits[idx] || ''; });
+      var next = Math.min(digits.length, otpInputs.length - 1);
+      otpInputs[next].focus();
+    });
+  });
+
+  // ---- Step 2: verify (mock — any 6 digits) ----
+  $('verify-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var code = otpInputs.map(function (i) { return i.value; }).join('');
+    var ok = /^\d{6}$/.test(code);
+    $('err-otp').classList.toggle('show', !ok);
+    otpInputs.forEach(function (i) { i.classList.toggle('is-invalid', !ok); });
+    if (!ok) return;
+    // Mark verified and hand off to the My eSIMs portal
+    try { sessionStorage.setItem('esim_verified_email', emailVal); } catch (err) {}
+    var btn = $('verify-btn');
+    btn.disabled = true; btn.textContent = 'Verifying…';
+    setTimeout(function () { window.location.href = 'account.html'; }, 700);
+  });
+
+  $('resend-code').addEventListener('click', function () {
+    var b = $('resend-code');
+    b.textContent = '✓ Sent'; b.disabled = true;
+    setTimeout(function () { b.textContent = '↻ Resend code'; b.disabled = false; }, 2500);
+  });
+
+  $('change-email').addEventListener('click', function (e) { e.preventDefault(); showEmail(); });
+})();
+</script>
+</body>
+</html>
