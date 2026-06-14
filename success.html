@@ -127,9 +127,30 @@
   set('ord-date', fmtDate(order.startDate));
   if (order.jpy) set('ord-total', fmtPrice(order.jpy, order.currency || 'USD'));
 
-  // Mock order id
+  // ---- If we came back from Stripe, confirm the payment really completed ----
+  var sessionId = new URLSearchParams(window.location.search).get('session_id');
+  if (sessionId) {
+    set('ord-id', sessionId.slice(0, 18) + '…');
+    fetch('api/get-session.php?id=' + encodeURIComponent(sessionId))
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (s) {
+        if (s && s.payment_status === 'paid') {
+          if (s.customer_email) {
+            set('ord-email', s.customer_email);
+            try { sessionStorage.setItem('esim_verified_email', s.customer_email); } catch (e) {}
+          }
+          if (s.amount_total != null && s.currency) {
+            var sym = SYM[s.currency.toUpperCase()] || '';
+            set('ord-total', sym + (s.amount_total / 100).toFixed(2) + ' ' + s.currency.toUpperCase());
+          }
+        }
+      })
+      .catch(function () {}); // mock / offline preview — keep sessionStorage values
+  }
+
+  // Mock order id (used for the QR seed and when there is no Stripe session)
   var oid = 'JP-' + Math.floor(Math.random() * 90000 + 10000);
-  set('ord-id', oid);
+  if (!sessionId) set('ord-id', oid);
 
   // ---- Draw a mock QR (looks like a QR; NOT a real eSIM profile) ----
   window.GJEsim.drawMockQR(document.getElementById('qr-canvas'), oid);

@@ -148,45 +148,44 @@
       startDate: $('startDate').value
     });
 
-    // === TODAY: mock payment ===
-    startMockPayment();
-
-    // === LATER: real payment (replace the line above with) ===
-    // createStripeCheckoutSession();
+    beginPayment();
   });
 
-  /* ---- Mock payment: spinner then success page ---- */
-  function startMockPayment() {
+  /* ---- Payment: create a Stripe Checkout Session, then redirect ----
+     Falls back to the mock flow when the backend isn't available yet
+     (e.g. local static preview) or no Stripe key is configured server-side. */
+  function beginPayment() {
     var btn = $('co-submit');
     btn.disabled = true;
     $('pay-overlay').classList.add('show');
-    setTimeout(function () {
-      window.location.href = 'success.html';
-    }, 1800);
+
+    var order = {};
+    try { order = JSON.parse(sessionStorage.getItem('esim_order')) || {}; } catch (e) {}
+
+    fetch('api/create-checkout-session.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        planId: order.planId,
+        email: order.email,
+        startDate: order.startDate
+      })
+    })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('http ' + r.status)); })
+      .then(function (data) {
+        if (data && data.url) {
+          window.location.href = data.url;     // -> Stripe Checkout (hosted)
+        } else {
+          goMock();                            // { mock: true } — no key configured yet
+        }
+      })
+      .catch(function () { goMock(); });        // endpoint missing (static preview) / network error
   }
 
-  /* ---------------------------------------------------------
-     STUB for the live Stripe integration (do not call yet).
-
-     Requires a serverless function (e.g. /api/create-checkout-session)
-     that creates a Stripe Checkout Session with your secret key and
-     returns { url }. The browser then redirects to Stripe's hosted page.
-
-     async function createStripeCheckoutSession() {
-       const order = JSON.parse(sessionStorage.getItem('esim_order'));
-       const res = await fetch('/api/create-checkout-session', {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify(order)
-       });
-       const { url } = await res.json();
-       window.location.href = url;   // -> Stripe Checkout
-     }
-
-     success.html becomes the Stripe success_url. The QR is then
-     issued server-side via the eSIM provider API after the
-     payment webhook confirms the charge.
-  --------------------------------------------------------- */
+  /* ---- Mock payment: spinner then success page (no real charge) ---- */
+  function goMock() {
+    setTimeout(function () { window.location.href = 'success.html'; }, 1200);
+  }
 
   /* Keep summary price in sync if the user switches currency */
   document.querySelectorAll('[data-currency]').forEach(function (a) {

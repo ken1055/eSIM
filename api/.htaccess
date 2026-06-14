@@ -1,0 +1,13 @@
+# Defense in depth: never serve PHP sources or secrets as plain text,
+# even if PHP processing is ever misconfigured/disabled on the server.
+<FilesMatch "^(secrets|config)\.php$">
+  Require all denied
+</FilesMatch>
+
+# Fallback for older Apache (2.2)
+<IfModule !mod_authz_core.c>
+  <FilesMatch "^(secrets|config)\.php$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
